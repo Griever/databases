@@ -1,0 +1,28 @@
+name: Check and Commit Updated File
+
+on:
+  schedule:
+    - cron: '0 * * * *' # 毎時チェック
+  workflow_dispatch:       # 手動トリガーも追加
+
+jobs:
+  update-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Download the file
+        run: curl -o temp.json http://wedata.net/databases/AutoPagerize/items_all.json
+
+      - name: Check for changes and commit if updated
+        run: |
+          if ! cmp -s temp.json ./AutoPagerize/items_all.json; then
+            mv temp.json ./AutoPagerize/items_all.json
+            git config user.name "GitHub Actions"
+            git config user.email "actions@github.com"
+            git add AutoPagerize/items_all.json
+            git commit -m "Update AutoPagerize/items_all.json with latest changes"
+            git push
+          fi  # 'if' 文を終了
