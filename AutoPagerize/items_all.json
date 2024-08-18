@@ -2,9 +2,8 @@
 {
   "resource_url": "http://wedata.net/items/86240",
   "data": {
-    "insertBefore": "",
     "pageElement": "//div[@class='act-video-list']",
-    "nextLink": "//div[@class='pagination']/b/a[last()][@title='']\r\n",
+    "nextLink": "//div[@class='pagination']/b/a[text()='次へ']\r\n",
     "url": "^https://www.minnano-av\\.com/",
     "exampleUrl": "https://www.minnano-av.com/actress218689.html"
   },
@@ -12,7 +11,7 @@
   "created_by": "blekai",
   "name": "みんなのAV.com",
   "created_at": "2024-08-04T09:53:36+09:00",
-  "updated_at": "2024-08-04T09:53:36+09:00"
+  "updated_at": "2024-08-18T14:37:33+09:00"
 },
 {
   "resource_url": "http://wedata.net/items/86239",
