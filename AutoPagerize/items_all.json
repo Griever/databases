@@ -12030,20 +12030,6 @@
   "created_at": "2018-11-20T23:05:03+09:00"
 },
 {
-  "name": "東京2020特集 - スポーツナビ",
-  "data": {
-    "url": "^https://2020\\.yahoo\\.co\\.jp/column/",
-    "pageElement": "//section[@class=\"article__body\"]",
-    "exampleUrl": "https://2020.yahoo.co.jp/column/detail/201810250001-spnavi/",
-    "nextLink": "//a[span/text()=\"次へ\"]"
-  },
-  "database_resource_url": "http://wedata.net/databases/AutoPagerize",
-  "created_by": "jpmyke",
-  "resource_url": "http://wedata.net/items/82021",
-  "created_at": "2018-11-16T14:01:22+09:00",
-  "updated_at": "2020-04-04T12:21:03+09:00"
-},
-{
   "resource_url": "http://wedata.net/items/82020",
   "name": "Us Weekly",
   "created_by": "Tanookirby",
