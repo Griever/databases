@@ -441,17 +441,6 @@
       "nextQuery": "page",
       "nextIncrement": 1,
       "nextStartValue": 1
-    },
-    {
-      "url": "^https?://togetter\\.com/li/",
-      "name": "Togetter 個別記事",
-      "exampleUrl": "https://togetter.com/li/351535\nhttps://togetter.com/li/1060348?page=38",
-      "nextLink": "//link[@rel='next']",
-      "pageElement": "//section[contains(concat(' ',@class,' '),' tweet_box ')]/div[not(@id)]",
-      "framePageElement": "//section[contains(concat(' ',@class,' '),' tweet_box ')]/descendant::img[@data-s and contains(@src, 'twimg.com')]",
-      "insertBefore": "id('hidden_tweet_box')/following-sibling::node()[1]",
-      "requestType": "frame",
-      "responseDelay": 1000
     }
   ],
   "MIDDLE_SITEINFO": [
