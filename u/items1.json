@@ -441,6 +441,15 @@
       "nextQuery": "page",
       "nextIncrement": 1,
       "nextStartValue": 1
+    },
+    {
+      "url": "^https://www\\.data-max\\.co\\.jp/article/",
+      "name": "NetIB-News article",
+      "exampleUrl": "https://www.data-max.co.jp/article/72720",
+      "nextLink": ".post_nav_item_next > a",
+      "pageElement": ".article_body > *",
+      "_build_in": true,
+      "sameTextFilter": true
     }
   ],
   "MIDDLE_SITEINFO": [
@@ -755,6 +764,27 @@
       "pageElement": "[data-testid='SummaryCollectionGridItems'] > div[role='button']",
       "_noFix": true,
       "_build_in": true
+    },
+    {
+      "url": "^https://aoyamabc\\.jp/",
+      "name": "青山ブックセンター本店",
+      "exampleUrl": "https://aoyamabc.jp/collections/comic",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' grid-uniform ')]"
+    },
+    {
+      "url": "^https?://asaikikaku\\.co\\.jp/",
+      "name": "浅井企画",
+      "exampleUrl": "http://asaikikaku.co.jp/news/media/page/2",
+      "nextLink": ".news_back[href*='/page/']",
+      "pageElement": "//main/section"
+    },
+    {
+      "url": "^https://engineweb\\.jp/article/detail/\\d+",
+      "name": "ENGINE (エンジン) |クルマ、時計、ファッション、男のライフスタイルメディア",
+      "exampleUrl": "https://engineweb.jp/article/detail/3350473",
+      "nextLink": "//li[contains(@class, 'active')][number()>0]/following-sibling::li[1]/a[number()>0]",
+      "pageElement": "descendant::div[contains(concat(' ', @class, ' '), ' articleDetailTxt ')][1]/*"
     }
   ]
 }
