@@ -28,6 +28,18 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://cookpad\\.com/",
+      "name": "クックパッド",
+      "exampleUrl": "https://cookpad.com/jp/search/%E5%8D%B5?event=search.trending_keywords&position=0&ref=search_top",
+      "pageElement": "//li[starts-with(@id, 'recipe_')]",
+      "spa": true
+    },
+    {
+      "url": "^https://cookpad\\.com/\\w+/users/\\d+/sent_cooksnaps",
+      "name": "クックパッド /sent_cooksnaps",
+      "pageElement": "id('main_contents')/div[.//img[contains(@src, '/photo.jpg')]]"
+    },
+    {
       "name": "いらすとや",
       "url": "^https://www\\.irasutoya\\.com/",
       "nextLink": "id('Blog1_blog-pager-older-link')",
