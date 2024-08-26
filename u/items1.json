@@ -411,7 +411,7 @@
       "url": "^https://finance\\.yahoo\\.co\\.jp/news/",
       "name": "Yahoo!ファイナンス /news/",
       "exampleUrl": "https://finance.yahoo.co.jp/news/bus_all",
-      "nextLink": "id('newslist')//li[contains(concat(' ', normalize-space(@class), ' '), '_3aycQecV') and number()>0]",
+      "nextLink": "id('newslist')//li[contains(@class, 'current') and number()>0]",
       "pageElement": "id('newslist')/div/div/ul/li[a[contains(@href, '/news/')]]",
       "nextQuery": "page",
       "nextIncrement": 1
