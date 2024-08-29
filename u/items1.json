@@ -20,6 +20,7 @@
     "http://wedata.net/items/85913": "tumblr dummy",
     "http://wedata.net/items/681": "tumblr canonical",
     "http://wedata.net/items/85560": "tumblr canonical",
+    "http://wedata.net/items/85562": "tumblr canonical",
     "http://wedata.net/items/63728": "tumblr canonical",
     "http://wedata.net/items/85802": "tumblr canonical",
     "http://wedata.net/items/31158": "tumblr autopagerize_page_element",
@@ -27,6 +28,14 @@
     "http://wedata.net/items/31114": "tumblr hatom"
   },
   "TOP_SITEINFO": [
+    {
+      "url": "^https://mirai-dora-world-online\\.com/",
+      "name": "ドラえもん未来デパート オンライン",
+      "exampleUrl": "https://mirai-dora-world-online.com/ic",
+      "pageElement": ".sysItemList > .sysThumbnail",
+      "requestType": "frame",
+      "responseDelay": 1000
+    },
     {
       "url": "^https://cookpad\\.com/",
       "name": "クックパッド",
