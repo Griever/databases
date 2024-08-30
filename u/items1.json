@@ -29,6 +29,10 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://booklive\\.jp/index/",
+      "spa": true
+    },
+    {
       "url": "^https://mirai-dora-world-online\\.com/",
       "name": "ドラえもん未来デパート オンライン",
       "exampleUrl": "https://mirai-dora-world-online.com/ic",
@@ -38,10 +42,7 @@
     },
     {
       "url": "^https://cookpad\\.com/",
-      "name": "クックパッド",
-      "exampleUrl": "https://cookpad.com/jp/search/%E5%8D%B5?event=search.trending_keywords&position=0&ref=search_top",
-      "pageElement": "//li[starts-with(@id, 'recipe_')]",
-      "spa": true
+      "disableBuildIn": true
     },
     {
       "url": "^https://cookpad\\.com/\\w+/users/\\d+/sent_cooksnaps",
