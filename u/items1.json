@@ -42,7 +42,8 @@
     },
     {
       "url": "^https://cookpad\\.com/",
-      "disableBuildIn": true
+      "disableBuildIn": true,
+      "spa": true
     },
     {
       "url": "^https://cookpad\\.com/\\w+/users/\\d+/sent_cooksnaps",
@@ -834,6 +835,20 @@
       "exampleUrl": "https://engineweb.jp/article/detail/3350473",
       "nextLink": "//li[contains(@class, 'active')][number()>0]/following-sibling::li[1]/a[number()>0]",
       "pageElement": "descendant::div[contains(concat(' ', @class, ' '), ' articleDetailTxt ')][1]/*"
+    },
+    {
+      "url": "^https://www\\.cosme\\.com/",
+      "name": "アットコスメ公式通販【アットコスメショッピング】",
+      "exampleUrl": "https://www.cosme.com/products/list.php?category_id=&name=%E7%BE%8E%E7%99%BD&pricefrom=&priceto=&brand_id=&reservation=&sort=2&disp=40&rmk=1&pageno=3",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "id('form1')/div[contains(concat(' ', @class, ' '), ' section ')]/ul[.//div[contains(@class, 'product')]]"
+    },
+    {
+      "url": "^https://www\\.komeri\\.com/shop/c/",
+      "name": "ホームセンター コメリドットコム",
+      "exampleUrl": "https://www.komeri.com/shop/c/c210101/",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' goods-list-event ')][*[contains(concat(' ', @class, ' '), ' item ')]]"
     }
   ]
 }
