@@ -4,17 +4,22 @@
     "http://wedata.net/items/649": "hAtom",
     "http://wedata.net/items/650": "hAtom",
     "http://wedata.net/items/2194": "bad",
+    "http://wedata.net/items/2482": "bad",
     "http://wedata.net/items/26621": "unnecessary",
     "http://wedata.net/items/63303": "dummy/400",
     "http://wedata.net/items/77203": "thumbanil",
+    "http://wedata.net/items/77754": "tenhou bad",
     "http://wedata.net/items/80660": "td-block-row",
     "http://wedata.net/items/80835": "dummy/400",
+    "http://wedata.net/items/81254": "listal bad",
     "http://wedata.net/items/82052": "unnecessary",
+    "http://wedata.net/items/85313": "bad",
     "http://wedata.net/items/85451": "dummy/649 why",
     "http://wedata.net/items/85766": "dummy bad",
     "http://wedata.net/items/85852": "unnecessary",
     "http://wedata.net/items/86004": "article",
     "http://wedata.net/items/86017": "article",
+    "http://wedata.net/items/86072": "listal bad",
     "http://wedata.net/items/85914": "tumblr canonical",
     "http://wedata.net/items/85915": "tumblr dummy",
     "http://wedata.net/items/85913": "tumblr dummy",
@@ -28,6 +33,21 @@
     "http://wedata.net/items/31114": "tumblr hatom"
   },
   "TOP_SITEINFO": [
+    {
+      "url": "^https?://www\\.google(?:\\.[^./]{2,3}){1,2}/search\\?(?!.*tbm=shop).*$",
+      "name": "Google Search",
+      "nextLink": "id('pnnext')",
+      "pageElement": "id('rso')|id('center_col')/style[id('rso')]",
+      "insertBefore": "id('bres')/following-sibling::node()[1]"
+    },
+    {
+      "url": "^https://(www\\.)?barks\\.jp/(?:feature|news)/",
+      "name": "BARKS ニュース・特集",
+      "exampleUrl": "https://www.barks.jp/news/?id=1000060027&page=2",
+      "nextLink": "descendant::article[1]/nav/a[@role='button'][not(./following-sibling::*)]",
+      "pageElement": "descendant::article[1]/section[1]",
+      "spa": true
+    },
     {
       "url": "^https://booklive\\.jp/index/",
       "spa": true
@@ -424,6 +444,24 @@
       "exampleUrl": "https://finance.yahoo.co.jp/news/bus_all",
       "nextLink": "id('newslist')//li[contains(@class, 'current') and number()>0]",
       "pageElement": "id('newslist')/div/div/ul/li[a[contains(@href, '/news/')]]",
+      "nextQuery": "page",
+      "nextIncrement": 1
+    },
+    {
+      "url": "^https://finance\\.yahoo\\.co\\.jp/stocks/",
+      "name": "Yahoo!ファイナンス /stocks/",
+      "exampleUrl": "https://finance.yahoo.co.jp/stocks/ranking/up?market=all&term=daily\nhttps://finance.yahoo.co.jp/stocks/screening/highdividend",
+      "nextLink": "id('pagerbtm')//li[last()]/button[not(@disabled)]",
+      "pageElement": "id('pagerbtm')/ancestor-or-self::*[preceding-sibling::*][1]/..",
+      "nextQuery": "page",
+      "nextIncrement": 1
+    },
+    {
+      "url": "^https://finance\\.yahoo\\.co\\.jp/search/",
+      "name": "Yahoo!ファイナンス /search/",
+      "exampleUrl": "https://finance.yahoo.co.jp/search/qi/?ids=2050&page=1",
+      "nextLink": "id('pagerbtm')//li[last()]/button[not(@disabled)]",
+      "pageElement": "id('sr')",
       "nextQuery": "page",
       "nextIncrement": 1
     },
@@ -849,6 +887,95 @@
       "exampleUrl": "https://www.komeri.com/shop/c/c210101/",
       "nextLink": "//a[@rel='next']",
       "pageElement": "//div[contains(concat(' ', @class, ' '), ' goods-list-event ')][*[contains(concat(' ', @class, ' '), ' item ')]]"
+    },
+    {
+      "url": "^https://www\\.sin-space\\.com/",
+      "exampleUrl": "https://www.sin-space.com/",
+      "pageElement": "id('content-card')/ul",
+      "insertBefore": "id('content-card')/following-sibling::*[last()]"
+    },
+    {
+      "url": "^https://www\\.camp-firefox\\.de/forum/",
+      "name": "WoltLab Forum",
+      "exampleUrl": "https://www.camp-firefox.de/forum/forum/15-firefox-allgemein/",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "id('content')/div/ol/li[not(@data-reload-page-when-empty)]",
+      "_resource_url": "http://wedata.net/items/82212"
+    },
+    {
+      "url": "^https://wear\\.jp/",
+      "exampleUrl": "https://wear.jp/saesan1201/?pageno=4",
+      "nextLink": "//a[contains(@href, 'pageno') and @aria-label='次のページ']",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' grid ')][.//time]"
+    },
+    {
+      "url": "^https://www\\.kuchan-bg\\.org/",
+      "exampleUrl": "https://www.kuchan-bg.org/",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' autopagerize_page_element ')]"
+    },
+    {
+      "url": "^https://www\\.nihonkiin\\.or\\.jp/teach/lesson/",
+      "name": "囲碁の基本：囲碁の日本棋院",
+      "exampleUrl": "https://www.nihonkiin.or.jp/teach/lesson/school/kigu.html",
+      "nextLink": "//li[contains(concat(' ', @class, ' '), ' li_next ')]/a[text()='次へ進む']",
+      "pageElement": "id('content')/*"
+    },
+    {
+      "url": "^https://carview\\.yahoo\\.co\\.jp/news/detail/.+?/comment/",
+      "name": "コメント一覧 carview!",
+      "exampleUrl": "https://carview.yahoo.co.jp/news/detail/554aba6c1ccaa449ced1659a4f9306488acde127/comment/",
+      "nextLink": "//a[contains(@class, 'is-current')][number()>0]/following-sibling::a[1][not(contains(@class, 'disabled'))]",
+      "pageElement": "descendant::ul[@class='comment_cont--user_cmt--list'][1]"
+    },
+    {
+      "url": "^https://www\\.katsumaweb\\.com/",
+      "name": "勝間和代オフィシャルサイト ニュース",
+      "exampleUrl": "https://www.katsumaweb.com/number.php",
+      "nextLink": "//a[contains(@href, 'pageNum_news=') and normalize-space(text())='»']",
+      "pageElement": "//div[@class='page_left']/div[@class='news_detail']",
+      "_resource_url": "http://wedata.net/items/77694"
+    },
+    {
+      "url": "^https?://free-photo\\.net/",
+      "exampleUrl": "http://free-photo.net/serach/list.php?search=%E7%8C%AB",
+      "nextLink": "//a[normalize-space(text())='次の24件へ']",
+      "pageElement": "//div[@class='box'][.//img]"
+    },
+    {
+      "url": "^https://pro\\.foto\\.ne\\.jp/",
+      "exampleUrl": "https://pro.foto.ne.jp/free/products_list.php/cPath/21_50_115",
+      "pageElement": ".list_tn_line > ul.cf:nth-child(1)"
+    },
+    {
+      "url": "^http://blog\\.tenhou\\.net/",
+      "exampleUrl": "http://blog.tenhou.net/ http://blog.tenhou.net/index-2.html http://blog.tenhou.net/article/171411254.html http://blog.tenhou.net/archives/201512-1.html http://blog.tenhou.net/category/702845-1.html http://blog.tenhou.net/category/702845-2.html",
+      "nextLink": "//div[@class='navi']/a[contains(., '>>')][not(contains(@href, '/article/') or contains(@href, '/archives/'))]|\n//div[@class='navi']/a[contains(., '<<')][contains(@href, '/article/') or contains(@href, '/archives/')]",
+      "pageElement": "//div[@class=\"blog\"]"
+    },
+    {
+      "url": "^https://online\\.nojima\\.co\\.jp/category/\\d+/",
+      "exampleUrl": "https://online.nojima.co.jp/category/114/?searchCategoryCode=114&mode=image&pageSize=60&currentPage=2&alignmentSequence=8&searchDispFlg=true&discontinuedFlg=1",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "//div[@class='commoditylistitem']"
+    },
+    {
+      "url": "^https://kobe-journal\\.com/",
+      "name": "神戸ジャーナル",
+      "exampleUrl": "https://kobe-journal.com/",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' post-list-card ')]/*"
+    },
+    {
+      "url": "^https://tomandlorenzo\\.com/",
+      "name": "Tom + Lorenzo",
+      "exampleUrl": "https://tomandlorenzo.com/category/movies/",
+      "pageElement": "#content > ul.raws"
+    },
+    {
+      "url": "^https://www\\.xvideos\\.com/",
+      "nextLink": "//div[contains(concat(' ', @class, ' '), ' pagination ')]//a[contains(concat(' ', @class, ' '), ' next-page ')]",
+      "pageElement": "//div[@id='content']"
     }
   ]
 }
