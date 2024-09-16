@@ -12,6 +12,7 @@
     "http://wedata.net/items/80660": "td-block-row",
     "http://wedata.net/items/80835": "dummy/400",
     "http://wedata.net/items/81254": "listal bad",
+    "http://wedata.net/items/81508": "absolute",
     "http://wedata.net/items/82052": "unnecessary",
     "http://wedata.net/items/85313": "bad",
     "http://wedata.net/items/85451": "dummy/649 why",
@@ -58,7 +59,7 @@
       "exampleUrl": "https://mirai-dora-world-online.com/ic",
       "pageElement": ".sysItemList > .sysThumbnail",
       "requestType": "frame",
-      "responseDelay": 1000
+      "responseDelay": 1500
     },
     {
       "url": "^https://cookpad\\.com/",
@@ -849,7 +850,7 @@
       "name": "Vogue Japan",
       "exampleUrl": "",
       "nextLink": "link[rel='next']",
-      "pageElement": "[data-testid='SummaryCollectionGridItems'] > div[role='button']",
+      "pageElement": "[data-testid='SummaryCollectionGridItems']:has( > div[role='button'])",
       "_noFix": true,
       "_build_in": true
     },
@@ -976,6 +977,27 @@
       "url": "^https://www\\.xvideos\\.com/",
       "nextLink": "//div[contains(concat(' ', @class, ' '), ' pagination ')]//a[contains(concat(' ', @class, ' '), ' next-page ')]",
       "pageElement": "//div[@id='content']"
+    },
+    {
+      "url": "^https://realsound\\.jp\\/",
+      "name": "Real Sound 画像",
+      "exampleUrl": "https://realsound.jp/book/2023/07/post-1363201.html/20230702-sonna000",
+      "nextLink": "//div[contains(concat(' ', @class, ' '), ' attachment-page-next ')]/a[.='次のページ']",
+      "pageElement": "//figure[contains(concat(' ', @class, ' '), ' attachment-img ')]"
+    },
+    {
+      "url": "^https://with\\.kodansha\\.co\\.jp/category/",
+      "name": "with digital 記事一覧",
+      "exampleUrl": "https://with.kodansha.co.jp/category/interview?after=YXJyYXljb25uZWN0aW9uOjc4MDA=",
+      "nextLink": "//div[contains(concat(' ', @class, ' '), ' pagination ')]/a[normalize-space()='NEXT']",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' article-list ')]"
+    },
+    {
+      "url": "^https?://polandball\\.jp/",
+      "name": "ポーランドボール 翻訳",
+      "exampleUrl": "http://polandball.jp/",
+      "nextLink": "link[rel='next']",
+      "pageElement": "[data-webele=\"main_contents\"] > :is([data-webele='gridArea'], [data-webele='entry_body'])"
     }
   ]
 }
