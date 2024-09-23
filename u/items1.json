@@ -3,37 +3,67 @@
     "http://wedata.net/items/400": "post",
     "http://wedata.net/items/649": "hAtom",
     "http://wedata.net/items/650": "hAtom",
+    "http://wedata.net/items/681": "tumblr canonical",
     "http://wedata.net/items/2194": "bad",
     "http://wedata.net/items/2482": "bad",
+    "http://wedata.net/items/25672": "absolute",
     "http://wedata.net/items/26621": "unnecessary",
-    "http://wedata.net/items/63303": "dummy/400",
-    "http://wedata.net/items/77203": "thumbanil",
+    "http://wedata.net/items/29787": "bad",
+    "http://wedata.net/items/31114": "tumblr hatom",
+    "http://wedata.net/items/31158": "tumblr autopagerize_page_element",
+    "http://wedata.net/items/32012": "bad",
+    "http://wedata.net/items/49408": "bad",
+    "http://wedata.net/items/61110": "bad",
+    "http://wedata.net/items/63728": "tumblr canonical",
+    "http://wedata.net/items/76807": "bad",
+    "http://wedata.net/items/77203": "thumbnail inf",
     "http://wedata.net/items/77754": "tenhou bad",
     "http://wedata.net/items/80660": "td-block-row",
-    "http://wedata.net/items/80835": "dummy/400",
+    "http://wedata.net/items/80835": "dummy",
     "http://wedata.net/items/81254": "listal bad",
     "http://wedata.net/items/81508": "absolute",
+    "http://wedata.net/items/81792": "bad",
+    "http://wedata.net/items/81933": "bad",
     "http://wedata.net/items/82052": "unnecessary",
     "http://wedata.net/items/85313": "bad",
-    "http://wedata.net/items/85451": "dummy/649 why",
-    "http://wedata.net/items/85766": "dummy bad",
-    "http://wedata.net/items/85852": "unnecessary",
-    "http://wedata.net/items/86004": "article",
-    "http://wedata.net/items/86017": "article",
-    "http://wedata.net/items/86072": "listal bad",
-    "http://wedata.net/items/85914": "tumblr canonical",
-    "http://wedata.net/items/85915": "tumblr dummy",
-    "http://wedata.net/items/85913": "tumblr dummy",
-    "http://wedata.net/items/681": "tumblr canonical",
+    "http://wedata.net/items/85451": "dummy",
     "http://wedata.net/items/85560": "tumblr canonical",
     "http://wedata.net/items/85562": "tumblr canonical",
-    "http://wedata.net/items/63728": "tumblr canonical",
-    "http://wedata.net/items/85802": "tumblr canonical",
-    "http://wedata.net/items/31158": "tumblr autopagerize_page_element",
     "http://wedata.net/items/85564": "tumblr canonical",
-    "http://wedata.net/items/31114": "tumblr hatom"
+    "http://wedata.net/items/85565": "bad inf",
+    "http://wedata.net/items/85766": "dummy",
+    "http://wedata.net/items/85802": "tumblr canonical",
+    "http://wedata.net/items/85805": "dummy",
+    "http://wedata.net/items/85852": "unnecessary",
+    "http://wedata.net/items/85913": "tumblr dummy",
+    "http://wedata.net/items/85914": "tumblr canonical",
+    "http://wedata.net/items/85915": "tumblr dummy",
+    "http://wedata.net/items/86004": "article",
+    "http://wedata.net/items/86017": "article",
+    "http://wedata.net/items/86072": "listal bad"
   },
   "TOP_SITEINFO": [
+    {
+      "url": "^https?://forbesjapan\\.com/articles/detail/",
+      "name": "Forbes JAPAN（フォーブス ジャパン）",
+      "exampleUrl": "https://forbesjapan.com/articles/detail/13687\nhttps://forbesjapan.com/articles/detail/32271\nhttps://forbesjapan.com/articles/detail/61830",
+      "nextLink": "descendant::div[contains(concat(' ', @class, ' '), ' articles-list-pager ')][1]/preceding-sibling::div/div[@class='article-detail-btn']/a",
+      "pageElement": "descendant::div[contains(concat(' ', @class, ' '), ' articles-list-pager ')][1]/preceding-sibling::div[contains(concat(' ',@class,' '),' article-detail-txt ')]"
+    },
+    {
+      "name": "宅配DVDレンタルのTSUTAYA DISCAS",
+      "exampleUrl": "https://movie-tsutaya.tsite.jp/netdvd/dvd/searchDvdBd.do?g=00001%2C00012",
+      "pageElement": "id('container-product-search')",
+      "requestType": "frame",
+      "responseDelay": 1500
+    },
+    {
+      "url": "^https://ecs\\.toranoana\\.jp/tora/ec/",
+      "exampleUrl": "https://ecs.toranoana.jp/tora/ec/cot/pages/all/portal/title/original/1/",
+      "nextLink": "html",
+      "pageElement": "id('search-result-container')//li[contains(concat(' ', @class, ' '), ' product-list-item ')]",
+      "nextQuery": "currentPage"
+    },
     {
       "url": "^https?://www\\.google(?:\\.[^./]{2,3}){1,2}/search\\?(?!.*tbm=shop).*$",
       "name": "Google Search",
@@ -500,9 +530,7 @@
       "nextLink": "//a[contains(@class,'sb_pagN')]",
       "pageElement": "id('b_results')/li[contains(concat(' ', @class, ' '), ' b_pag ')]/preceding-sibling::li[not(contains(concat(' ', @class, ' '), ' b_ad ') or div/@id='relatedSearchesLGWContainer')]|//style[contains(., '.cico')]",
       "insertBefore": "id('b_results')/li[@class='b_pag']",
-      "nextQuery": "first",
-      "nextIncrement": 10,
-      "nextStartValue": 1
+      "spa": true
     },
     {
       "url": "^https://kakaku\\.com/fashion/",
@@ -539,6 +567,20 @@
       "exampleUrl": "https://i-voce.jp/feed/663858/",
       "pageElement": "//div[@class='wp']/*",
       "spa": true
+    },
+    {
+      "url": "^http://wordgear\\.sblo\\.jp/(?:article|index)?",
+      "name": "WordGear",
+      "exampleUrl": "http://wordgear.sblo.jp/ http://wordgear.sblo.jp/article/154424703.html",
+      "nextLink": "//div[@class='navi']/a[1][not(@href='http://wordgear.sblo.jp/')]",
+      "pageElement": "id('content')/*[@class='blog' or @color='#3d3d3d']",
+      "resource_url": "http://wedata.net/items/28818"
+    },
+    {
+      "url": "^https://www\\.jkforum\\.net/(p/)?forum",
+      "name": "JKF 捷克論壇",
+      "nextLink": "//a[@class='nxt']",
+      "pageElement": "id('threadlisttableid waterfall')[.//a[contains(@href, 'thread')]]"
     }
   ],
   "MIDDLE_SITEINFO": [
@@ -952,7 +994,7 @@
       "url": "^http://blog\\.tenhou\\.net/",
       "exampleUrl": "http://blog.tenhou.net/ http://blog.tenhou.net/index-2.html http://blog.tenhou.net/article/171411254.html http://blog.tenhou.net/archives/201512-1.html http://blog.tenhou.net/category/702845-1.html http://blog.tenhou.net/category/702845-2.html",
       "nextLink": "//div[@class='navi']/a[contains(., '>>')][not(contains(@href, '/article/') or contains(@href, '/archives/'))]|\n//div[@class='navi']/a[contains(., '<<')][contains(@href, '/article/') or contains(@href, '/archives/')]",
-      "pageElement": "//div[@class=\"blog\"]"
+      "pageElement": "//div[@class='blog']"
     },
     {
       "url": "^https://online\\.nojima\\.co\\.jp/category/\\d+/",
@@ -997,7 +1039,68 @@
       "name": "ポーランドボール 翻訳",
       "exampleUrl": "http://polandball.jp/",
       "nextLink": "link[rel='next']",
-      "pageElement": "[data-webele=\"main_contents\"] > :is([data-webele='gridArea'], [data-webele='entry_body'])"
+      "pageElement": "[data-webele='main_contents'] > :is([data-webele='gridArea'], [data-webele='entry_body'])"
+    },
+    {
+      "url": "^https://f1sokuho\\.mopita\\.com/",
+      "name": "F1速報公式サイト",
+      "exampleUrl": "https://f1sokuho.mopita.com/pc/free/index.php?uid=NULLGWDOCOMO&pass=&page=news/sp/top\nhttps://f1sokuho.mopita.com/pc/free/index.php?uid=NULLGWDOCOMO&pass=&page=photo/photo_search/sp/top",
+      "nextLink": "id('common_center')//a[img[contains(@src, 'button_next')]]|\nid('common_center')//a[contains(@href, 'new_at=') and text()='Next']",
+      "pageElement": "id('common_list_all')/ul|\nid('common_center')//ul[contains(concat(' ', @class, ' '), ' thumbnail ')]"
+    },
+    {
+      "url": "^https://www\\.dine\\.co\\.jp/",
+      "pageElement": "#n-topic"
+    },
+    {
+      "url": "^https://commons\\.nicovideo\\.jp/",
+      "exampleUrl": "https://commons.nicovideo.jp/search/material/all?category=%E5%8A%B9%E6%9E%9C%E9%9F%B3&transit_from=commons_librarytop_category_kv",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": ".autopagerize_page_element",
+      "requestType": "frame",
+      "responseDelay": 500
+    },
+    {
+      "url": "^https://aur\\.archlinux\\.org/packages",
+      "name": "archlinux",
+      "exampleUrl": "https://aur.archlinux.org/packages?SeB=nd&SB=p&O=0",
+      "nextLink": "//p[contains(concat(' ', @class, ' '), ' pkglist-nav ')]/span[number()>0]/following-sibling::a[1]",
+      "pageElement": "//table[contains(concat(' ', @class, ' '), ' results ')]"
+    },
+    {
+      "url": "^https://\\w+\\.wikipedia\\.org/w/index\\.php\\?(?:.+&)?action=history(?:&|$)",
+      "name": "WikiPedia 変更履歴",
+      "exampleUrl": "https://ja.wikipedia.org/w/index.php?title=%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8&action=history",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": "id('pagehistory')/*[self::h4 or self::ul]"
+    },
+    {
+      "url": "^https://webheibon\\.jp/.+?/\\d+",
+      "name": "ウェブ平凡 web heibon",
+      "exampleUrl": "https://webheibon.jp/sumo-shakai/2714",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": "id('article-data article-text')"
+    },
+    {
+      "url": "^https://(www\\.)?magaseek\\.com/fw/list/",
+      "name": "ファッション通販magaseek",
+      "exampleUrl": "https://www.magaseek.com/fw/list/dp_2-tr_f-fw_2",
+      "nextLink": "//li[@class='next']/a",
+      "pageElement": "//ul[contains(concat(' ', @class, ' '), ' productList ')]"
+    },
+    {
+      "url": "^https://www\\.(networkworld|infoworld|computerworld|cio|csoonline)\\.com/",
+      "name": "Network World, Infoworld, Computerworld, CIO, CSO",
+      "exampleUrl": "https://www.networkworld.com/network-security/\nhttps://www.networkworld.com/network-security/page/2/\nhttps://www.infoworld.com/careers/\nhttps://www.computerworld.com/careers/\nhttps://www.cio.com/careers/\nhttps://www.csoonline.com/careers/",
+      "pageElement": "//a[contains(concat(' ', @class, ' '), ' grid ') and contains(concat(' ', @class, ' '), ' content-row-article ')]/ancestor::div[contains(concat(@class, ' '), 'container ')][1]"
+    },
+    {
+      "url": "^https://music-book\\.jp/",
+      "name": "music.jp",
+      "exampleUrl": "https://music-book.jp/comic/store/rankingDetails?rankingType=D&page=1\nhttps://music-book.jp/video/category-21/recent\nhttps://music-book.jp/music/Genre/jpop/ranking/Music/weekly\nhttps://music-book.jp/book/store/genreDetails?id=1100",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' paging ')]/preceding-sibling::ul[contains(concat(@class, ' '), 'list ')]",
+      "requestType": "frame",
+      "responseDelay": 1000
     }
   ]
 }
