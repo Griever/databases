@@ -51,6 +51,7 @@
       "pageElement": "descendant::div[contains(concat(' ', @class, ' '), ' articles-list-pager ')][1]/preceding-sibling::div[contains(concat(' ',@class,' '),' article-detail-txt ')]"
     },
     {
+      "url": "^https://movie-tsutaya\\.tsite\\.jp/",
       "name": "宅配DVDレンタルのTSUTAYA DISCAS",
       "exampleUrl": "https://movie-tsutaya.tsite.jp/netdvd/dvd/searchDvdBd.do?g=00001%2C00012",
       "pageElement": "id('container-product-search')",
@@ -1101,6 +1102,13 @@
       "pageElement": "//div[contains(concat(' ', @class, ' '), ' paging ')]/preceding-sibling::ul[contains(concat(@class, ' '), 'list ')]",
       "requestType": "frame",
       "responseDelay": 1000
+    },
+    {
+      "url": "^https://novel\\.fc2\\.com/",
+      "name": "FC2小説",
+      "exampleUrl": "https://novel.fc2.com/novel.php?mode=tc&nid=216376",
+      "nextLink": "//ul[contains(concat(' ', @class, ' '), ' navi_prev_next ')]/li[@class='right']/a[.='次の目次へ']",
+      "pageElement": "//ul[contains(concat(' ', @class, ' '), ' navi_prev_next ')]/preceding-sibling::ul[contains(concat(' ', @class, ' '), ' list ')]"
     }
   ]
 }
