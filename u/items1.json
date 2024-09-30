@@ -44,6 +44,57 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://zozo\\.jp/",
+      "name": "ZOZOTOWN coordinate",
+      "exampleUrl": "https://zozo.jp/women-coordinate/",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "id('coordinate_list')"
+    },
+    {
+      "url": "^https://zozo\\.jp/",
+      "name": "ZOZOTOWN search",
+      "exampleUrl": "https://zozo.jp/search/?sex=men",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "//main/div/div/div[header]/div[.//div[contains(concat(' ', @class, ' '), ' ui-image ')]]",
+      "framePageElement": "//main/descendant::div[contains(concat(' ', @class, ' '), ' ui-image ')][last()]//img[contains(concat(' ', @class, ' '), ' ui-img ')]",
+      "requestType": "frame",
+      "responseDelay": 5000
+    },
+    {
+      "url": "^https://vimeo\\.com/",
+      "stopElement": "*"
+    },
+    {
+      "url": "^https://allabout\\.co\\.jp/",
+      "spa": true
+    },
+    {
+      "url": "^https://www\\.yomiuri\\.co\\.jp/",
+      "name": "YOMIURI ONLINE",
+      "exampleUrl": "https://www.yomiuri.co.jp/fukayomi/20190204-OYT8T50085/\nhttps://www.yomiuri.co.jp/olympic/2016/feature/20160729-OYT8T50020.html",
+      "nextLink": "//div[@class='next']/a|//div[@class='p-article-wp-pager']/span[@aria-current]/following-sibling::a[1]",
+      "pageElement": "descendant::div[@class='article-pagination' or @class='p-article-wp-pager'][1]/preceding-sibling::*[not(self::aside or @id='ad_dfp_premiumrec')]",
+      "_resource_url": "http://wedata.net/items/77724"
+    },
+    {
+      "url": "^https?://www\\.flickr\\.com/photos/tags/",
+      "name": "Flickr - Tags",
+      "exampleUrl": "https://www.flickr.com/photos/tags/wii",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": "//div[starts-with(@class,'view photo-list-view')]",
+      "_resource_url": "http://wedata.net/items/462"
+    },
+    {
+      "url": "^https://www\\.ecosia\\.org/search\\?",
+      "name": "Ecosia.org Search",
+      "exampleUrl": "https://www.ecosia.org/search?q=hallo",
+      "nextLink": "//a[@data-test-id='next-button']",
+      "pageElement": "//div[@data-test-id='web-related-queries']/preceding-sibling::*[.//div[@data-test-id='mainline-result-web']]",
+      "removeElement": "//div[@data-test-id='mainline-result-ad']",
+      "insertBefore": "//div[@data-test-id='web-related-queries']",
+      "_resource_url": "http://wedata.net/items/81586"
+    },
+    {
       "url": "^https?://forbesjapan\\.com/articles/detail/",
       "name": "Forbes JAPAN（フォーブス ジャパン）",
       "exampleUrl": "https://forbesjapan.com/articles/detail/13687\nhttps://forbesjapan.com/articles/detail/32271\nhttps://forbesjapan.com/articles/detail/61830",
@@ -322,7 +373,6 @@
       "url": "^https://paypayfleamarket\\.yahoo\\.co\\.jp/",
       "name": "PayPayフリマ",
       "exampleUrl": "https://paypayfleamarket.yahoo.co.jp/search/%E3%83%88%E3%83%83%E3%83%97%E3%82%B9",
-      "nextLink": "//button[@href and div/text()='次へ']",
       "pageElement": "id('itm')/*",
       "spa": true
     },
@@ -414,14 +464,25 @@
     {
       "name": "Pixiv",
       "url": "^https://www\\.pixiv\\.net/",
+      "exampleUrl": "https://www.pixiv.net/tags/Re%3A%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89%E5%A7%8B%E3%82%81%E3%82%8B%E7%95%B0%E4%B8%96%E7%95%8C%E7%94%9F%E6%B4%BB/illustrations\nhttps://www.pixiv.net/user_event.php?type=artworks",
       "nextLink": "//button[@aria-current]/following-sibling::a[1][not(@hidden)]",
-      "pageElement": "descendant::ul[.//a[@data-gtm-user-id] and .//button/*[local-name()='svg']][not(ancestor::aside)]",
-      "framePageElement": "descendant::ul[.//a[@data-gtm-user-id] and .//button/*[local-name()='svg']][not(ancestor::aside)]/li[last()][.//img[starts-with(@src, 'https://i.pximg.net/')]]",
-      "exampleUrl": "https://www.pixiv.net/tags/Re%3A%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89%E5%A7%8B%E3%82%81%E3%82%8B%E7%95%B0%E4%B8%96%E7%95%8C%E7%94%9F%E6%B4%BB/illustrations",
+      "pageElement": "descendant::ul[.//a[@data-gtm-user-id or @data-gtm-value] and .//button/*[local-name()='svg']][last()][not(ancestor::aside)]",
+      "framePageElement": "descendant::ul[.//a[@data-gtm-user-id or @data-gtm-value] and .//button/*[local-name()='svg']][last()][not(ancestor::aside)]/li[last()][.//img[starts-with(@src, 'https://i.pximg.net/')]]",
       "requestType": "frame",
       "responseDelay": 5000,
-      "spa": true,
-      "spaDelay": 1000
+      "spa": true
+    },
+    {
+      "url": "^https://www\\.pixiv\\.net/search/users\\?",
+      "name": "Pixiv /search/users?",
+      "exampleUrl": "https://www.pixiv.net/search/users?s_mode=s_usr&nick=a",
+      "nextLink": "//button[@aria-current]/following-sibling::button[1]",
+      "pageElement": "descendant::div[contains(concat(' ', @class, ' '), ' grid ')][.//a[@data-gtm-user-id]]",
+      "framePageElement": "descendant::div[contains(concat(' ', @class, ' '), ' grid ')][.//a[@data-gtm-user-id]]/li[last()][.//img[starts-with(@src, 'https://i.pximg.net/')]]",
+      "nextQuery": "p",
+      "requestType": "frame",
+      "responseDelay": 5000,
+      "spa": true
     },
     {
       "url": "^https://www\\.deviantart\\.com/",
@@ -575,7 +636,7 @@
       "exampleUrl": "http://wordgear.sblo.jp/ http://wordgear.sblo.jp/article/154424703.html",
       "nextLink": "//div[@class='navi']/a[1][not(@href='http://wordgear.sblo.jp/')]",
       "pageElement": "id('content')/*[@class='blog' or @color='#3d3d3d']",
-      "resource_url": "http://wedata.net/items/28818"
+      "_resource_url": "http://wedata.net/items/28818"
     },
     {
       "url": "^https://www\\.jkforum\\.net/(p/)?forum",
@@ -608,9 +669,9 @@
       "_build_in": true
     },
     {
-      "url": "^https://(boards\\.4channel|4archive)\\.org/.",
+      "url": "^https://(boards\\.4chan|4archive)\\.org/.",
       "name": "4channel",
-      "exampleUrl": "https://boards.4channel.org/jp/",
+      "exampleUrl": "https://boards.4chan.org/jp/",
       "nextLink": "//div[@class='pages']/strong[a]/following-sibling::a[1][@href]|//div[@class='pages']/a[contains(@title, 'currently')]/following-sibling::a[1][@href]",
       "pageElement": "//div[@class='board']"
     },
@@ -791,12 +852,16 @@
       "pageElement": "main > .main-news > *"
     },
     {
-      "url": "^https://(?:www|jp)\\.freepik\\.com/",
+      "url": "^https://\\w{2,3}\\.freepik\\.com/",
       "name": "freepik.com",
-      "exampleUrl": "https://www.freepik.com/free-vectors/signs-and-symbols",
-      "nextLink": ".pagination__button > a.pagination__next",
-      "pageElement": "section > figure",
-      "_build_in": true
+      "exampleUrl": "https://www.freepik.com/vectors/signs-and-symbols\nhttps://www.freepik.com/search?format=search&last_filter=type&last_value=video&query=Signs+And+Symbols&type=video\nhttps://www.freepik.com/search?format=search&iconType=standard&last_filter=iconType&last_value=standard&query=Signs+And+Symbols&type=icon",
+      "nextLink": "//a[@data-cy='pagination-next']",
+      "pageElement": "descendant::*[@data-cy='resource-thumbnail'][1]/ancestor::div[2]|\ndescendant::article[@data-cy='icon-item-wrapper'][1]/parent::div",
+      "stopElement": "*",
+      "requestType": "frame",
+      "responseDelay": 1500,
+      "spa": true,
+      "spaDelay": 1500
     },
     {
       "url": "^https://www\\.recordchina\\.co\\.jp/",
@@ -808,7 +873,7 @@
     {
       "url": "^https://www\\.(?:polygon|eater|sbnation)\\.com/",
       "name": ".c-compact-river__entry",
-      "exampleUrl": "https://www.polygon.com/ https://www.eater.com/ https://www.sbnation.com/",
+      "exampleUrl": "https://www.eater.com/ https://www.sbnation.com/",
       "nextLink": "a.c-pagination__more, a.c-pagination__next",
       "pageElement": ".c-compact-river__entry"
     },
@@ -1051,6 +1116,7 @@
     },
     {
       "url": "^https://www\\.dine\\.co\\.jp/",
+      "exampleUrl": "https://www.dine.co.jp/news/",
       "pageElement": "#n-topic"
     },
     {
@@ -1109,6 +1175,18 @@
       "exampleUrl": "https://novel.fc2.com/novel.php?mode=tc&nid=216376",
       "nextLink": "//ul[contains(concat(' ', @class, ' '), ' navi_prev_next ')]/li[@class='right']/a[.='次の目次へ']",
       "pageElement": "//ul[contains(concat(' ', @class, ' '), ' navi_prev_next ')]/preceding-sibling::ul[contains(concat(' ', @class, ' '), ' list ')]"
+    },
+    {
+      "url": "^https://b\\.hatena\\.ne\\.jp/q/",
+      "name": "はてなブックマーク 検索",
+      "exampleUrl": "https://b.hatena.ne.jp/q/hatena?page=2",
+      "nextLink": "//span[contains(@class, 'pager-next')]/a[.='次のページ']",
+      "pageElement": "//ul[contains(concat(' ', @class, ' '), ' entrysearch-articles ')]"
+    },
+    {
+      "url": "^https://www\\.digimart\\.net/search\\?",
+      "exampleUrl": "https://www.digimart.net/search?category12Id=1&nosoldoutp=on",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' itemSearchIntro ')]"
     }
   ]
 }
