@@ -44,6 +44,33 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://[^/]+\\.wikipedia\\.org/wiki/",
+      "stopElement": "*"
+    },
+    {
+      "url": "^https?://(www\\.)?jprime\\.jp/",
+      "showElement": ".figure-center"
+    },
+    {
+      "url": "^https://mangaip\\.kodansha\\.co\\.jp/",
+      "name": "講談社マンガIPサーチ by C-station",
+      "exampleUrl": "https://mangaip.kodansha.co.jp/category/boy/",
+      "nextLink": "//li[*[contains(@class, 'active')]][number()>0]/following-sibling::li[1]/a[number()>0]",
+      "pageElement": "//main/div/ul[li/article]",
+      "nextQuery": "page"
+    },
+    {
+      "url": "^https://genseki\\.me/",
+      "name": "GENSEKI",
+      "exampleUrl": "https://genseki.me/works",
+      "nextLink": "a[href*='page']:has(img[src*='angle-pager-right'])",
+      "pageElement": "main section ul.grid",
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "spa": true,
+      "spaDelay": 2000
+    },
+    {
       "url": "^https://zozo\\.jp/",
       "name": "ZOZOTOWN coordinate",
       "exampleUrl": "https://zozo.jp/women-coordinate/",
