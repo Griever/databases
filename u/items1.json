@@ -44,8 +44,27 @@
   },
   "TOP_SITEINFO": [
     {
-      "url": "^https://[^/]+\\.wikipedia\\.org/wiki/",
-      "stopElement": "*"
+      "url": "^https://senseino-shiroiuso\\.jp/",
+      "css": "article[id^='post-'] { clip-path: none !important; }"
+    },
+    {
+      "url": "^https://((www\\.(tennimu|jigokuraku)|sakuna-anime|tonari-no-yokai-san)\\.com|(www\\.anime-shikanoko|mayopan)\\.jp)/",
+      "pageElement": ":is(#js-newsLists, .newsLists, .p-news__list) > *",
+      "framePageElement": ":is(#js-newsLists, .newsLists, .p-news__list) > *",
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://sasapi-anime\\.com/",
+      "nextLink": "//li[contains(@class, 'current')][number()>0]/following-sibling::li[1]/a[number()>0]",
+      "pageElement": "id('news_box')/article",
+      "framePageElement": "id('news_box')/article",
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^[^?#]+/wiki/\\d+/?($|\\/?#)",
+      "disableBuildIn": "true"
     },
     {
       "url": "^https?://(www\\.)?jprime\\.jp/",
@@ -1214,6 +1233,34 @@
       "url": "^https://www\\.digimart\\.net/search\\?",
       "exampleUrl": "https://www.digimart.net/search?category12Id=1&nosoldoutp=on",
       "pageElement": "//div[contains(concat(' ', @class, ' '), ' itemSearchIntro ')]"
+    },
+    {
+      "url": "^https?://re-zero-anime\\.jp/tv/news/",
+      "name": "TVアニメ『Re:ゼロから始める異世界生活』オフィシャルサイト",
+      "exampleUrl": "http://re-zero-anime.jp/tv/news/",
+      "nextLink": ".news-pager-r > a",
+      "pageElement": "#Entries > .content-entry"
+    },
+    {
+      "url": "^https://dokuha\\.jp/comicweb/",
+      "name": "マンガ読破！EX",
+      "exampleUrl": "https://dokuha.jp/comicweb/genre/action/seinen",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "id('list-thumbnail')/*"
+    },
+    {
+      "url": "^https://www\\.redbubble\\.com/",
+      "name": "Redbubble",
+      "exampleUrl": "https://www.redbubble.com/shop/stickers",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "//div[@data-testid='search-results-grid']"
+    },
+    {
+      "url": "^https://rezv\\.net/",
+      "name": "LABOホンテン",
+      "exampleUrl": "https://rezv.net/",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "id('content')/*[not(self::nav or @id='top-content-widget')]"
     }
   ]
 }
