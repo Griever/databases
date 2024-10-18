@@ -40,9 +40,34 @@
     "http://wedata.net/items/85915": "tumblr dummy",
     "http://wedata.net/items/86004": "article",
     "http://wedata.net/items/86017": "article",
-    "http://wedata.net/items/86072": "listal bad"
+    "http://wedata.net/items/86072": "listal bad",
+    "http://wedata.net/items/86138": "bad"
   },
   "TOP_SITEINFO": [
+    {
+      "url": "^https://www\\.nikkansports\\.com/.+?/news/\\d+",
+      "name": "日刊スポーツ 記事",
+      "exampleUrl": "https://www.nikkansports.com/entertainment/news/202402110000307.html",
+      "pageElement": "id('news')/*[@id and @id=concat('page_', //div[contains(concat(' ', @class, ' '), ' article-pagenavi ')]/a[contains(@class, 'current')])]/*",
+      "requestType": "frame",
+      "responseDelay": 1000
+    },
+    {
+      "url": "^https://livedoorblogstyle\\.jp/?$",
+      "name": "ライブドアブログStyle",
+      "disableUAP": true
+    },
+    {
+      "url": "^https://www\\.mikocon\\.com/forum\\.php\\?",
+      "disableWedata": true
+    },
+    {
+      "url": "^https://rocketnews24\\.com/\\d+",
+      "name": "ロケットニュース24 連載",
+      "exampleUrl": "https://rocketnews24.com/2024/04/23/2270021/",
+      "nextLink": "self::node()[not(id('page-nav')//a[.='漫画'])]//nav[contains(concat(' ', @class, ' '), ' links-in-same-term ')]/ul[li/a[.='第1回から読む']]/li/a[contains(., '»')]",
+      "pageElement": "//div[@class='post-header' or @class='post-content']"
+    },
     {
       "url": "^https://senseino-shiroiuso\\.jp/",
       "css": "article[id^='post-'] { clip-path: none !important; }"
@@ -1000,12 +1025,58 @@
       "pageElement": "//main/*[not(self::h2)]"
     },
     {
-      "url": "^https://www\\.vogue\\.co\\.jp/",
-      "name": "Vogue Japan",
-      "exampleUrl": "",
-      "nextLink": "link[rel='next']",
-      "pageElement": "[data-testid='SummaryCollectionGridItems']:has( > div[role='button'])",
-      "_noFix": true,
+      "url": "^https://hatena\\.blog/g/-/recent",
+      "name": "新着グループ - はてなブログ",
+      "exampleUrl": "https://hatena.blog/g/-/recent",
+      "pageElement": ".circle-list-item"
+    },
+    {
+      "url": "^https://blog\\.hatena\\.ne\\.jp/-/campaign/odai/entries",
+      "name": "今週のお題 - はてなブログ",
+      "exampleUrl": "https://blog.hatena.ne.jp/-/campaign/odai/entries",
+      "pageElement": ".campaign-blog-entry"
+    },
+    {
+      "url": "^https://livejapan\\.com/",
+      "name": "LIVE JAPAN",
+      "exampleUrl": "https://livejapan.com/ja/in-tokyo/article-list/area-all01/p-294/",
+      "nextLink": "//a[contains(concat(' ', @class, ' '), ' c-pagenarion__navi ')][span[contains(concat(' ', @class, ' '), ' --mono-base-arrow ')]]",
+      "pageElement": "//li[div[contains(concat(' ', @class, ' '), ' c-card ')]]"
+    },
+    {
+      "url": "^https://www\\.theguardian\\.com/",
+      "name": "The Guardian",
+      "exampleUrl": "https://www.theguardian.com/world/brazil",
+      "pageElement": "main > *:has(a)"
+    },
+    {
+      "url": "^https://www\\.irisplaza\\.co\\.jp/index\\.php\\?",
+      "name": "アイリスオーヤマ公式通販サイト",
+      "exampleUrl": "https://www.irisplaza.co.jp/index.php?KB=KAISO&CID=6030",
+      "pageElement": "id('contents')/ul[starts-with(@id, 'itembox')]"
+    },
+    {
+      "url": "^https://(?:www\\.vogue(?:\\.(?:co(?:\\.(?:jp|kr|uk)|m(?:\\.tw)?)|p[hlt]|i[nt]|de|es|fr|mx|nl)|hk\\.com/zh)|vogue(?:\\.(?:gr|sg)|adria\\.com)|en\\.vogue\\.me)/",
+      "name": "Vogue",
+      "exampleUrl": "https://www.vogue.co.jp/tag/love?page=2 https://vogueadria.com/category/beauty/hairnails/",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "(descendant::main|descendant::main/article)[last()]/div[.//a and .//img]",
+      "_build_in": true
+    },
+    {
+      "url": "^https://(?:www\\.(?:gq(?:(?:\\.co(?:m(?:\\.(?:au|cn|mx|tw))?|\\.za)|m(?:iddleeast\\.com|agazine\\.fr)|-magazin(?:e\\.co\\.uk|\\.de)|i(?:ndia\\.com|talia\\.it)|korea\\.co\\.kr|thailand\\.com|portugal\\.pt)/|japan\\.jp)|revistagq\\.com/)|gq\\.(?:globo\\.com|com\\.tr)/)",
+      "name": "GQ",
+      "exampleUrl": "https://www.gqjapan.jp/author/kana-endo-gq https://www.gq-magazin.de/body-care",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "(descendant::main|descendant::main/article)[last()]/div[.//a and .//img]",
+      "_build_in": true
+    },
+    {
+      "url": "^https://(?:w(?:ww\\.wired\\.(?:c(?:om|z)|it|kr|me)/|ired\\.jp)|es\\.wired\\.com/)",
+      "name": "WIRED",
+      "exampleUrl": "https://wired.jp/author/lauren-goode/ https://www.wired.com/category/security/",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "(descendant::main|descendant::main/article)[last()]/div[.//a and .//img]",
       "_build_in": true
     },
     {
