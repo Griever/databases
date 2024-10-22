@@ -45,6 +45,10 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://comic-walker\\.com/",
+      "spa": true
+    },
+    {
       "url": "^https://www\\.nikkansports\\.com/.+?/news/\\d+",
       "name": "日刊スポーツ 記事",
       "exampleUrl": "https://www.nikkansports.com/entertainment/news/202402110000307.html",
@@ -159,11 +163,8 @@
       "url": "^https://www\\.ecosia\\.org/search\\?",
       "name": "Ecosia.org Search",
       "exampleUrl": "https://www.ecosia.org/search?q=hallo",
-      "nextLink": "//a[@data-test-id='next-button']",
-      "pageElement": "//div[@data-test-id='web-related-queries']/preceding-sibling::*[.//div[@data-test-id='mainline-result-web']]",
-      "removeElement": "//div[@data-test-id='mainline-result-ad']",
-      "insertBefore": "//div[@data-test-id='web-related-queries']",
-      "_resource_url": "http://wedata.net/items/81586"
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' mainline__content ')]",
+      "removeElement": "//div[@data-test-id='mainline-skeleton' or @data-test-id='web-related-queries']"
     },
     {
       "url": "^https?://forbesjapan\\.com/articles/detail/",
@@ -1332,6 +1333,33 @@
       "exampleUrl": "https://rezv.net/",
       "nextLink": "//link[@rel='next']",
       "pageElement": "id('content')/*[not(self::nav or @id='top-content-widget')]"
+    },
+    {
+      "url": "^https://deview\\.co\\.jp/NewsList",
+      "name": "ニュース一覧 | Deview-デビュー",
+      "exampleUrl": "https://deview.co.jp/NewsList?search=keyword%3D%26offset%3D20",
+      "nextLink": ".next > a",
+      "pageElement": ".news-list > ul > li"
+    },
+    {
+      "url": "^https://www\\.sozailab\\.jp/",
+      "name": "素材ラボ",
+      "exampleUrl": "https://www.sozailab.jp/sozai/digest/",
+      "nextLink": "//ul[contains(concat(' ', @class, ' '), ' pageMoveBox ')]/span[number()>0]/following-sibling::a[1]",
+      "pageElement": ":is(.dgtList, dgtList-2) > li"
+    },
+    {
+      "url": "^https://store\\.tsite\\.jp/",
+      "name": "蔦屋書店オンラインストア",
+      "exampleUrl": "https://store.tsite.jp/%E6%9C%AC/%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF/?input_page=2&input_order=1",
+      "nextLink": "//div[contains(concat(' ', @class, ' '), ' page ')]/span[number()>0]/following-sibling::a[1]",
+      "pageElement": ".goods_box"
+    },
+    {
+      "url": "^https://appleinsider\\.com/",
+      "name": "AppleInsider",
+      "exampleUrl": "https://appleinsider.com/",
+      "pageElement": "id('news-river')/*[article or self::hr]"
     }
   ]
 }
