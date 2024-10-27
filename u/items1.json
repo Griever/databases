@@ -1360,6 +1360,12 @@
       "name": "AppleInsider",
       "exampleUrl": "https://appleinsider.com/",
       "pageElement": "id('news-river')/*[article or self::hr]"
+    },
+    {
+      "url": "^https://agenda-note\\.com/.+/detail/",
+      "name": "Agenda note (アジェンダノート)",
+      "exampleUrl": "https://agenda-note.com/brands/detail/id=5755",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' pager ')]/preceding-sibling::node()"
     }
   ]
 }
