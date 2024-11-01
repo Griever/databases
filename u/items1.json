@@ -1366,6 +1366,12 @@
       "name": "Agenda note (アジェンダノート)",
       "exampleUrl": "https://agenda-note.com/brands/detail/id=5755",
       "pageElement": "//div[contains(concat(' ', @class, ' '), ' pager ')]/preceding-sibling::node()"
+    },
+    {
+      "url": "^https://www\\.phonearena\\.com/",
+      "name": "PhoneArena",
+      "exampleUrl": "https://www.phonearena.com/",
+      "pageElement": "article > .feed-item-section"
     }
   ]
 }
