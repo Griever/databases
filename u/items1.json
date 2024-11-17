@@ -45,6 +45,10 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://steamcommunity\\.com/",
+      "disableBuildIn": true
+    },
+    {
       "url": "^https://comic-walker\\.com/",
       "spa": true
     },
@@ -1267,13 +1271,6 @@
       "pageElement": "id('article-data article-text')"
     },
     {
-      "url": "^https://(www\\.)?magaseek\\.com/fw/list/",
-      "name": "ファッション通販magaseek",
-      "exampleUrl": "https://www.magaseek.com/fw/list/dp_2-tr_f-fw_2",
-      "nextLink": "//li[@class='next']/a",
-      "pageElement": "//ul[contains(concat(' ', @class, ' '), ' productList ')]"
-    },
-    {
       "url": "^https://www\\.(networkworld|infoworld|computerworld|cio|csoonline)\\.com/",
       "name": "Network World, Infoworld, Computerworld, CIO, CSO",
       "exampleUrl": "https://www.networkworld.com/network-security/\nhttps://www.networkworld.com/network-security/page/2/\nhttps://www.infoworld.com/careers/\nhttps://www.computerworld.com/careers/\nhttps://www.cio.com/careers/\nhttps://www.csoonline.com/careers/",
@@ -1314,13 +1311,6 @@
       "pageElement": "#Entries > .content-entry"
     },
     {
-      "url": "^https://dokuha\\.jp/comicweb/",
-      "name": "マンガ読破！EX",
-      "exampleUrl": "https://dokuha.jp/comicweb/genre/action/seinen",
-      "nextLink": "//link[@rel='next']",
-      "pageElement": "id('list-thumbnail')/*"
-    },
-    {
       "url": "^https://www\\.redbubble\\.com/",
       "name": "Redbubble",
       "exampleUrl": "https://www.redbubble.com/shop/stickers",
@@ -1340,13 +1330,6 @@
       "exampleUrl": "https://deview.co.jp/NewsList?search=keyword%3D%26offset%3D20",
       "nextLink": ".next > a",
       "pageElement": ".news-list > ul > li"
-    },
-    {
-      "url": "^https://www\\.sozailab\\.jp/",
-      "name": "素材ラボ",
-      "exampleUrl": "https://www.sozailab.jp/sozai/digest/",
-      "nextLink": "//ul[contains(concat(' ', @class, ' '), ' pageMoveBox ')]/span[number()>0]/following-sibling::a[1]",
-      "pageElement": ":is(.dgtList, dgtList-2) > li"
     },
     {
       "url": "^https://store\\.tsite\\.jp/",
