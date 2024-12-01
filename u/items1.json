@@ -456,11 +456,13 @@
       "url": "^https?://www\\.j-cast\\.com/",
       "name": "J-CASTニュース 一覧",
       "exampleUrl": "https://www.j-cast.com/news/category/politics/",
-      "nextLink": "//div[@class='pagenation']/span/following-sibling::a",
-      "pageElement": "#list > ul",
-      "framePageElement": "#list img",
+      "nextLink": "id('embed-list')//button[.='次へ']",
+      "pageElement": "#embed-list > ul",
+      "framePageElement": "#embed-list img",
       "requestType": "frame",
-      "responseDelay": 3000
+      "responseDelay": 3000,
+      "nextQuery": "page",
+      "nextIncrement": 1
     },
     {
       "url": "^https://(www\\.)?eonline\\.com/",
@@ -719,6 +721,20 @@
       "name": "JKF 捷克論壇",
       "nextLink": "//a[@class='nxt']",
       "pageElement": "id('threadlisttableid waterfall')[.//a[contains(@href, 'thread')]]"
+    },
+    {
+      "url": "^https?://www\\.zerochan\\.net/",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": "id('thumbs2 thumbs3 thumbs4 children-grid')",
+      "_resource_url": "http://wedata.net/items/81542"
+    },
+    {
+      "url": "^https?://nknews\\.jp/archives/",
+      "name": "NKNews",
+      "exampleUrl": "https://nknews.jp/archives/6934",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "id('mainEntity')/div[1]/node()",
+      "_resource_url": "http://wedata.net/items/82117"
     }
   ],
   "MIDDLE_SITEINFO": [
@@ -1261,7 +1277,8 @@
       "name": "WikiPedia 変更履歴",
       "exampleUrl": "https://ja.wikipedia.org/w/index.php?title=%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8&action=history",
       "nextLink": "//a[@rel='next']",
-      "pageElement": "id('pagehistory')/*[self::h4 or self::ul]"
+      "pageElement": "id('pagehistory')/*[self::h4 or self::ul]",
+      "removeElement": "id('pagehistory')//input[@type='radio']/@checked"
     },
     {
       "url": "^https://webheibon\\.jp/.+?/\\d+",
@@ -1355,6 +1372,14 @@
       "name": "PhoneArena",
       "exampleUrl": "https://www.phonearena.com/",
       "pageElement": "article > .feed-item-section"
+    },
+    {
+      "url": "^https://myanimelist\\.net/",
+      "name": "MyAnimeList.net",
+      "exampleUrl": "https://myanimelist.net/manga/genre/1/Action\nhttps://myanimelist.net/news",
+      "nextLink": "//div[contains(concat(' ', @class, ' '), ' pagination ')]/a[contains(@class, 'current')]/following-sibling::a[1]",
+      "pageElement": "#content > .js-block-list,\n#content > .content-left .news-list",
+      "disableShowElement": true
     }
   ]
 }
