@@ -1380,6 +1380,23 @@
       "nextLink": "//div[contains(concat(' ', @class, ' '), ' pagination ')]/a[contains(@class, 'current')]/following-sibling::a[1]",
       "pageElement": "#content > .js-block-list,\n#content > .content-left .news-list",
       "disableShowElement": true
+    },
+    {
+      "url": "^https://one-piece\\.com/anime/",
+      "name": "ONE PIECE.com",
+      "exampleUrl": "https://one-piece.com/anime/index.html",
+      "nextLink": "//li[@data-type='next']/a",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' el-pagination--set ')]/following-sibling::div[contains(concat(' ', @class, ' '), ' el-card-block ')]"
+    },
+    {
+      "url": "^https://slickdeals\\.net/f/",
+      "name": "slickdeals.net/f/",
+      "exampleUrl": "https://slickdeals.net/f/17974539-gopro-hero13-black-action-camera-bundle-with-additional-endura-battery-128gb-microsd-card-and-carrying-case-costco-299",
+      "nextLink": "//div[contains(concat(' ', @class, ' '), ' slickdealsPagination ')]/span[number()>0]/following-sibling::a[1]",
+      "pageElement": "id('commentsBox')/*[starts-with(@id, 'post')]",
+      "framePageElement": "//div[contains(concat(' ', @class, ' '), ' slickdealsPagination ')]/span[number()>0]",
+      "requestType": "frame",
+      "responseDelay": 5000
     }
   ]
 }
