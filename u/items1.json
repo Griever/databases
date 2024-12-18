@@ -20,6 +20,7 @@
     "http://wedata.net/items/77754": "tenhou bad",
     "http://wedata.net/items/80660": "td-block-row",
     "http://wedata.net/items/80835": "dummy",
+    "http://wedata.net/items/81178": "unnecessary",
     "http://wedata.net/items/81254": "listal bad",
     "http://wedata.net/items/81508": "absolute",
     "http://wedata.net/items/81792": "bad",
@@ -44,6 +45,24 @@
     "http://wedata.net/items/86138": "bad"
   },
   "TOP_SITEINFO": [
+    {
+      "url": "^https://steamcommunity\\.com/discussions/forum/\\d+/\\d+/",
+      "exampleUrl": "https://steamcommunity.com/discussions/forum/30/864973577904147767/",
+      "nextLink": "//a[contains(@id, '_pagebtn_next')]",
+      "pageElement": "//div[translate(@id, '1234567890', '')='comment_']",
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "spa": true,
+      "spaDelay": 1000
+    },
+    {
+      "url": "^https://steamcommunity\\.com/",
+      "exampleUrl": "https://steamcommunity.com/discussions/forum/30/",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": "//*[@data-gidforumtopic]",
+      "spa": true,
+      "spaDelay": 1000
+    },
     {
       "url": "^https://steamcommunity\\.com/",
       "disableBuildIn": true
@@ -735,6 +754,13 @@
       "nextLink": "//link[@rel='next']",
       "pageElement": "id('mainEntity')/div[1]/node()",
       "_resource_url": "http://wedata.net/items/82117"
+    },
+    {
+      "url": "^https://www\\.sankei\\.com/",
+      "nextLink": "//link[@rel='next']|//div[contains(@class,'article-body')]/p[last()]/a[contains(., 'に続く') or contains(., 'につづく')]",
+      "pageElement": "//div[contains(@class,'article-body')]/*[not(contains(@class, 'gptAd'))]",
+      "selectorFilter": ".article-link_list, .article-link_list ~ *",
+      "_resource_url": "http://wedata.net/items/76399"
     }
   ],
   "MIDDLE_SITEINFO": [
@@ -1415,6 +1441,10 @@
       "framePageElement": "//div[contains(concat(' ', @class, ' '), ' slickdealsPagination ')]/span[number()>0]",
       "requestType": "frame",
       "responseDelay": 5000
+    },
+    {
+      "url": "^https://automaton-media\\.com/",
+      "pageElement": "//nav[contains(@class, 'pagination')]/preceding-sibling::div/article"
     }
   ]
 }
