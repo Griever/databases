@@ -32,6 +32,7 @@
     "http://wedata.net/items/85562": "tumblr canonical",
     "http://wedata.net/items/85564": "tumblr canonical",
     "http://wedata.net/items/85565": "bad inf",
+    "http://wedata.net/items/85640": "jbpress",
     "http://wedata.net/items/85766": "dummy",
     "http://wedata.net/items/85802": "tumblr canonical",
     "http://wedata.net/items/85805": "dummy",
@@ -39,12 +40,157 @@
     "http://wedata.net/items/85913": "tumblr dummy",
     "http://wedata.net/items/85914": "tumblr canonical",
     "http://wedata.net/items/85915": "tumblr dummy",
+    "http://wedata.net/items/85947": "jbpress",
     "http://wedata.net/items/86004": "article",
     "http://wedata.net/items/86017": "article",
     "http://wedata.net/items/86072": "listal bad",
     "http://wedata.net/items/86138": "bad"
   },
   "TOP_SITEINFO": [
+    {
+      "url": "^https://fashionpost\\.jp/",
+      "name": "The Fashion Post",
+      "exampleUrl": "https://fashionpost.jp/news/page/3",
+      "pageElement": "main > section > .l-container > div > div > ul",
+      "spa": true,
+      "spaDelay": 2500
+    },
+    {
+      "url": "^https://www\\.alba\\.co\\.jp/",
+      "name": "ゴルフ総合サイト ALBA Net",
+      "exampleUrl": "https://www.alba.co.jp/tour/category/jlpga/tournament/97167/articles/page/2/",
+      "nextLink": "//a[@aria-label='1つ後ろのページに進む']",
+      "pageElement": "//div[@aria-label='ページナビゲーション']/ancestor-or-self::div[preceding-sibling::*[.//a//img]][1]/preceding-sibling::*[.//a//img]",
+      "requestType": "frame",
+      "responseDelay": 500,
+      "spa": true,
+      "spaDelay": 2000
+    },
+    {
+      "url": "^https://www\\.sbs\\.com\\.au/",
+      "name": "SBS Food",
+      "exampleUrl": "https://www.sbs.com.au/food/tag/ingredient/almond-meal?page=2",
+      "pageElement": "//div[@data-layer-event-source-placement='content list']",
+      "spa": true,
+      "spaDelay": 2000
+    },
+    {
+      "url": "^https://www\\.nintendo\\.com/[^/]+/topics/",
+      "name": "Nintendo",
+      "exampleUrl": "https://www.nintendo.com/jp/topics/list",
+      "pageElement": ".nc3-l-grid__inner",
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "spa": true,
+      "spaDelay": 1000
+    },
+    {
+      "url": "^https://gadgetsnow\\.indiatimes\\.com/",
+      "name": "gadgetsnow",
+      "exampleUrl": "https://gadgetsnow.indiatimes.com/latest-news/2",
+      "pageElement": "id('app')/header/following-sibling::*[following-sibling::footer]",
+      "framePageElement": "#app > .container > div.grid_wrapper > .col_l_12",
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://www\\.dreamstime\\.com/",
+      "name": "New Stock Photos & Images",
+      "exampleUrl": "https://www.dreamstime.com/new-stock-photos-images",
+      "pageElement": "id('ilc0, #ilc1')",
+      "framePageElement": "id('ilc0, #ilc1')",
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://www\\.nintendo\\.com/jp/fe/pickup/",
+      "name": "ファイアーエムブレムワールド【FIRE EMBLEM WORLD】",
+      "exampleUrl": "https://www.nintendo.com/jp/fe/pickup/index.html?p=1",
+      "nextLink": "//a[contains(concat(' ', @class, ' '), ' fe-blog-content__button--next ')]",
+      "pageElement": "ul.fe-blog-content__list",
+      "requestType": "frame",
+      "responseDelay": 1000
+    },
+    {
+      "url": "^https?://design\\.web-hon\\.com/",
+      "name": "iPhoneデザインボックス",
+      "exampleUrl": "http://design.web-hon.com/",
+      "pageElement": "#li_container1 > ul.mcol",
+      "framePageElement": "#li_container1 > ul.mcol",
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://www\\.dealmagazine\\.net/",
+      "name": "DEAL",
+      "exampleUrl": "https://www.dealmagazine.net/posts/categories/598058/page/2?type=list",
+      "nextLink": "//li[contains(concat(' ', @class, ' '), ' pagination__item--next ')]/a",
+      "pageElement": ".blog-list__inner",
+      "framePageElement": ".blog-list__inner",
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "spa": true,
+      "spaDelay": 1000
+    },
+    {
+      "url": "^https://ebookjapan\\.yahoo\\.co\\.jp/",
+      "name": "ebookjapan",
+      "exampleUrl": "https://ebookjapan.yahoo.co.jp/theme/6/?page=2",
+      "pageElement": "ul.featured-campaign-list",
+      "framePageElement": "ul.featured-campaign-list img:not([src^='data:'])",
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://dmagazine\\.docomo\\.ne\\.jp/",
+      "name": "dマガジン",
+      "exampleUrl": "https://dmagazine.docomo.ne.jp/list/1A41/d5832538f56a9691ce9001e19493d60462c0a398b2b33f4cebf520b8dbed5a09/?page=2",
+      "nextLink": "a.bw_pager_next",
+      "pageElement": "#list_contents > .bw_listItems > li",
+      "framePageElement": "#list_contents > .bw_listItems > li",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://foods-ch\\.infomart\\.co\\.jp/",
+      "name": "フーズチャネル",
+      "exampleUrl": "https://foods-ch.infomart.co.jp/interview",
+      "nextLink": "//ul[contains(@class, 'c-pager')]/li[contains(@class, 'current')][number()>0]/following-sibling::li[1]/a",
+      "pageElement": ".l-list-cards__main",
+      "spa": true,
+      "spaDelay": 2000
+    },
+    {
+      "url": "^https://www\\.fashion-headline\\.com/",
+      "css": ".posts li:after { display: none !important; }",
+      "exampleUrl": "https://www.fashion-headline.com/category/fashion"
+    },
+    {
+      "url": "^https://www\\.baidu\\.com/s",
+      "name": "Baidu",
+      "nextLink": "id('page')/div/a[last()]",
+      "pageElement": "id('content_left')/*",
+      "insertBefore": "id('content_left')/following-sibling::node()[last()]",
+      "_resource_url": "http://wedata.net/items/425"
+    },
+    {
+      "url": "^https?://nhentai\\.net/",
+      "exampleUrl": "https://nhentai.net/g/446216/1/",
+      "css": "html.reader #image-container.fit-both { height: auto !important; }"
+    },
+    {
+      "url": "^https://(\\w+\\.)?supleks\\.jp/",
+      "name": "なんとかデータベース",
+      "exampleUrl": "https://supleks.jp/community\nhttps://supleks.jp/news\nhttps://supleks.jp/community/view/41/threads\nhttps://sobadb.supleks.jp/reviews?state=\nhttps://udondb.supleks.jp/rank/recent\nhttps://ramendb.supleks.jp/s/151381/photo\nhttps://ramendb.supleks.jp/u/184453/review",
+      "nextLink": "//a[translate(text(), '1234567890', '')='次の件' or text()='次へ'][@href='javascript:void(0);']",
+      "pageElement": "descendant::div[contains(concat(' ', @class, ' '), ' pages ')]/ancestor::*[self::nav or position()=1][last()]/following-sibling::*[following-sibling::*//div[contains(concat(' ', @class, ' '), ' pages ')]]",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
     {
       "url": "^https://steamcommunity\\.com/discussions/forum/\\d+/\\d+/",
       "exampleUrl": "https://steamcommunity.com/discussions/forum/30/864973577904147767/",
@@ -85,7 +231,7 @@
       "disableUAP": true
     },
     {
-      "url": "^https://www\\.mikocon\\.com/forum\\.php\\?",
+      "url": "^https://\\w+\\.mikocon\\.com/",
       "disableWedata": true
     },
     {
@@ -249,6 +395,13 @@
       "pageElement": "id('main_contents')/div[.//img[contains(@src, '/photo.jpg')]]"
     },
     {
+      "url": "^https://cookpad\\.com/",
+      "name": "クックパッド",
+      "nextLink": "//a[@rel='next'][number()>0]",
+      "pageElement": "//div[contains(@class, 'pagination my-lg')]/preceding-sibling::*",
+      "sameTextFilter": true
+    },
+    {
       "name": "いらすとや",
       "url": "^https://www\\.irasutoya\\.com/",
       "nextLink": "id('Blog1_blog-pager-older-link')",
@@ -258,7 +411,7 @@
     },
     {
       "name": "yande.re & konachan.com",
-      "url": "^https?://(konachan\\.com|yande\\.re|www\\.sakugabooru\\.com)/(post|comment)($|\\?|#|/search\\?)",
+      "url": "^https?://(konachan\\.com|yande\\.re|www\\.sakugabooru\\.com)/(post|comment)/?($|\\?|#|/search\\?)",
       "nextLink": "//a[@class='next_page']",
       "pageElement": "//li[contains(@class, 'creator-id-')]|//div[@id='comment-list']/div[@class='post']|//table[@class='highlightable']",
       "exampleUrl": "https://yande.re/post\nhttps://yande.re/comment\nhttp://konachan.com/post\nhttp://konachan.com/comment\nhttps://www.sakugabooru.com/post\nhttps://www.sakugabooru.com/comment"
@@ -550,6 +703,14 @@
       "spaDelay": 1000
     },
     {
+      "url": "^https?://www\\.amazon\\.(?:c(?:a|o(?:m|\\.(?:jp|uk)))|de|fr)/(?:[^/]+/)?(?:(?:customer|product)-reviews|review/product)/",
+      "name": "Amazon Product Reviews",
+      "exampleUrl": "https://www.amazon.co.jp/product-reviews/B09VSXCY87",
+      "nextLink": "//li[@class='a-last']/a",
+      "pageElement": "id('cm_cr-review_list')/ul",
+      "_resource_url": "http://wedata.net/items/27473"
+    },
+    {
       "url": "^https://www\\.pixiv\\.net/howto/category/\\d+/",
       "name": "www.pixiv.net/howto",
       "exampleUrl": "https://www.pixiv.net/howto/category/1/%E3%83%9D%E3%83%BC%E3%82%BA?order=date_d&s_mode=s_tag&mode=all&s_type=howto",
@@ -687,7 +848,7 @@
       "name": "Bing search",
       "exampleUrl": "https://www.bing.com/search?q=autopagerize\nhttps://www4.bing.com/search?q=food\nhttps://www4.bing.com/search?q=food&qs=n&sp=-1&pq=foo&sc=8-3&sk=&cvid=387D0CF73BAD466697D930524DD38825&first=11&FORM=PERE",
       "nextLink": "//a[contains(@class,'sb_pagN')]",
-      "pageElement": "id('b_results')/li[contains(concat(' ', @class, ' '), ' b_pag ')]/preceding-sibling::li[not(contains(concat(' ', @class, ' '), ' b_ad ') or div/@id='relatedSearchesLGWContainer')]|//style[contains(., '.cico')]",
+      "pageElement": "id('b_results')/li[contains(concat(' ', @class, ' '), ' b_algo ')]|//style[contains(., '.cico')]",
       "insertBefore": "id('b_results')/li[@class='b_pag']",
       "spa": true
     },
@@ -761,6 +922,14 @@
       "pageElement": "//div[contains(@class,'article-body')]/*[not(contains(@class, 'gptAd'))]",
       "selectorFilter": ".article-link_list, .article-link_list ~ *",
       "_resource_url": "http://wedata.net/items/76399"
+    },
+    {
+      "url": "^https://www\\.palcloset\\.jp/addons/pal/blog/list/",
+      "name": "ブログ パルグループ公式ファッション通販サイト",
+      "exampleUrl": "https://www.palcloset.jp/addons/pal/blog/list/",
+      "pageElement": "#article_list > ul > li",
+      "requestType": "frame",
+      "responseDelay": 1000
     }
   ],
   "MIDDLE_SITEINFO": [
@@ -841,7 +1010,7 @@
       "url": "^https://(?!blog)\\w+\\.naturum\\.ne\\.jp/(?!e\\d+)",
       "exampleUrl": "https://maxair.naturum.ne.jp/\nhttps://solcamp.naturum.ne.jp/",
       "nextLink": "descendant::div[contains(concat(' ', @class, ' '), ' blog ')]//a[contains(., '次のページ')]",
-      "pageElement": "descendant::div[contains(concat(' ', @class, ' '), ' blog ')]/*[not(self::link)]"
+      "pageElement": "descendant::div[contains(concat(' ', @class, ' '), ' blog ')]/*[not(self::link or self::ifdatechanged)][not((@id='box' or contains(@class, 'blogbody')) and contains(., '30日以上更新のないブログに表示しています'))]"
     },
     {
       "url": "^https?://(?:[^/]+\\.)?(?:(?:da-te|n-da|365blog|tamaliver|hama1|niiblo|nassy|naganoblog|eshizuoka|i-ra|kyo2|ko-co|ashita-sanuki|yoka-yoka|sagafan|chesuto|amamin)\\.jp|(?:gunmablog|kitemi|dosugoi|shiga-saku|osakazine|noramba|otemo-yan|ti-da)\\.net|(?:sapolog|e-iwate|5502710|ffsagami|toyamaru|hida-ch|boo-log|citylife-new|junglekouen|kataranna|myanmars-now)\\.com|(?:amazo|tenkomori|ikora|hamazo|vietnhat)\\.tv|(?:miyachan|namjai)\\.cc|tsukuba\\.ch)/(?!e\\d+)",
@@ -1162,9 +1331,9 @@
       "pageElement": "//div[contains(concat(' ', @class, ' '), ' goods-list-event ')][*[contains(concat(' ', @class, ' '), ' item ')]]"
     },
     {
-      "url": "^https://www\\.sin-space\\.com/",
+      "url": "^https://(www\\.)?sin-space\\.com/",
       "exampleUrl": "https://www.sin-space.com/",
-      "pageElement": "id('content-card')/ul",
+      "pageElement": "id('content-card')",
       "insertBefore": "id('content-card')/following-sibling::*[last()]"
     },
     {
@@ -1423,7 +1592,8 @@
       "exampleUrl": "https://myanimelist.net/manga/genre/1/Action\nhttps://myanimelist.net/news",
       "nextLink": "//div[contains(concat(' ', @class, ' '), ' pagination ')]/a[contains(@class, 'current')]/following-sibling::a[1]",
       "pageElement": "#content > .js-block-list,\n#content > .content-left .news-list",
-      "disableShowElement": true
+      "disableShowElement": true,
+      "minHeight": 100
     },
     {
       "url": "^https://one-piece\\.com/anime/",
@@ -1444,7 +1614,82 @@
     },
     {
       "url": "^https://automaton-media\\.com/",
+      "exampleUrl": "https://automaton-media.com/",
       "pageElement": "//nav[contains(@class, 'pagination')]/preceding-sibling::div/article"
+    },
+    {
+      "url": "^https://haveagood\\.holiday/",
+      "name": "Holiday",
+      "exampleUrl": "https://haveagood.holiday/events",
+      "pageElement": ".events-wrap > ul.events"
+    },
+    {
+      "url": "^https://www\\.thejakartapost\\.com/",
+      "exampleUrl": "https://www.thejakartapost.com/world/asia-pacific",
+      "pageElement": ".columns.tjp-newsListing"
+    },
+    {
+      "url": "^https://info\\.nextmode\\.co\\.jp/",
+      "exampleUrl": "https://info.nextmode.co.jp/blog",
+      "name": "ネクストモードブログ",
+      "pageElement": "//nav[contains(concat(' ', @class, ' '), ' pagination ')]/preceding-sibling::article"
+    },
+    {
+      "url": "^https://yoi\\.shueisha\\.co\\.jp/",
+      "exampleUrl": "https://yoi.shueisha.co.jp/body/innercare/",
+      "pageElement": ".page-body > .article-card-list"
+    },
+    {
+      "url": "^https://www\\.pinclipart\\.com/",
+      "name": "PinClipart",
+      "exampleUrl": "https://www.pinclipart.com/hot/2/",
+      "pageElement": "id('masList')/div",
+      "_build_in": true
+    },
+    {
+      "url": "^https://www\\.allposters\\.com/",
+      "exampleUrl": "https://www.allposters.com/-st/Art-Posters_c41632_.htm",
+      "pageElement": "id('grid-container')",
+      "framePageElement": "id('grid-container')//img",
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://liginc\\.co\\.jp/",
+      "exampleUrl": "https://liginc.co.jp/blog",
+      "pageElement": ".article.paginate > .article-list > *"
+    },
+    {
+      "url": "^https://cocokara-next\\.com/",
+      "name": "CoCoKARAnext 記事",
+      "exampleUrl": "https://cocokara-next.com/athlete_celeb/kojifukutani-fa-05/",
+      "pageElement": "#maincolumn > :is(.txtBox, .borderBox)"
+    },
+    {
+      "name": "フジヤカメラネットショップ",
+      "url": "^https://www\\.fujiya-camera\\.co\\.jp/shop/",
+      "exampleUrl": "https://www.fujiya-camera.co.jp/shop/r/rC-ARE_p2/?ps=50",
+      "nextLink": "a[rel='next']",
+      "pageElement": ".block-thumbnail-t"
+    },
+    {
+      "url": "^https://www\\.point-i\\.jp/",
+      "name": "釣りのポイント",
+      "exampleUrl": "https://www.point-i.jp/fishing_infos",
+      "pageElement": ".layout-subpage__container--grid"
+    },
+    {
+      "url": "^https://www\\.fripper\\.jp/",
+      "name": "ふりっぱーWeb",
+      "exampleUrl": "https://www.fripper.jp/digest/category-4/page-3/\nhttps://www.fripper.jp/search/",
+      "pageElement": "#shopList, #dtlSection > .ctsBox"
+    },
+    {
+      "url": "^https://\\w\\.5chan\\.jp/.*?\\?from=",
+      "name": "いつもちゃんねる掲示板",
+      "exampleUrl": "https://b.5chan.jp/CjaXpXam33?from=popular1&p=2",
+      "nextLink": "id('bbs_threadlist_area_pagenation_top')//a[text()='次']",
+      "pageElement": "id('bbs_entries')/ul/li[not(.//span[@class='eno'][a='1001'])]"
     }
   ]
 }
