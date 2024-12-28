@@ -48,6 +48,16 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://presearch\\.com/",
+      "name": "presearch.com",
+      "exampleUrl": "https://presearch.com/search?q=infinity",
+      "nextLink": "//div[contains(@class, 'text-presearch-alternative border-presearch-alternative')]/following-sibling::div/a",
+      "pageElement": "//div[contains(@class, 'text-gray-300 relative')]/*[.//span[@x-html='result.title']]",
+      "framePageElement": "//div[contains(@class, 'text-gray-300 relative')]/*[.//span[@x-html='result.title']]",
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
       "url": "^https://fashionpost\\.jp/",
       "name": "The Fashion Post",
       "exampleUrl": "https://fashionpost.jp/news/page/3",
@@ -1652,7 +1662,9 @@
       "pageElement": "id('grid-container')",
       "framePageElement": "id('grid-container')//img",
       "requestType": "frame",
-      "responseDelay": 3000
+      "responseDelay": 3000,
+      "spa": true,
+      "spaDelay": 1000
     },
     {
       "url": "^https://liginc\\.co\\.jp/",
@@ -1685,7 +1697,7 @@
       "pageElement": "#shopList, #dtlSection > .ctsBox"
     },
     {
-      "url": "^https://\\w\\.5chan\\.jp/.*?\\?from=",
+      "url": "^https://\\w\\.5chan\\.jp/.*?[?&]p=",
       "name": "いつもちゃんねる掲示板",
       "exampleUrl": "https://b.5chan.jp/CjaXpXam33?from=popular1&p=2",
       "nextLink": "id('bbs_threadlist_area_pagenation_top')//a[text()='次']",
