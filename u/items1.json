@@ -48,6 +48,30 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://www\\.slrclub\\.com/bbs/",
+      "requestType": "frame",
+      "responseDelay": 1500
+    },
+    {
+      "url": "^https://ameblo\\.jp/",
+      "requestType": "frame",
+      "responseDelay": 1500,
+      "spa": true,
+      "spaDelay": 1000
+    },
+    {
+      "url": "^https://ameblo\\.jp/",
+      "name": "アメブロ",
+      "exampleUrl": "https://ameblo.jp/irakoir/",
+      "nextLink": "//link[@rel=\"next\"]",
+      "pageElement": "//ul[contains(concat(' ', @class, ' '), ' skin-paging ')]/following-sibling::*[following-sibling::*[contains(concat(' ', @class, ' '), ' skin-blogFooterNav ')]]"
+    },
+    {
+      "url": "^https://image\\.itmedia\\.co\\.jp/(?:(?!articles/)[^/?#]+/)+articles/[^.?#]+\\.jpg",
+      "requestType": "frame",
+      "responseDelay": 2000
+    },
+    {
       "url": "^https://presearch\\.com/",
       "name": "presearch.com",
       "exampleUrl": "https://presearch.com/search?q=infinity",
@@ -218,10 +242,6 @@
       "pageElement": "//*[@data-gidforumtopic]",
       "spa": true,
       "spaDelay": 1000
-    },
-    {
-      "url": "^https://steamcommunity\\.com/",
-      "disableBuildIn": true
     },
     {
       "url": "^https://comic-walker\\.com/",
@@ -1702,6 +1722,20 @@
       "exampleUrl": "https://b.5chan.jp/CjaXpXam33?from=popular1&p=2",
       "nextLink": "id('bbs_threadlist_area_pagenation_top')//a[text()='次']",
       "pageElement": "id('bbs_entries')/ul/li[not(.//span[@class='eno'][a='1001'])]"
+    },
+    {
+      "url": "^https://cartune\\.me/",
+      "name": "CARTUNE",
+      "exampleUrl": "https://cartune.me/cars/663/models/17190/tags/1047",
+      "pageElement": ".masonry-notes",
+      "css": ".autopagerize_page_info ~ .masonry-notes > div { position: relative !important; display: inline-block !important; width: calc(100% / 3 - 6px); }"
+    },
+    {
+      "url": "^https://minkara\\.carview\\.co\\.jp/tag/",
+      "name": "みんカラ /tag/",
+      "exampleUrl": "https://minkara.carview.co.jp/tag/%e3%83%ac%e3%83%bc%e3%82%b9/?nt=1731131269697#section-article",
+      "nextLink": "//div[@class='pager']//a[text()='次へ']",
+      "pageElement": "id('section-article')/div"
     }
   ]
 }
