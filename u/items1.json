@@ -1736,6 +1736,18 @@
       "exampleUrl": "https://minkara.carview.co.jp/tag/%e3%83%ac%e3%83%bc%e3%82%b9/?nt=1731131269697#section-article",
       "nextLink": "//div[@class='pager']//a[text()='次へ']",
       "pageElement": "id('section-article')/div"
+    },
+    {
+      "url": "^https://botanica-media\\.jp/\\d+",
+      "name": "BOTANICA",
+      "exampleUrl": "https://botanica-media.jp/4992",
+      "pageElement": ".p-post__wrap > :not(.p-post__toc)"
+    },
+    {
+      "url": "^https://www\\.ryuzee\\.com/",
+      "name": "Ryuzee.com",
+      "exampleUrl": "https://www.ryuzee.com/contents/blog/",
+      "pageElement": "id('posts')"
     }
   ]
 }
