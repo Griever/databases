@@ -1,6 +1,7 @@
 {
   "DISABLED_ITEMS": {
     "http://wedata.net/items/400": "post",
+    "http://wedata.net/items/447": "Discuz (Forum|Thread)",
     "http://wedata.net/items/649": "hAtom",
     "http://wedata.net/items/650": "hAtom",
     "http://wedata.net/items/681": "tumblr canonical",
@@ -131,8 +132,8 @@
       "url": "^https://www\\.dreamstime\\.com/",
       "name": "New Stock Photos & Images",
       "exampleUrl": "https://www.dreamstime.com/new-stock-photos-images",
-      "pageElement": "id('ilc0, #ilc1')",
-      "framePageElement": "id('ilc0, #ilc1')",
+      "pageElement": "id('ilc0 #ilc1')",
+      "framePageElement": "id('ilc0 #ilc1')",
       "requestType": "frame",
       "responseDelay": 3000
     },
@@ -224,6 +225,19 @@
       "nextQuery": "page",
       "nextIncrement": 1,
       "nextStartValue": 1
+    },
+    {
+      "url": "^https://video\\.dmm\\.co\\.jp/",
+      "name": "video.dmm.co.jp",
+      "nextLink": "//a[contains(@href, 'page=')][img[@alt='次へ']]",
+      "pageElement": "ul.grid[class*='repeat']",
+      "framePageElement": "//a[contains(@href, 'page=')][img[@alt='次へ' or @alt='前へ']]",
+      "requestType": "frame",
+      "responseDelay": 5000
+    },
+    {
+      "url": "^https://store\\.steampowered\\.com/search",
+      "disableBuildIn": true
     },
     {
       "url": "^https://steamcommunity\\.com/discussions/forum/\\d+/\\d+/",
@@ -927,12 +941,6 @@
       "_resource_url": "http://wedata.net/items/28818"
     },
     {
-      "url": "^https://www\\.jkforum\\.net/(p/)?forum",
-      "name": "JKF 捷克論壇",
-      "nextLink": "//a[@class='nxt']",
-      "pageElement": "id('threadlisttableid waterfall')[.//a[contains(@href, 'thread')]]"
-    },
-    {
       "url": "^https?://www\\.zerochan\\.net/",
       "nextLink": "//a[@rel='next']",
       "pageElement": "id('thumbs2 thumbs3 thumbs4 children-grid')",
@@ -963,6 +971,21 @@
     }
   ],
   "MIDDLE_SITEINFO": [
+    {
+      "url": "^https?://.+/(forum|thread).+",
+      "name": "forum447",
+      "nextLink": "//a[@class='next' or @class='nxt']",
+      "pageElement": "id('threadlisttableid waterfall')[.//a[contains(@href, 'thread')]]",
+      "_resource_url": "http://wedata.net/items/447"
+    },
+    {
+      "url": "^https?://.+/(forum|thread).+",
+      "name": "items/447-1",
+      "exampleUrl": "http://bbs.inter.net.cn/forum-4-1.html\nhttps://apk.tw/forum-144-1.html\nhttps://www.hkepc.com/forum/forumdisplay.php?fid=4\nhttps://www.uwants.com/forumdisplay.php?fid=102&page=2\nhttps://apk.tw/thread-595352-1-1.html\nhttps://apk.tw/thread-136840-1-4.html\nhttps://www.hkepc.com/forum/viewthread.php?tid=1319665&extra=page%3D1",
+      "nextLink": "//a[@class='next' or @class='nxt']",
+      "pageElement": "(id('threadlist')|//div[starts-with(a/@id,'newspecial') or @class='pgs mtm mbm cl' or @class='mainbox threadlist'])//tbody[@id][.//a]|id('postlist')/div/table[starts-with(@id,'pid')][not(@class='plhin post_lz')]",
+      "_resource_url": "http://wedata.net/items/447"
+    },
     {
       "url": "^https://www\\.oricon\\.co\\.jp/search/result\\.php",
       "name": "ORICON NEWS 画像検索結果",
