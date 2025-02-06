@@ -1771,6 +1771,26 @@
       "name": "Ryuzee.com",
       "exampleUrl": "https://www.ryuzee.com/contents/blog/",
       "pageElement": "id('posts')"
+    },
+    {
+      "url": "^https://talkingpointsmemo\\.com/news/after/1501234",
+      "name": "Category: News - TPM – Talking Points Memo",
+      "nextLink": "a.next",
+      "pageElement": ".Archive__Main > :has(img)"
+    },
+    {
+      "url": "^https://www\\.akb48\\.co\\.jp/news/",
+      "name": "AKB48公式サイト | ニュース",
+      "exampleUrl": "https://www.akb48.co.jp/news/?date=2024-10-13",
+      "nextLink": "a[data-label='NEWS : BACK']",
+      "pageElement": ".newsList"
+    },
+    {
+      "url": "^https://www\\.\\w+\\.playblackdesert\\.com/.*News/Notice",
+      "name": "ニュース | 黒い砂漠",
+      "exampleUrl": "https://www.jp.playblackdesert.com/ja-JP/News/Notice",
+      "pageElement": ".thumb_nail_area",
+      "insertBefore": "//div[contains(concat(' ', @class, ' '), ' search_bottom ')]/following-sibling::node()"
     }
   ]
 }
