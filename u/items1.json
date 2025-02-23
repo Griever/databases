@@ -49,6 +49,42 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://www\\.pokemon\\.co\\.jp/",
+      "name": "ポケットモンスターオフィシャルサイト",
+      "exampleUrl": "https://www.pokemon.co.jp/goods/\nhttps://www.pokemon.co.jp/info/cat_card/",
+      "nextLink": "//li[contains(@class, 'active')][number()>0]/following-sibling::li[1]/a",
+      "pageElement": ".goods-list__body, .news-list__body",
+      "framePageElement": ":is(.goods-list__body, .news-list__body) img:not([src*='loading'])",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://medibang\\.com/author/creatorSearch/",
+      "name": "MediBang creatorSearch",
+      "exampleUrl": "https://medibang.com/author/creatorSearch/?currentPage=1&keyword=japan",
+      "nextLink": "a.next:not(.disable)",
+      "pageElement": ".creatorSearchList",
+      "framePageElement": "a.next",
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://medibang\\.com/",
+      "name": "MediBang",
+      "exampleUrl": "https://medibang.com/picture/recent/\nhttps://medibang.com/materials/list/?sType=newly&pType=all\nhttps://medibang.com/contentsSearch/?searchCategory=3&keyword=japan",
+      "nextLink": "a.next:not(.disable)",
+      "pageElement": ".picturelist-contwrap, .asMaterialsProductList",
+      "framePageElement": "a.next",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
       "url": "^https://www\\.slrclub\\.com/bbs/",
       "requestType": "frame",
       "responseDelay": 1500
@@ -1791,6 +1827,20 @@
       "exampleUrl": "https://www.jp.playblackdesert.com/ja-JP/News/Notice",
       "pageElement": ".thumb_nail_area",
       "insertBefore": "//div[contains(concat(' ', @class, ' '), ' search_bottom ')]/following-sibling::node()"
+    },
+    {
+      "url": "^https://cartoondealer\\.com/",
+      "name": "CartoonDealer.com",
+      "exampleUrl": "https://cartoondealer.com/illustrations/pg1/japan.html",
+      "nextLink": "//a[@title='next page']",
+      "pageElement": "h1 ~ .thb_cell"
+    },
+    {
+      "url": "^https://news\\.toremaga\\.com/",
+      "name": "とれまがニュース",
+      "exampleUrl": "https://news.toremaga.com/entertainment/entnews/\nhttps://news.toremaga.com/photo/",
+      "nextLink": "//img[@alt='次のページ']/..",
+      "pageElement": ".newslist, .photo_list"
     }
   ]
 }
