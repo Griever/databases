@@ -49,6 +49,28 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://store-jp\\.nintendo\\.com/",
+      "name": "My Nintendo Store",
+      "exampleUrl": "https://store-jp.nintendo.com/list/tag/0007/",
+      "nextLink": "a[rel='next'][aria-disabled=\"false\"]",
+      "pageElement": "main > div> div > .grid",
+      "framePageElement": "main > div> div > .grid",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "spa": true
+    },
+    {
+      "url": "^https?://blog\\.esuteru\\.com/archives/\\d+\\.html",
+      "name": "はちま起稿 - 記事",
+      "exampleUrl": "http://blog.esuteru.com/archives/8541816.html\nhttp://blog.esuteru.com/archives/20000466.html",
+      "nextLink": "//a[contains(concat(' ', @class, ' '), ' next ')]",
+      "pageElement": "main > article > :is(.article-header, .article-main)",
+      "_resource_url": "http://wedata.net/items/55354"
+    },
+    {
       "url": "^https://www\\.pokemon\\.co\\.jp/",
       "name": "ポケットモンスターオフィシャルサイト",
       "exampleUrl": "https://www.pokemon.co.jp/goods/\nhttps://www.pokemon.co.jp/info/cat_card/",
@@ -1841,6 +1863,12 @@
       "exampleUrl": "https://news.toremaga.com/entertainment/entnews/\nhttps://news.toremaga.com/photo/",
       "nextLink": "//img[@alt='次のページ']/..",
       "pageElement": ".newslist, .photo_list"
+    },
+    {
+      "url": "^https://buy\\.janpara\\.co\\.jp/buy/search\\?",
+      "name": "じゃんぱら(買取)",
+      "exampleUrl": "https://buy.janpara.co.jp/buy/search?outClsCode=82\nhttps://buy.janpara.co.jp/buy/search?outClsCode=82&design=2",
+      "pageElement": ".search_list, .model_price_list"
     }
   ]
 }
