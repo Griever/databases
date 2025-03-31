@@ -26,6 +26,7 @@
     "http://wedata.net/items/81508": "absolute",
     "http://wedata.net/items/81792": "bad",
     "http://wedata.net/items/81933": "bad",
+    "http://wedata.net/items/81996": "bad",
     "http://wedata.net/items/82052": "unnecessary",
     "http://wedata.net/items/85313": "bad",
     "http://wedata.net/items/85451": "dummy",
@@ -49,12 +50,57 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://kaigai\\.ch/",
+      "name": "kaigai.ch",
+      "exampleUrl": "https://kaigai.ch/",
+      "pageElement": ".box-pickup, #entry",
+      "framePageElement": "#entry:has(*)",
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://tower\\.jp/search/",
+      "name": "検索 - TOWER RECORDS ONLINE",
+      "exampleUrl": "https://tower.jp/search/item/test\nhttps://tower.jp/search/artist/test\nhttps://tower.jp/search/article/test\nhttps://tower.jp/search/advanced/item/search?genre=01&subgenre=01&salesDiv=New&echandling=y",
+      "nextLink": ".common-pagination-next",
+      "pageElement": ".TOL-item-search-result-PC-result-tile-display-block,\n.TOL-artist-search-result-PC-list,\n.TOL-article-search-result-PC-search-result-block",
+      "framePageElement": ".common-pagination-next",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://shikiho\\.toyokeizai\\.net/",
+      "name": "会社四季報オンライン",
+      "exampleUrl": "https://shikiho.toyokeizai.net/news",
+      "nextLink": ".pagination__items__btn.next:not(.disabled)",
+      "pageElement": "ul.newsList",
+      "framePageElement": "ul.newsList",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://goo-net\\.com/cgi-bin/fsearch/goo_used_search\\.cgi\\?",
+      "name": "中古車一覧【グーネット】",
+      "exampleUrl": "https://goo-net.com/cgi-bin/fsearch/goo_used_search.cgi?category=USDN",
+      "nextLink": "//li[contains(@class, 'current')][number()>0]/following-sibling::li[1]/a",
+      "pageElement": "div[id][stock_id]",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
       "url": "^https://store-jp\\.nintendo\\.com/",
       "name": "My Nintendo Store",
       "exampleUrl": "https://store-jp.nintendo.com/list/tag/0007/",
-      "nextLink": "a[rel='next'][aria-disabled=\"false\"]",
-      "pageElement": "main > div> div > .grid",
-      "framePageElement": "main > div> div > .grid",
+      "nextLink": "a[rel='next'][aria-disabled='false']",
+      "pageElement": "main > div > div > .grid",
+      "framePageElement": "main > div > div > .grid",
       "nextQuery": "page",
       "nextIncrement": 1,
       "nextStartValue": 1,
@@ -229,10 +275,12 @@
       "url": "^https://ebookjapan\\.yahoo\\.co\\.jp/",
       "name": "ebookjapan",
       "exampleUrl": "https://ebookjapan.yahoo.co.jp/theme/6/?page=2",
-      "pageElement": "ul.featured-campaign-list",
-      "framePageElement": "ul.featured-campaign-list img:not([src^='data:'])",
+      "pageElement": "ul:has(.book-item__cover)",
+      "framePageElement": "ul:has(.book-item__cover) img:not([src^='data:'])",
       "requestType": "frame",
-      "responseDelay": 3000
+      "responseDelay": 3000,
+      "spa": true,
+      "spaDelay": 2000
     },
     {
       "url": "^https://dmagazine\\.docomo\\.ne\\.jp/",
@@ -267,7 +315,9 @@
       "nextLink": "id('page')/div/a[last()]",
       "pageElement": "id('content_left')/*",
       "insertBefore": "id('content_left')/following-sibling::node()[last()]",
-      "_resource_url": "http://wedata.net/items/425"
+      "_resource_url": "http://wedata.net/items/425",
+      "spa": true,
+      "spaDelay": 1000
     },
     {
       "url": "^https?://nhentai\\.net/",
@@ -1869,6 +1919,49 @@
       "name": "じゃんぱら(買取)",
       "exampleUrl": "https://buy.janpara.co.jp/buy/search?outClsCode=82\nhttps://buy.janpara.co.jp/buy/search?outClsCode=82&design=2",
       "pageElement": ".search_list, .model_price_list"
+    },
+    {
+      "url": "^https://www\\.rei\\.com/search",
+      "name": "nike at REI | REI Co-op",
+      "exampleUrl": "https://www.rei.com/search?query=nike",
+      "nextLink": "a[data-id='pagination-test-link-next']",
+      "pageElement": "#search-results"
+    },
+    {
+      "url": "^https://vgcats\\.com/comics/",
+      "name": "VG Cats! Comics",
+      "exampleUrl": "https://vgcats.com/comics/?strip_id=2",
+      "nextLink": "//a[img[@src='next.png']]",
+      "pageElement": "//table[@cellpadding='9' and @cellspacing='9']/tbody/tr/td/*"
+    },
+    {
+      "url": "^https://webcomics\\.jp/",
+      "name": "Web漫画アンテナ",
+      "exampleUrl": "https://webcomics.jp/info",
+      "nextLink": ".pager-next > a",
+      "pageElement": ".entry"
+    },
+    {
+      "url": "^https://croissant-online\\.jp/",
+      "name": "クロワッサン オンライン",
+      "exampleUrl": "https://croissant-online.jp/life/57021/",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": ".single-content"
+    },
+    {
+      "url": "^https://typescriptbook\\.jp/",
+      "name": "TypeScript入門『サバイバルTypeScript』",
+      "exampleUrl": "https://typescriptbook.jp/overview/features",
+      "nextLink": "a.pagination-nav__link--next",
+      "pageElement": ".docItemContainer_Djhp > article"
+    },
+    {
+      "url": "^https://kangaeruhito\\.jp/article/\\d+",
+      "name": "新潮社 連載",
+      "exampleUrl": "https://kangaeruhito.jp/article/759720",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": "#mainContentsInner > *",
+      "removeElement": ".articleAuthorTop, #mainArticleBottomSns, #mainArticlePagerBlock"
     }
   ]
 }
