@@ -280,7 +280,7 @@
       "requestType": "frame",
       "responseDelay": 3000,
       "spa": true,
-      "spaDelay": 2000
+      "spaDelay": 3000
     },
     {
       "url": "^https://dmagazine\\.docomo\\.ne\\.jp/",
@@ -1962,6 +1962,22 @@
       "nextLink": "//a[@rel='next']",
       "pageElement": "#mainContentsInner > *",
       "removeElement": ".articleAuthorTop, #mainArticleBottomSns, #mainArticlePagerBlock"
+    },
+    {
+      "url": "^https://claypier\\.com/",
+      "name": "claypier",
+      "exampleUrl": "https://claypier.com/\nhttps://claypier.com/category/apple/",
+      "nextLink": "a.next",
+      "pageElement": "div[id^='post-'],\nbody > div[class='max-w-7xl mx-auto h-full pt-16 mt-6 lg:mt-8 px-2 lg:px-4'] > h2 ~ div"
+    },
+    {
+      "url": "^http://www\\.kaminotane\\.com/",
+      "name": "かみのたね",
+      "exampleUrl": "https://www.kaminotane.com/2025/01/31/26670/",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": "id('postHeader')|id('hideContent')/*",
+      "removeElement": "#postHeader > :is(.sns, .category, .btn)",
+      "resource_url": "http://wedata.net/items/85668"
     }
   ]
 }
