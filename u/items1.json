@@ -50,6 +50,36 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://healthpress\\.jp/",
+      "name": "healthpress.jp",
+      "exampleUrl": "https://healthpress.jp/2017/09/post-3235.html\nhttps://healthpress.jp/2017/12/post-3423.html",
+      "nextLink": ".link_next a",
+      "pageElement": "#entryBody",
+      "_resource_url": "http://wedata.net/items/81552",
+      "css": "#archive { height: auto !important; }"
+    },
+    {
+      "url": "^https://maidigitv\\.jp/",
+      "name": "MAiDiGiTV",
+      "exampleUrl": "https://maidigitv.jp/movies",
+      "nextLink": ".pagination",
+      "pageElement": ".movie-list",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
+      "url": "^https://maquia\\.hpplus\\.jp/",
+      "removeElement": ".section-blog-hot-topics"
+    },
+    {
+      "url": "^https://www\\.kanaloco\\.jp/sports/baseball/baystars/",
+      "name": "横浜ＤｅＮＡベイスターズ カナロコ by 神奈川新聞",
+      "exampleUrl": "https://www.kanaloco.jp/sports/baseball/baystars/2025\nhttps://www.kanaloco.jp/sports/baseball/baystars/games202404",
+      "pageElement": "id('main-contents')/div[.//a[@aria-current='page']]",
+      "insertBefore": "id('block-kanaloco-theme-content')/following-sibling::node()"
+    },
+    {
       "url": "^https://kaigai\\.ch/",
       "name": "kaigai.ch",
       "exampleUrl": "https://kaigai.ch/",
@@ -227,7 +257,7 @@
       "url": "^https://gadgetsnow\\.indiatimes\\.com/",
       "name": "gadgetsnow",
       "exampleUrl": "https://gadgetsnow.indiatimes.com/latest-news/2",
-      "pageElement": "id('app')/header/following-sibling::*[following-sibling::footer]",
+      "pageElement": "id('app')",
       "framePageElement": "#app > .container > div.grid_wrapper > .col_l_12",
       "requestType": "frame",
       "responseDelay": 3000
@@ -432,8 +462,9 @@
       "url": "^https://genseki\\.me/",
       "name": "GENSEKI",
       "exampleUrl": "https://genseki.me/works",
-      "nextLink": "a[href*='page']:has(img[src*='angle-pager-right'])",
+      "nextLink": "//nav//span[contains(concat(' ', @class, ' '), ' material-symbols-rounded ') and text()='keyboard_arrow_right']/parent::a",
       "pageElement": "main section ul.grid",
+      "framePageElement": "main section ul.grid",
       "requestType": "frame",
       "responseDelay": 3000,
       "spa": true,
@@ -1509,7 +1540,10 @@
       "url": "^https://wear\\.jp/",
       "exampleUrl": "https://wear.jp/saesan1201/?pageno=4",
       "nextLink": "//a[contains(@href, 'pageno') and @aria-label='次のページ']",
-      "pageElement": "//div[contains(concat(' ', @class, ' '), ' grid ')][.//time]"
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' grid ')][.//time]",
+      "framePageElement": "//div[contains(concat(' ', @class, ' '), ' grid ')][.//a[contains(concat(' ', @class, ' '), ' truncate ')]]",
+      "requestType": "frame",
+      "responseDelay": 3000
     },
     {
       "url": "^https://www\\.kuchan-bg\\.org/",
@@ -1978,6 +2012,12 @@
       "pageElement": "id('postHeader')|id('hideContent')/*",
       "removeElement": "#postHeader > :is(.sns, .category, .btn)",
       "resource_url": "http://wedata.net/items/85668"
+    },
+    {
+      "url": "^https://news\\.ponycanyon\\.co\\.jp/",
+      "name": "PONY CANYON NEWS",
+      "exampleUrl": "https://news.ponycanyon.co.jp/",
+      "pageElement": "//main/descendant::div[contains(concat(' ', @class, ' '), ' newsList ')][1]"
     }
   ]
 }
