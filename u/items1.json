@@ -50,6 +50,22 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https?://www\\.furaffinity\\.net/(?:browse|msg/submissions|(?:favorites|gallery|scraps)/[^/]+)/",
+      "name": "Fur Affinity",
+      "exampleUrl": "https://www.furaffinity.net/browse/",
+      "css": ".blocked-content { filter: none !important; }"
+    },
+    {
+      "url": "^https://www\\.soundhouse\\.co\\.jp/",
+      "name": "サウンドハウス",
+      "exampleUrl": "https://www.soundhouse.co.jp/outlet/index\nhttps://www.soundhouse.co.jp/search/index?s_maker_cd=&s_category_cd=&s_mid_category_cd=&s_large_category_cd=&s_product_cd=&search_all=MUSICMAN+StingRay+5&sSeriesCd=&sPriceFrom=0&sPriceTo=9999999&s_spec=&s_zaiko=&i_type=s&i_sub_type=&i_page=&i_sort=&i_page_size=32&i_ListType=type2&tag=",
+      "nextLink": "//li[span[@class='now']][number()>0]/following-sibling::li[1]/a",
+      "pageElement": "id('globalContents')/div/ul[contains(concat(' ', @class, ' '), ' item_list ')]",
+      "nextQuery": "i_page",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
       "url": "^https://healthpress\\.jp/",
       "name": "healthpress.jp",
       "exampleUrl": "https://healthpress.jp/2017/09/post-3235.html\nhttps://healthpress.jp/2017/12/post-3423.html",
@@ -92,7 +108,7 @@
       "url": "^https://tower\\.jp/search/",
       "name": "検索 - TOWER RECORDS ONLINE",
       "exampleUrl": "https://tower.jp/search/item/test\nhttps://tower.jp/search/artist/test\nhttps://tower.jp/search/article/test\nhttps://tower.jp/search/advanced/item/search?genre=01&subgenre=01&salesDiv=New&echandling=y",
-      "nextLink": ".common-pagination-next",
+      "nextLink": "//button[contains(@class, 'is-active')][number()>0]/following-sibling::button[1][number()>0]",
       "pageElement": ".TOL-item-search-result-PC-result-tile-display-block,\n.TOL-artist-search-result-PC-list,\n.TOL-article-search-result-PC-search-result-block",
       "framePageElement": ".common-pagination-next",
       "nextQuery": "page",
