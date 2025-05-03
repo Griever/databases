@@ -2,28 +2,35 @@
   "DISABLED_ITEMS": {
     "http://wedata.net/items/400": "post",
     "http://wedata.net/items/447": "Discuz (Forum|Thread)",
+    "http://wedata.net/items/561": "bad, iframe",
     "http://wedata.net/items/649": "hAtom",
     "http://wedata.net/items/650": "hAtom",
     "http://wedata.net/items/681": "tumblr canonical",
     "http://wedata.net/items/2194": "bad",
     "http://wedata.net/items/2482": "bad",
     "http://wedata.net/items/25672": "absolute",
+    "http://wedata.net/items/25843": "ismedia",
     "http://wedata.net/items/26621": "unnecessary",
+    "http://wedata.net/items/27628": "bad",
     "http://wedata.net/items/29787": "bad",
     "http://wedata.net/items/31114": "tumblr hatom",
     "http://wedata.net/items/31158": "tumblr autopagerize_page_element",
     "http://wedata.net/items/32012": "bad",
+    "http://wedata.net/items/32771": "bad",
     "http://wedata.net/items/49408": "bad",
     "http://wedata.net/items/61110": "bad",
     "http://wedata.net/items/63728": "tumblr canonical",
     "http://wedata.net/items/76807": "bad",
+    "http://wedata.net/items/76907": "bad",
+    "http://wedata.net/items/77079": "bad",
     "http://wedata.net/items/77203": "thumbnail inf",
     "http://wedata.net/items/77754": "tenhou bad",
     "http://wedata.net/items/80660": "td-block-row",
     "http://wedata.net/items/80835": "dummy",
-    "http://wedata.net/items/81178": "unnecessary",
+    "http://wedata.net/items/81178": "bad",
     "http://wedata.net/items/81254": "listal bad",
     "http://wedata.net/items/81508": "absolute",
+    "http://wedata.net/items/81552": "bad, nl",
     "http://wedata.net/items/81792": "bad",
     "http://wedata.net/items/81933": "bad",
     "http://wedata.net/items/81996": "bad",
@@ -34,7 +41,9 @@
     "http://wedata.net/items/85562": "tumblr canonical",
     "http://wedata.net/items/85564": "tumblr canonical",
     "http://wedata.net/items/85565": "bad inf",
-    "http://wedata.net/items/85640": "jbpress",
+    "http://wedata.net/items/85609": "bad, pe",
+    "http://wedata.net/items/85640": "ismedia",
+    "http://wedata.net/items/85756": "bad, pe",
     "http://wedata.net/items/85766": "dummy",
     "http://wedata.net/items/85802": "tumblr canonical",
     "http://wedata.net/items/85805": "dummy",
@@ -42,13 +51,41 @@
     "http://wedata.net/items/85913": "tumblr dummy",
     "http://wedata.net/items/85914": "tumblr canonical",
     "http://wedata.net/items/85915": "tumblr dummy",
-    "http://wedata.net/items/85947": "jbpress",
+    "http://wedata.net/items/85947": "ismedia",
     "http://wedata.net/items/86004": "article",
     "http://wedata.net/items/86017": "article",
     "http://wedata.net/items/86072": "listal bad",
-    "http://wedata.net/items/86138": "bad"
+    "http://wedata.net/items/86138": "bad, nl"
   },
   "TOP_SITEINFO": [
+    {
+      "url": "^https://[^/]+\\.ismedia\\.jp/articles/",
+      "name": "isMedia /articles/",
+      "exampleUrl": "https://wedge.ismedia.jp/articles/-/142\nhttps://jbpress.ismedia.jp/articles/-/56489?page=2#.m-regist-premium-login\nhttps://jbpress.ismedia.jp/articles/-/71438#.m-regist-premium-login\nhttps://jbpress.ismedia.jp/articles/-/86556#.leafs-login-btnbox",
+      "nextLink": "(//*[contains(@class,'next')]/descendant-or-self::a[contains(@href,'page=')])[1][not(//div[\ncontains(@class,'skin-premium') or \ncontains(concat(' ', @class, ' '), ' m-regist-premium-login ') or \ncontains(concat(' ', @class, ' '), ' leafs-login-btnbox ')])]",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' article-body ')][./*]/../*[\ncontains(concat(' ', @class, ' '), ' article-body ') or \ncontains(concat(' ', @class, ' '), ' m-regist-premium-login ') or \ncontains(concat(' ', @class, ' '), ' leafs-login-btnbox ')]"
+    },
+    {
+      "url": "^https://www\\.infos\\.inc/books/list/",
+      "exampleUrl": "https://www.infos.inc/books/list/contents_type=98",
+      "showElement": "p.main_img"
+    },
+    {
+      "url": "^https://bbs\\.yaruyomi\\.com/test/read\\.cgi/",
+      "name": "普通のやる夫板",
+      "exampleUrl": "https://bbs.yaruyomi.com/test/read.cgi/ban/1735805144",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": "#aa-contents p[id]"
+    },
+    {
+      "url": "^https://bbs\\.yaruyomi\\.com/",
+      "name": "普通のやる夫板",
+      "exampleUrl": "https://bbs.yaruyomi.com/ban/works\nhttps://bbs.yaruyomi.com/ban/post-schedules",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": "descendant::div[contains(concat(' ', @class, ' '), ' pagination ')][1]/..",
+      "requestType": "frame",
+      "responseDelay": 500
+    },
     {
       "url": "^https?://www\\.furaffinity\\.net/(?:browse|msg/submissions|(?:favorites|gallery|scraps)/[^/]+)/",
       "name": "Fur Affinity",
@@ -129,16 +166,6 @@
       "nextStartValue": 1,
       "requestType": "frame",
       "responseDelay": 3000
-    },
-    {
-      "url": "^https://goo-net\\.com/cgi-bin/fsearch/goo_used_search\\.cgi\\?",
-      "name": "中古車一覧【グーネット】",
-      "exampleUrl": "https://goo-net.com/cgi-bin/fsearch/goo_used_search.cgi?category=USDN",
-      "nextLink": "//li[contains(@class, 'current')][number()>0]/following-sibling::li[1]/a",
-      "pageElement": "div[id][stock_id]",
-      "nextQuery": "page",
-      "nextIncrement": 1,
-      "nextStartValue": 1
     },
     {
       "url": "^https://store-jp\\.nintendo\\.com/",
@@ -902,6 +929,14 @@
       "spaDelay": 1000
     },
     {
+      "url": "^https://www\\.amazon(?:\\.[^./]{2,3}){1,2}/gp/bestsellers/",
+      "name": "Amazon.co.jp 売れ筋ランキング",
+      "exampleUrl": "https://www.amazon.co.jp/gp/bestsellers/computers/2151972051/ref=zg_bs_nav_computers_2_2151970051",
+      "pageElement": "[class*='-desktop-grid']",
+      "requestType": "frame",
+      "responseDelay": 500
+    },
+    {
       "url": "^https?://www\\.amazon\\.(?:c(?:a|o(?:m|\\.(?:jp|uk)))|de|fr)/(?:[^/]+/)?(?:(?:customer|product)-reviews|review/product)/",
       "name": "Amazon Product Reviews",
       "exampleUrl": "https://www.amazon.co.jp/product-reviews/B09VSXCY87",
@@ -989,6 +1024,15 @@
       "nextIncrement": 1
     },
     {
+      "url": "^https://finance\\.yahoo\\.co\\.jp/cm/",
+      "disableBuildIn": true
+    },
+    {
+      "url": "^https://finance\\.yahoo\\.co\\.jp/",
+      "spa": true,
+      "spaDelay": 1000
+    },
+    {
       "url": "^https://finance\\.yahoo\\.co\\.jp/news/",
       "name": "Yahoo!ファイナンス /news/",
       "exampleUrl": "https://finance.yahoo.co.jp/news/bus_all",
@@ -1002,7 +1046,7 @@
       "name": "Yahoo!ファイナンス /stocks/",
       "exampleUrl": "https://finance.yahoo.co.jp/stocks/ranking/up?market=all&term=daily\nhttps://finance.yahoo.co.jp/stocks/screening/highdividend",
       "nextLink": "id('pagerbtm')//li[last()]/button[not(@disabled)]",
-      "pageElement": "id('pagerbtm')/ancestor-or-self::*[preceding-sibling::*][1]/..",
+      "pageElement": "id('item')/div/table/tbody/tr",
       "nextQuery": "page",
       "nextIncrement": 1
     },
@@ -1012,6 +1056,24 @@
       "exampleUrl": "https://finance.yahoo.co.jp/search/qi/?ids=2050&page=1",
       "nextLink": "id('pagerbtm')//li[last()]/button[not(@disabled)]",
       "pageElement": "id('sr')",
+      "nextQuery": "page",
+      "nextIncrement": 1
+    },
+    {
+      "url": "^https://finance\\.yahoo\\.co\\.jp/funds/",
+      "name": "Yahoo!ファイナンス 投資信託ランキング",
+      "exampleUrl": "https://finance.yahoo.co.jp/funds/ranking/nisarecommend",
+      "nextLink": "id('pagerbtm')//li[last()]/button[not(@disabled)]",
+      "pageElement": "id('fundname')//tbody/tr",
+      "nextQuery": "page",
+      "nextIncrement": 1
+    },
+    {
+      "url": "^https://finance\\.yahoo\\.co\\.jp/",
+      "name": "Yahoo!ファイナンス id('pagerbtm')",
+      "exampleUrl": "https://finance.yahoo.co.jp/quote/7203.T/news\nhttps://finance.yahoo.co.jp/quote/7203.T/disclosure",
+      "nextLink": "id('pagerbtm')//li[last()]/*[self::button or self::a][not(@disabled or @aria-disabled)]",
+      "pageElement": "id('pagerbtm')/preceding-sibling::*[.//a or .//tr]",
       "nextQuery": "page",
       "nextIncrement": 1
     },
