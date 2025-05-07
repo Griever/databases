@@ -59,6 +59,43 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://gist\\.github\\.com/",
+      "spa": true,
+      "spaDelay": 1000
+    },
+    {
+      "url": "^https://togetter\\.com/li/\\d+",
+      "name": "Togetter 記事",
+      "exampleUrl": "https://togetter.com/li/2547666",
+      "pageElement": "descendant::div[contains(concat(' ', @class, ' '), ' pagenation ')][last()]/preceding-sibling::*"
+    },
+    {
+      "url": "^https://comicspace\\.jp/",
+      "name": "コミックスペース",
+      "exampleUrl": "https://comicspace.jp/title/genre/1",
+      "pageElement": "._titlesWrap > div:has(figure)",
+      "framePageElement": "._titlesWrap > div figure img[src*=':']",
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "spa": true,
+      "spaDelay": 2000
+    },
+    {
+      "url": "^https://colleize\\.com/",
+      "name": "colleize",
+      "exampleUrl": "https://colleize.com/lineup/33?sortType=RECOMMEND&pno=2",
+      "nextLink": "div.btn:not(.disable) > span.next",
+      "pageElement": "id('pager')/preceding-sibling::div[contains(concat(' ', @class, ' '), ' list ')]",
+      "framePageElement": "div.btn > span.next",
+      "nextQuery": "pno",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "spa": true,
+      "spaDelay": 2000
+    },
+    {
       "url": "^https://[^/]+\\.ismedia\\.jp/articles/",
       "name": "isMedia /articles/",
       "exampleUrl": "https://wedge.ismedia.jp/articles/-/142\nhttps://jbpress.ismedia.jp/articles/-/56489?page=2#.m-regist-premium-login\nhttps://jbpress.ismedia.jp/articles/-/71438#.m-regist-premium-login\nhttps://jbpress.ismedia.jp/articles/-/86556#.leafs-login-btnbox",
@@ -226,6 +263,11 @@
       "responseDelay": 3000
     },
     {
+      "url": "^https://(www\\.)?bhphotovideo\\.com/c/(?:buy/|search\\?)",
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
       "url": "^https://www\\.slrclub\\.com/bbs/",
       "requestType": "frame",
       "responseDelay": 1500
@@ -349,7 +391,7 @@
       "name": "ebookjapan",
       "exampleUrl": "https://ebookjapan.yahoo.co.jp/theme/6/?page=2",
       "pageElement": "ul:has(.book-item__cover)",
-      "framePageElement": "ul:has(.book-item__cover) img:not([src^='data:'])",
+      "framePageElement": "ul:has(.book-item__cover) img:not([src^='data:']):not([src*='loading_book.png'])",
       "requestType": "frame",
       "responseDelay": 3000,
       "spa": true,
@@ -1910,7 +1952,7 @@
     {
       "url": "^https://yoi\\.shueisha\\.co\\.jp/",
       "exampleUrl": "https://yoi.shueisha.co.jp/body/innercare/",
-      "pageElement": ".page-body > .article-card-list"
+      "pageElement": "//ul[contains(concat(' ', @class, ' '), ' article-card-list ')][not(ancestor::div[contains(@class, 'slide') or contains(@class, 'ranking')])]"
     },
     {
       "url": "^https://www\\.pinclipart\\.com/",
