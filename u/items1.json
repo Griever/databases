@@ -59,6 +59,46 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://utakatanka\\.jp/",
+      "disableBuildIn": true
+    },
+    {
+      "url": "^https://xtech\\.nikkei\\.com/media/",
+      "name": "日経クロステック（xTECH）",
+      "exampleUrl": "https://xtech.nikkei.com/media/digitalhealth/coverstory.html\nhttps://xtech.nikkei.com/media/digitalhealth/coverstory.html?bn=coverstory&M=20&P=2",
+      "nextLink": "//a[text()='次へ']|//li[contains(@class, 'p-pagenation_list_item -next')]/a",
+      "pageElement": "//li[.//time]",
+      "requestType": "frame",
+      "responseDelay": 1000
+    },
+    {
+      "url": "^https://gendai\\.media/list/",
+      "name": "現代ビジネス /list/",
+      "exampleUrl": "https://gendai.media/list/genre/gendaibusiness/politics",
+      "pageElement": "main > *:has(a[href*='/articles/'])"
+    },
+    {
+      "url": "^https://[^/]+\\.aliexpress\\.com/w/",
+      "name": "AliExpress",
+      "exampleUrl": "https://ja.aliexpress.com/w/wholesale-%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%83%9C%E3%83%BC%E3%83%AB.html",
+      "nextLink": "[data-spm='main']",
+      "pageElement": "[data-spm='main']",
+      "framePageElement": "//div[@data-spm='main'][not(.//div[contains(concat(' ', @class, ' '), ' lazy-load ')])]",
+      "nextQuery": "page",
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "spa": true,
+      "spaDelay": 2000
+    },
+    {
+      "url": "^https://www\\.abc-mart\\.net/shop/goods/search\\.aspx\\?",
+      "name": "ABC-MART",
+      "exampleUrl": "https://www.abc-mart.net/shop/goods/search.aspx?keyword=%83i%83C%83L",
+      "nextLink": ".navipage_forward_",
+      "pageElement": ".autopagerize_page_element",
+      "nextQuery": "p"
+    },
+    {
       "url": "^https://gist\\.github\\.com/",
       "spa": true,
       "spaDelay": 1000
@@ -202,7 +242,8 @@
       "nextIncrement": 1,
       "nextStartValue": 1,
       "requestType": "frame",
-      "responseDelay": 3000
+      "responseDelay": 3000,
+      "spa": true
     },
     {
       "url": "^https://store-jp\\.nintendo\\.com/",
