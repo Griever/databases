@@ -59,6 +59,10 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://www\\.dospara\\.co\\.jp/",
+      "disableBuildIn": true
+    },
+    {
       "url": "^https://utakatanka\\.jp/",
       "disableBuildIn": true
     },
@@ -125,7 +129,7 @@
       "name": "colleize",
       "exampleUrl": "https://colleize.com/lineup/33?sortType=RECOMMEND&pno=2",
       "nextLink": "div.btn:not(.disable) > span.next",
-      "pageElement": "id('pager')/preceding-sibling::div[contains(concat(' ', @class, ' '), ' list ')]",
+      "pageElement": ".goodsCard",
       "framePageElement": "div.btn > span.next",
       "nextQuery": "pno",
       "nextIncrement": 1,
