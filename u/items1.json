@@ -59,6 +59,11 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://www\\.walkerplus\\.com/article_list/",
+      "exampleUrl": "https://www.walkerplus.com/article_list/",
+      "disableWedata": true
+    },
+    {
       "url": "^https://www\\.dospara\\.co\\.jp/",
       "disableBuildIn": true
     },
@@ -1022,14 +1027,6 @@
       "pageElement": "[class*='-desktop-grid']",
       "requestType": "frame",
       "responseDelay": 500
-    },
-    {
-      "url": "^https?://www\\.amazon\\.(?:c(?:a|o(?:m|\\.(?:jp|uk)))|de|fr)/(?:[^/]+/)?(?:(?:customer|product)-reviews|review/product)/",
-      "name": "Amazon Product Reviews",
-      "exampleUrl": "https://www.amazon.co.jp/product-reviews/B09VSXCY87",
-      "nextLink": "//li[@class='a-last']/a",
-      "pageElement": "id('cm_cr-review_list')/ul",
-      "_resource_url": "http://wedata.net/items/27473"
     },
     {
       "url": "^https://www\\.pixiv\\.net/howto/category/\\d+/",
