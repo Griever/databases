@@ -59,6 +59,10 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "https://wezard\\.net/",
+      "disableBuildIn": true
+    },
+    {
       "url": "^https://www\\.walkerplus\\.com/article_list/",
       "exampleUrl": "https://www.walkerplus.com/article_list/",
       "disableWedata": true
@@ -2048,7 +2052,7 @@
       "name": "いつもちゃんねる掲示板",
       "exampleUrl": "https://b.5chan.jp/CjaXpXam33?from=popular1&p=2",
       "nextLink": "id('bbs_threadlist_area_pagenation_top')//a[text()='次']",
-      "pageElement": "id('bbs_entries')/ul/li[not(.//span[@class='eno'][a='1001'])]"
+      "pageElement": "id('bbs_entries')//article[contains(concat(' ', @class, ' '), ' resentry ')]"
     },
     {
       "url": "^https://cartune\\.me/",
