@@ -18,6 +18,7 @@
     "http://wedata.net/items/32012": "bad",
     "http://wedata.net/items/32771": "bad",
     "http://wedata.net/items/49408": "bad",
+    "http://wedata.net/items/61099": "bad",
     "http://wedata.net/items/61110": "bad",
     "http://wedata.net/items/63728": "tumblr canonical",
     "http://wedata.net/items/76807": "bad",
@@ -58,6 +59,43 @@
     "http://wedata.net/items/86138": "bad, nl"
   },
   "TOP_SITEINFO": [
+    {
+      "url": "^https://bakusai\\.com/",
+      "name": "爆サイ.com id=res_list",
+      "exampleUrl": "https://bakusai.com/thr_res/acode=7/ctgid=123/bid=2493/tid=1604525/tp=1/rw=1/",
+      "nextLink": ".paging_nextlink > a[href*='rw=1']",
+      "pageElement": "#res_list"
+    },
+    {
+      "url": "^https://bakusai\\.com/",
+      "name": "爆サイ.com id=imgThreadList",
+      "exampleUrl": "https://bakusai.com/thr_tl/acode=5/ctgid=137/bid=1150/",
+      "pageElement": "#threadListLeft",
+      "removeElement": "#threadListRight, #contentUnder"
+    },
+    {
+      "url": "^https://bakusai\\.com/",
+      "name": "爆サイ.com 写真",
+      "exampleUrl": "https://bakusai.com/thr_tl/acode=3/ctrid=0/ctgid=104/bid=5818/",
+      "nextLink": ".paging_nextlink > a",
+      "pageElement": "#threadListField"
+    },
+    {
+      "url": "^https://www\\.jp\\.square-enix\\.com/",
+      "name": "トピックス | SQUARE ENIX",
+      "exampleUrl": "https://www.jp.square-enix.com/topics/",
+      "nextLink": "li.next > a",
+      "pageElement": "#js-topic-list",
+      "nextQuery": "p",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 1000
+    },
+    {
+      "url": "^https://www\\.wwdjapan\\.com/",
+      "disableShowElement": true
+    },
     {
       "url": "https://wezard\\.net/",
       "disableBuildIn": true
@@ -1871,6 +1909,7 @@
       "url": "^https://music-book\\.jp/",
       "name": "music.jp",
       "exampleUrl": "https://music-book.jp/comic/store/rankingDetails?rankingType=D&page=1\nhttps://music-book.jp/video/category-21/recent\nhttps://music-book.jp/music/Genre/jpop/ranking/Music/weekly\nhttps://music-book.jp/book/store/genreDetails?id=1100",
+      "nextLink": "//li[contains(@class, 'active')][number()>0]/following-sibling::li[a][1][number()>0]/a",
       "pageElement": "//div[contains(concat(' ', @class, ' '), ' paging ')]/preceding-sibling::ul[contains(concat(@class, ' '), 'list ')]",
       "requestType": "frame",
       "responseDelay": 1000
@@ -2184,6 +2223,12 @@
       "name": "PONY CANYON NEWS",
       "exampleUrl": "https://news.ponycanyon.co.jp/",
       "pageElement": "//main/descendant::div[contains(concat(' ', @class, ' '), ' newsList ')][1]"
+    },
+    {
+      "url": "^https://www\\.tak-dcxi\\.com/",
+      "name": "TAKLOG",
+      "exampleUrl": "https://www.tak-dcxi.com/page/1",
+      "pageElement": ".ArchiveCards, head > style"
     }
   ]
 }
