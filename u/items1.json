@@ -60,6 +60,11 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://eetimes\\.itmedia\\.co\\.jp/ee/articles/2506/18/news037\\.html",
+      "requestType": "frame",
+      "responseDelay": 1000
+    },
+    {
       "url": "^https://bakusai\\.com/",
       "name": "爆サイ.com id=res_list",
       "exampleUrl": "https://bakusai.com/thr_res/acode=7/ctgid=123/bid=2493/tid=1604525/tp=1/rw=1/",
@@ -2229,6 +2234,19 @@
       "name": "TAKLOG",
       "exampleUrl": "https://www.tak-dcxi.com/page/1",
       "pageElement": ".ArchiveCards, head > style"
+    },
+    {
+      "url": "^https://www\\.pornbb\\.org/",
+      "name": "pornBB",
+      "exampleUrl": "https://www.pornbb.org/viewforum.php?f=27",
+      "nextLink": "//div[contains(concat(' ', @class, ' '), ' pagenav ')]//a[contains(@class, 'active')][number()>0]/following-sibling::a[1]",
+      "pageElement": ".forumline > .row:has(.topictitle)"
+    },
+    {
+      "url": "^https://thetv\\.jp/news/",
+      "name": "WEBザテレビジョン",
+      "exampleUrl": "https://thetv.jp/news/gravure/",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' pager ')]/preceding-sibling::ul[contains(concat(' ', @class, ' '), ' masonrylist ')]"
     }
   ]
 }
