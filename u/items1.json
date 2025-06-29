@@ -60,6 +60,19 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://www\\.jz-tamago\\.co\\.jp/",
+      "name": "JA全農たまご株式会社",
+      "requestType": "frame",
+      "responseDelay": 500
+    },
+    {
+      "url": "^https://www\\.mizkan\\.co\\.jp/",
+      "name": "ミツカングループ",
+      "exampleUrl": "https://www.mizkan.co.jp/qssearch.jsp?searchGenre=recipe_k&indexname=MenuRecipeIndex&sort=metainfonum1+desc&info_is_and=true&searchtype=kw&contentgroup=MenuRecipeGroup&limit=30&metainfoOption1=2&metainfoOption2=1&metainfoOption3=2&metainfoOption4=2&search=%E5%8D%B5",
+      "requestType": "frame",
+      "responseDelay": 500
+    },
+    {
       "url": "^https://eetimes\\.itmedia\\.co\\.jp/ee/articles/2506/18/news037\\.html",
       "requestType": "frame",
       "responseDelay": 1000
@@ -487,8 +500,8 @@
       "url": "^https://ebookjapan\\.yahoo\\.co\\.jp/",
       "name": "ebookjapan",
       "exampleUrl": "https://ebookjapan.yahoo.co.jp/theme/6/?page=2",
-      "pageElement": "ul:has(.book-item__cover)",
-      "framePageElement": "ul:has(.book-item__cover) img:not([src^='data:']):not([src*='loading_book.png'])",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' pagination ')]/preceding-sibling::*[.//div[contains(@class, 'item__cover')]]",
+      "framePageElement": "ul img[src*='/contents/thumb/']",
       "requestType": "frame",
       "responseDelay": 3000,
       "spa": true,
