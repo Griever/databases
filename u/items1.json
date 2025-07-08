@@ -1329,6 +1329,18 @@
       "pageElement": "#article_list > ul > li",
       "requestType": "frame",
       "responseDelay": 1000
+    },
+    {
+      "url": "^https?://[^/.]+\\.jugem\\.(jp|cc)/",
+      "name": "jugem",
+      "pageElement": "(\ndescendant::*[*[contains(concat(' ', @class, ' '), ' entry_c1 ')]][last()=1]/*[contains(@class, 'entry')][not(contains(@class, 'entry_navi'))]\n|id('main m-cont')/div[contains(@class, 'entry_area')]\n|id('container')/div[contains(concat(' ', @class, ' '), ' grid_container ')]\n|id('main entry_area')[2][@id='entry_area']/*\n|id('e_area')/*\n|id('main-inner entry')[2][@id='entry']\n|//table[@class='entrytable']\n|//article[starts-with(@id, 'post')]\n)[not(.//p[text()='一定期間更新がないため広告を表示しています'])]",
+      "_build_in": true
+    },
+    {
+      "url": "^https?://[^/.]+\\.jugem\\.(jp|cc)/",
+      "name": "jugem .entry",
+      "pageElement": "descendant::*[*[contains(concat(' ', @class, ' '), ' entry ')]][last()=1]/*[contains(@class, 'entry')][not(contains(@class, 'entry_navi'))][not(.//p[text()='一定期間更新がないため広告を表示しています'])]",
+      "_build_in": true
     }
   ],
   "MIDDLE_SITEINFO": [
@@ -1532,18 +1544,6 @@
       "exampleUrl": "https://thedigestweb.com/baseball/detail/id=62763 https://thedigestweb.com/topics_detail13/id=71621",
       "nextLink": "id('next')",
       "pageElement": "//section[@class='c-pager-area']/preceding-sibling::div[@class='l-container--inner']"
-    },
-    {
-      "url": "^https?://[^/.]+\\.jugem\\.(jp|cc)/",
-      "name": "jugem",
-      "pageElement": "(\ndescendant::*[*[contains(concat(' ', @class, ' '), ' entry_c1 ')]][last()=1]/*[contains(@class, 'entry')][not(contains(@class, 'entry_navi'))]\n|id('main m-cont')/div[contains(@class, 'entry_area')]\n|id('container')/div[contains(concat(' ', @class, ' '), ' grid_container ')]\n|id('main entry_area')[2][@id='entry_area']/*\n|id('e_area')/*\n|id('main-inner entry')[2][@id='entry']\n|//table[@class='entrytable']\n|//article[starts-with(@id, 'post')]\n)[not(.//p[text()='一定期間更新がないため広告を表示しています'])]",
-      "_build_in": true
-    },
-    {
-      "url": "^https?://[^/.]+\\.jugem\\.(jp|cc)/",
-      "name": "jugem .entry",
-      "pageElement": "descendant::*[*[contains(concat(' ', @class, ' '), ' entry ')]][last()=1]/*[contains(@class, 'entry')][not(contains(@class, 'entry_navi'))][not(.//p[text()='一定期間更新がないため広告を表示しています'])]",
-      "_build_in": true
     },
     {
       "url": "^https://([^/.]+\\.)?(?:rbbtoday|response|carcareplus|mycar-life|resemom|inside-games|gamespark|gamebusiness|roundup-gamers|animeanime|cho-animedia|cinemacafe|reanimal|cyclestyle|scansecurity|tsuhan-ec|manetatsu|media-innovation|nomooo|techno-edge|branc|irnote|green-economy|web3\\.gamebusiness|scan\\.netsecurity)\\.((?:ne\\.)?jp|com|net|global)/",
