@@ -60,6 +60,44 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://www\\.shopch\\.jp/",
+      "name": "ショップチャンネル",
+      "nextLink": "//li[contains(@class, 'is-active')][number()>0]/following-sibling::li[1]/a[number()>0]",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' mod-pager ')]/preceding-sibling::div[.//a[contains(@href, '/product/')]]",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
+      "url": "^https://www\\.walkerplus\\.com/special/fandomplus/article/",
+      "name": "Fandomplus",
+      "exampleUrl": "https://www.walkerplus.com/special/fandomplus/article/1106637/image13404702.html#13404702",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": "id('image-area')"
+    },
+    {
+      "url": "^https://ddnavi\\.com/article/\\d+/image/\\d+/",
+      "name": "ダ・ヴィンチWeb 次の画像 >>",
+      "exampleUrl": "https://ddnavi.com/article/1264910/image/14588977/",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "#attachment_img > .main_img"
+    },
+    {
+      "url": "^https?://ddnavi\\.com/",
+      "name": "ダ・ヴィンチ電子ナビ（マンガ）",
+      "exampleUrl": "https://ddnavi.com/serial/999956/a/",
+      "nextLink": "(descendant::a[@rel='next' or @class='next'][1])[//p[contains(@class, 'article-body__cate')]/a[normalize-space(text()[2])='マンガ']]",
+      "pageElement": "descendant::div[@class='article-body__main'][1]/*[figure]|\n//article[@class='article-body']/*[self::h1 or contains(@class, 'article-body__info')][//span[@class='current' and text()='1']]",
+      "removeElement": ".buttonlink2.aff"
+    },
+    {
+      "url": "^https://www\\.excite\\.co\\.jp/news/article/E\\d+",
+      "name": "エキサイトニュース 漫画",
+      "exampleUrl": "https://www.excite.co.jp/news/article/E1750683948865/",
+      "nextLink": "//a[contains(concat(' ', @class, ' '), ' pager-NextpageLink ')][.='続きを読む']|\nid('newsSeriesNextLink')/a[div/text()='次回はこちら']",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' story ')]/node()[not(\n  self::text() and normalize-space(self::text())='' or\n  contains(@class, 'ad-aside') or \n  @id='newsSeriesIndexLink' or\n  @id='newsSeriesNextLink' or\n  @id='newsSeriesIndexLinkBottom' or \n  @id='pager-Nextpage'\n)]\n|\n//div[contains(concat(' ', @class, ' '), ' article-header ')][//nav//a[@class='is-current' and text()='1']]"
+    },
+    {
       "url": "^https://www\\.jz-tamago\\.co\\.jp/",
       "name": "JA全農たまご株式会社",
       "requestType": "frame",
@@ -511,9 +549,9 @@
       "url": "^https://dmagazine\\.docomo\\.ne\\.jp/",
       "name": "dマガジン",
       "exampleUrl": "https://dmagazine.docomo.ne.jp/list/1A41/d5832538f56a9691ce9001e19493d60462c0a398b2b33f4cebf520b8dbed5a09/?page=2",
-      "nextLink": "a.bw_pager_next",
-      "pageElement": "#list_contents > .bw_listItems > li",
-      "framePageElement": "#list_contents > .bw_listItems > li",
+      "nextLink": "div.m-pager__next > a[href^='javascript:']",
+      "pageElement": "#list_contents li[data-disp-no]",
+      "framePageElement": "#list_contents li[data-disp-no]",
       "nextQuery": "page",
       "nextIncrement": 1,
       "nextStartValue": 1,
@@ -664,13 +702,6 @@
       "responseDelay": 3000,
       "spa": true,
       "spaDelay": 2000
-    },
-    {
-      "url": "^https://zozo\\.jp/",
-      "name": "ZOZOTOWN coordinate",
-      "exampleUrl": "https://zozo.jp/women-coordinate/",
-      "nextLink": "//link[@rel='next']",
-      "pageElement": "id('coordinate_list')"
     },
     {
       "url": "^https://zozo\\.jp/",
@@ -873,16 +904,6 @@
       "nextLink": "//li[@class='p-pagenation_list_item -next']/a",
       "pageElement": "id('resultArea')/li",
       "framePageElement": "id('resultArea')/li[last()]//img[contains(@src, '.jpg')]",
-      "requestType": "frame",
-      "responseDelay": 3000
-    },
-    {
-      "url": "^https://jp\\.wsj\\.com/news/",
-      "name": "jp.wsj.com",
-      "exampleUrl": "https://jp.wsj.com/news/types/j-capital-account?page=2",
-      "nextLink": "//a[contains(@class, 'next') and contains(@href, 'page=')]",
-      "pageElement": "//article[@data-id]",
-      "framePageElement": "//article[@data-id]",
       "requestType": "frame",
       "responseDelay": 3000
     },
@@ -1279,19 +1300,16 @@
     {
       "url": "^https://i-voce\\.jp/",
       "name": "VoCE 記事一覧",
-      "exampleUrl": "https://i-voce.jp/make-up/",
-      "pageElement": "//div[contains(concat(' ', @class, ' '), ' VcPagination_F0FMa ')]/preceding-sibling::*//li[@class='card_a8sNL']|\n//div[contains(@class, 'moreButton_b7zO6')]/preceding-sibling::ul",
+      "exampleUrl": [
+        "https://i-voce.jp/make-up/",
+        "https://i-voce.jp/featured-series/brands-special/",
+        "https://i-voce.jp/feed/663858/"
+      ],
       "removeElement": "li:has(p[class*='sponsored'])",
       "spa": true,
       "requestType": "frame",
-      "responseDelay": 1000
-    },
-    {
-      "url": "^https://i-voce\\.jp/",
-      "name": "VoCE /feed/",
-      "exampleUrl": "https://i-voce.jp/feed/663858/",
-      "pageElement": "//div[@class='wp']/*",
-      "spa": true
+      "responseDelay": 1000,
+      "disableWedata": true
     },
     {
       "url": "^http://wordgear\\.sblo\\.jp/(?:article|index)?",
@@ -1510,13 +1528,6 @@
       "comment": "has data-original. disabled http://wedata.net/items/2194"
     },
     {
-      "url": "^https://search\\.kakaku\\.com/.+category=",
-      "name": "search.kakaku.com",
-      "exampleUrl": "https://search.kakaku.com/%8cv%97%ca%83J%83b%83v%20200ml/?category=0030_0002_0015",
-      "nextLink": "//li[@class='p-pager_btn p-pager_btn_next']/a",
-      "pageElement": "//div[@class='p-cont_in']/div[@class='p-result_list_wrap']"
-    },
-    {
       "name": "LINE公式ブログ",
       "url": "^https://line-ja\\.officialblog\\.jp/",
       "nextLink": "#main a[rel='next']",
@@ -1664,6 +1675,7 @@
       "url": "^https://blog\\.hatena\\.ne\\.jp/-/campaign/odai/entries",
       "name": "今週のお題 - はてなブログ",
       "exampleUrl": "https://blog.hatena.ne.jp/-/campaign/odai/entries",
+      "nextLink": "a[rel='next']",
       "pageElement": ".campaign-blog-entry"
     },
     {
@@ -2260,6 +2272,12 @@
       "name": "WEBザテレビジョン",
       "exampleUrl": "https://thetv.jp/news/gravure/",
       "pageElement": "//div[contains(concat(' ', @class, ' '), ' pager ')]/preceding-sibling::ul[contains(concat(' ', @class, ' '), ' masonrylist ')]"
+    },
+    {
+      "url": "^https?://curren\\.blog32\\.fc2\\.com/",
+      "name": "CURREN't DRIVE",
+      "exampleUrl": "http://curren.blog32.fc2.com/",
+      "pageElement": "//body/*[self::ul[.//a[contains(@class, 'permanent_link')]] or contains(@id|@class, 'entry_')]"
     }
   ]
 }
