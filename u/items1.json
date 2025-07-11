@@ -21,10 +21,12 @@
     "http://wedata.net/items/61099": "bad",
     "http://wedata.net/items/61110": "bad",
     "http://wedata.net/items/63728": "tumblr canonical",
+    "http://wedata.net/items/66481": "bad",
     "http://wedata.net/items/76807": "bad",
     "http://wedata.net/items/76907": "bad",
     "http://wedata.net/items/77079": "bad",
     "http://wedata.net/items/77203": "thumbnail inf",
+    "http://wedata.net/items/77487": "bad",
     "http://wedata.net/items/77754": "tenhou bad",
     "http://wedata.net/items/80660": "td-block-row",
     "http://wedata.net/items/80835": "dummy",
@@ -59,6 +61,10 @@
     "http://wedata.net/items/86138": "bad, nl"
   },
   "TOP_SITEINFO": [
+    {
+      "url": "^https://cybozushiki\\.cybozu\\.co\\.jp/",
+      "showElement": "img.js-lazy"
+    },
     {
       "url": "^https://www\\.shopch\\.jp/",
       "name": "ショップチャンネル",
