@@ -1369,6 +1369,14 @@
   ],
   "MIDDLE_SITEINFO": [
     {
+      "url": "^https://pholder\\.com/",
+      "name": "Pholder",
+      "pageElement": "#Slideshow > :not(div[style*='background-color'])",
+      "framePageElement": "#Slideshow article  > a > img",
+      "requestType": "frame",
+      "responseDelay": 10000
+    },
+    {
       "url": "^https?://.+/(forum|thread).+",
       "name": "forum447",
       "nextLink": "//a[@class='next' or @class='nxt']",
@@ -2284,6 +2292,1202 @@
       "name": "CURREN't DRIVE",
       "exampleUrl": "http://curren.blog32.fc2.com/",
       "pageElement": "//body/*[self::ul[.//a[contains(@class, 'permanent_link')]] or contains(@id|@class, 'entry_')]"
+    }
+  ],
+  "SITE_SETTINGS": [
+    {
+      "disableBuildIn": true,
+      "url": "^https?://(?:code|enterprise|marke|ec|biz|hr|edtech|product)zine\\.jp/article/detail"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https?://(?:[^/]+\\.)?(?:instagram|youtube|tiktok|hulu)(?:\\.[^./]{2,3}){1,2}/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://www\\.grajapa\\.shueisha\\.co\\.jp/weeklyplayboy"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://carview\\.yahoo\\.co\\.jp/news/detail/.+/photo/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https?://(?:[^/]+\\.)?bilibili(?:\\.[^./]{2,3}){1,2}/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://steamcommunity\\.com/app/\\d+/discussions/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://mirashiru\\.dai-ichi-life\\.co\\.jp/.*list"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://column\\.sp\\.baseball\\.findfriends\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://nishispo\\.nishinippon\\.co\\.jp/article/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://www\\.saladclub\\.jp/recipe/search\\.html"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://www\\.monotaro\\.com/s/(q-|\\?(.+&)?q=)"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.giveitlove\\.com/\\w+/category/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://select\\.mamastar\\.jp/\\d+/?($|\\?|#)"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://studywalker\\.jp/minitest/\\d+/\\d+/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://[^/]+\\.(?:firebaseapp|web)\\.app/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://jbpress\\.ismedia\\.jp/articles/-/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://creatorzine\\.jp/article/detail/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://\\w+\\.ismedia\\.jp/articles/-/\\d+"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.extrafabulouscomics\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://natgeo\\.nikkeibp\\.co\\.jp/atcl"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://otocoto\\.jp/[^/]+(/|[?#].*)?$"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1500,
+      "url": "^https://puyopuyoquest\\.sega-net\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1500,
+      "url": "^https://nhk-charactershop-tokyo\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://eigaland\\.com/topics/\\?p=\\d+"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https?://(?:www\\.)?dailymotion\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.osaka-monorail\\.co\\.jp/"
+    },
+    {
+      "spa": true,
+      "spaDelay": 1000,
+      "url": "^https://fan\\.books\\.rakuten\\.co\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://news\\.careerconnection\\.jp/"
+    },
+    {
+      "css": ".posts li:after { background: transparent !important; }",
+      "url": "^https://www\\.fashion-headline\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://shopdisney\\.disney\\.co\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://the-liberty\\.com/article/\\d"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.cbnews\\.jp/news/entry/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://maidonanews\\.jp/article/\\d+"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 500,
+      "url": "^https://www\\.subaru\\.co\\.jp/sports/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.digimart\\.net/search\\?"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1500,
+      "url": "^https://niziu\\.com/s/n123/page/news"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "https://gadgetsnow\\.indiatimes\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.kojimaproductions\\.jp/"
+    },
+    {
+      "disableShowElement": true,
+      "url": "^https://www\\.rikujyokyogi\\.co\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://fumufumunews\\.jp/articles/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https?://(?:[^/]+\\.)?twitter\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https?://(?:[^/]+\\.)?pornhub\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 500,
+      "url": "^https://ganref\\.jp/photo_contests/"
+    },
+    {
+      "spa": true,
+      "url": "^https://fortune\\.line\\.me/charmmy/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://www\\.prime1studio\\.co\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://www\\.titicaca-online\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.thejakartapost\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://www\\.bunendo-online\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://search-voi\\.0101\\.co\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.jalan\\.net/.*?search"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 500,
+      "url": "^https://www\\.cyberagent\\.co\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://bushiroad-creative\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://www\\.mikanakashima\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^http://scienceandtechnology\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.fotocommunity\\.com/"
+    },
+    {
+      "spa": true,
+      "url": "^https://uchi\\.tokyo-gas\\.co\\.jp/"
+    },
+    {
+      "url": "^https://www\\.jungledragon\\.com/",
+      "showElement": ".photos img"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://www\\.laineygossip\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://commons\\.nicovideo\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 2000,
+      "url": "^https://news\\.tv-asahi\\.co\\.jp/"
+    },
+    {
+      "disableFixImage": true,
+      "disableShowElement": true,
+      "url": "^https://www\\.scsagamihara\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://camp-fire\\.jp/projects/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://info\\.nextmode\\.co\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https?://ecocar\\.autoc-one\\.jp/"
+    },
+    {
+      "disableFixImage": true,
+      "url": "^https://community\\.fandom\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://celebmafia\\.com/search/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://cache\\.sqex-bridge\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.omegawatches\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://v-storage\\.bnarts\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://yoi\\.shueisha\\.co\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https?://design\\.web-hon\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.nintendo\\.co\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://mag\\.nhk-book\\.co\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://twilog\\.togetter\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://forum\\.gamer\\.com\\.tw/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://\\w{2,3}\\.freepik\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1500,
+      "url": "^https://akibamaidwar\\.com/news"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1500,
+      "url": "^https://dororo-anime\\.com/news"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://plus\\.luremaga\\.jp/\\d+"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://hikinginfinland\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.chinatimes\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://bunshun\\.jp/articles/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://style\\.ehonnavi\\.net/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.deviantart\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.pinclipart\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.dreamstime\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.bunkyo\\.org\\.br/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.allposters\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://acafe\\.msc\\.sony\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.boredpanda\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://www\\.refinery29\\.com/"
+    },
+    {
+      "enablePagerFunction": true,
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "spa": true,
+      "url": "^https://naruto-official\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.omosan-st\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://www\\.kurashiru\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "disableFixImage": true,
+      "disableShowElement": true,
+      "url": "^https://www\\.oricon\\.co\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://news\\.netkeiba\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.nojima\\.co\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.titech\\.ac\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://bodoge\\.hoobby\\.net/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.jroitacity\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.slashfilm\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.joetsu\\.ne\\.jp/"
+    },
+    {
+      "spa": true,
+      "spaDelay": 1000,
+      "url": "^https://github\\.com/search\\?"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.tvfanatic\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.slashgear\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.vogue\\.com\\.au/"
+    },
+    {
+      "spa": true,
+      "spaDelay": 2000,
+      "url": "^https://forum\\.vivaldi\\.net/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.oneesports\\.gg/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 2000,
+      "url": "^https://booklive\\.jp/index/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://go\\.sbisec\\.co\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://jp\\.misumi-ec\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://superstarsbio\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://laopinion\\.com\\.ar/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "spa": true,
+      "url": "^https://dokusho-ojikan\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.askul\\.co\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.sekaimon\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.houyhnhnm\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.nintendo\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://nureyon\\.com/search"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://magazinesummit\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://fitgirlsdiary\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://orionfeedback\\.org/"
+    },
+    {
+      "spa": true,
+      "url": "^https://dengekionline\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.ukrinform\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.my-kagawa\\.jp/"
+    },
+    {
+      "spa": true,
+      "url": "^https://www\\.autoblog\\.com/"
+    },
+    {
+      "spa": true,
+      "url": "^https://www\\.vecteezy\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.gamestop\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://www\\.chibimaru.tv/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.artofit\\.org/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 2000,
+      "url": "^https://www\\.s-manga\\.net/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://www\\.eonline\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://www\\.tbsradio\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://okazaki-kanko\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://baila\\.hpplus\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://chrome-stats\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://b\\.hatena\\.ne\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.ssnp\\.co\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 500,
+      "url": "^https://oceans-nadia\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://www\\.jujunyc\\.net/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.sbs\\.com\\.au/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.net-frx\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://\\w+\\.xvideos\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://news\\.ntv\\.co\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.250music\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 500,
+      "url": "^https://manga-yomeru\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 500,
+      "url": "^https://www\\.bodybook\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://minkabu\\.jp/yutai/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.postfun\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 2000,
+      "url": "^https://www\\.soolide\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "spa": true,
+      "url": "^https://delishkitchen\\.tv/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.bb-navi\\.com/"
+    },
+    {
+      "spa": true,
+      "url": "^https://rightcode\\.co\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://blog\\.tsushin\\.tv/"
+    },
+    {
+      "spa": true,
+      "url": "^https://square\\.unext\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.beatink\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://www\\.nippon\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.pexels\\.com/"
+    },
+    {
+      "spa": true,
+      "spaDelay": 1000,
+      "url": "^https://www\\.skypce\\.net/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.tumbex\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.point-i\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.manegy\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.magmoe\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.fripper\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://myanimelist\\.net/"
+    },
+    {
+      "enablePagerFunction": true,
+      "url": "^https://allabout\\.co\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.e-begin\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.fanpop\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://www\\.congre\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.inprnt\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://superbalist\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://jikayosha\\.jp/\\d+"
+    },
+    {
+      "spa": true,
+      "spaDelay": 1000,
+      "url": "^https://huggingface\\.co/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.pixiv\\.net/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://slickdeals\\.net/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://mangapedia\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.47club\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://fashionpost\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://rhythmzone\\.net/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://toyotatimes\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://news\\.audee\\.jp/"
+    },
+    {
+      "spa": true,
+      "spaDelay": 1000,
+      "url": "^https://scrambleweb\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 2000,
+      "url": "^https://news\\.ameba\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://novel\\.prcm\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 2000,
+      "url": "^https://shigoto100\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.ekiten\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.teahub\\.io/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.alamy\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1500,
+      "url": "^https://koibanashi\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://deviceplus\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://liginc\\.co\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://lp\\.p\\.pia\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.barks\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://yourfones\\.net/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.veoh\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.asos\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://moneyworld\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^http://ranobe-jkt\\.net/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://audiostock\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://\\w+\\.5chan\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://hypebeast\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://findy-code\\.io/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://niewmedia\\.com/"
+    },
+    {
+      "spa": true,
+      "spaDelay": 3000,
+      "url": "^https://videohive\\.net/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://bitstar\\.tokyo/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https?://www\\.amazon\\."
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 500,
+      "url": "^https://biomarket\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://netagear\\.net/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://www\\.bbc\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://openmoney\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://v-storage\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://wallhere\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://sdxlturbo\\.ai/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://beergirl\\.net/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://joshinweb\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://futurism\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://coconala\\.com/"
+    },
+    {
+      "disableShowElement": true,
+      "url": "^https://e-hentai\\.org/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://\\w+\\.holiday/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://g-witch\\.net/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://jp\\.wsj\\.com/"
+    },
+    {
+      "disableShowElement": true,
+      "url": "^https://sirabee\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://twicomi\\.com/"
+    },
+    {
+      "enablePagerFunction": true,
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://readyfor\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://pholder\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://faponic\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://mirapri\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://jp\\.news\\.cn/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://myhockey\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://cookpad\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://matomeno\\.in/"
+    },
+    {
+      "enablePagerFunction": true,
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "spa": true,
+      "url": "^https://friday\\.gold/"
+    },
+    {
+      "url": "^https://posfie\\.com/@"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://voyapon\\.com/"
+    },
+    {
+      "spa": true,
+      "url": "^https://newscast\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://my-best\\.com/"
+    },
+    {
+      "disableFixImage": true,
+      "disableShowElement": true,
+      "url": "^https://ddnavi\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://iotnews\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://feedly\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://twiman\\.net/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://cartune\\.me/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "spa": true,
+      "spaDelay": 1000,
+      "url": "^https://bitbank\\.cc/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://cgfrog\\.com/"
+    },
+    {
+      "enablePagerFunction": true,
+      "url": "^https://madcity\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://pxhere\\.com/"
+    },
+    {
+      "enablePagerFunction": true,
+      "url": "^https://mtrl\\.tokyo/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://creeto\\.com/"
+    },
+    {
+      "spa": true,
+      "url": "^https://nnn\\.ed\\.jp/"
+    },
+    {
+      "spa": true,
+      "spaDelay": 2000,
+      "url": "^https://annict\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://nozomi\\.la/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://yandex\\.ru/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 2000,
+      "url": "^https://storys\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://teller\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^http://areaers\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://vimeo\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://hugmug\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://isuta\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 500,
+      "url": "^https://wowma\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://fudge\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1500,
+      "url": "^https://spaia\\.jp/"
+    },
+    {
+      "disableFixImage": true,
+      "url": "^https://eiga\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://aukro\\.cz/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://time\\.com/"
+    },
+    {
+      "spa": true,
+      "url": "^https://cremu\\.jp/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://hbx\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://itch\\.io/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "spa": true,
+      "spaDelay": 1000,
+      "url": "^https://alu\\.jp/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "https://txxx.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://[^/]+/@"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://x\\.com/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https?://api\\."
+    },
+    {
+      "disableBuildIn": true,
+      "url": "/_(?:ct|tags)/"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "read\\.cgi"
     }
   ]
 }
