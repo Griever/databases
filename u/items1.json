@@ -62,6 +62,35 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://teratail\\.com/",
+      "name": "teratail",
+      "exampleUrl": "https://teratail.com/",
+      "nextLink": "//p[contains(@class, 'pagination_current')]/following-sibling::button[1][number() > 0]",
+      "pageElement": "//main/div/article",
+      "framePageElement": "//main/div/article",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 5000,
+      "spa": true,
+      "spaDelay": 1000
+    },
+    {
+      "url": "^https://blogger\\.ameba\\.jp/",
+      "name": "Ameba公式ジャンル",
+      "exampleUrl": "https://blogger.ameba.jp/genres/america/blogs/ranking",
+      "nextLink": "//li[contains(concat(' ', @class, ' '), ' c-pager__item--next ')]/a[.='次の20件']",
+      "pageElement": "//ul[contains(concat(' ', @class, ' '), ' c-pager ')]/preceding-sibling::*[.//a]",
+      "spa": true
+    },
+    {
+      "url": "^https://blogtag\\.ameba\\.jp/",
+      "name": "人気のハッシュタグ｜アメーバブログ（アメブロ）",
+      "requestType": "frame",
+      "responseDelay": 1000
+    },
+    {
       "url": "^https://cybozushiki\\.cybozu\\.co\\.jp/",
       "showElement": "img.js-lazy"
     },
@@ -461,7 +490,8 @@
       "exampleUrl": "https://fashionpost.jp/news/page/3",
       "pageElement": "main > section > .l-container > div > div > ul",
       "spa": true,
-      "spaDelay": 2500
+      "spaDelay": 2500,
+      "disableBuildin": true
     },
     {
       "url": "^https://www\\.alba\\.co\\.jp/",
@@ -1369,6 +1399,55 @@
   ],
   "MIDDLE_SITEINFO": [
     {
+      "url": "^https://www\\.soumu\\.go\\.jp/senkyo/",
+      "name": "総務省｜なるほど！選挙",
+      "exampleUrl": "https://www.soumu.go.jp/senkyo/senkyo_s/naruhodo/naruhodo03.html",
+      "nextLink": "id('contentBody')//li[contains(concat(' ', @class, ' '), ' next ')]/a",
+      "pageElement": "id('contentBody')/*"
+    },
+    {
+      "url": "^https://tete009\\.seesaa\\.net/",
+      "name": "テテのつぶやき",
+      "exampleUrl": "https://tete009.seesaa.net/",
+      "pageElement": ".h1body > :is(.contents, :has(.bbody))"
+    },
+    {
+      "url": "^https://10magazine\\.com/",
+      "name": "10 Magazine",
+      "exampleUrl": "https://10magazine.com/category/news/page/2/",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": ".eltdf-blog-holder-inner"
+    },
+    {
+      "url": "^https://www\\.blessthisstuff\\.com/",
+      "name": "Bless This Stuff",
+      "exampleUrl": "https://www.blessthisstuff.com/latest/p/7/",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "#main-nav ~ div.container-main > *"
+    },
+    {
+      "url": "^https://www\\.goo-net\\.com/cgi-bin/",
+      "name": "【グーネット】",
+      "exampleUrl": "https://www.goo-net.com/cgi-bin/fsearch/goo_used_search.cgi?category=USDN",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "//div[starts-with(@id, 'tr_')]"
+    },
+    {
+      "url": "^https://www\\.kaminotane\\.com/",
+      "name": "かみのたね",
+      "exampleUrl": "https://www.kaminotane.com/2025/06/03/27178/",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": "id('postHeader')|id('hideContent')/*"
+    },
+    {
+      "url": "^https://tw\\.buy\\.yahoo\\.com/search/",
+      "name": "Yahoo購物中心",
+      "exampleUrl": "https://tw.buy.yahoo.com/search/product?p=2&qt=product&cid=&clv=&guccounter=1",
+      "pageElement": ".main ul.gridList > a",
+      "requestType": "frame",
+      "responseDelay": 1000
+    },
+    {
       "url": "^https://pholder\\.com/",
       "name": "Pholder",
       "pageElement": "#Slideshow > :not(div[style*='background-color'])",
@@ -1898,10 +1977,9 @@
     {
       "url": "^https://commons\\.nicovideo\\.jp/",
       "exampleUrl": "https://commons.nicovideo.jp/search/material/all?category=%E5%8A%B9%E6%9E%9C%E9%9F%B3&transit_from=commons_librarytop_category_kv",
-      "nextLink": "//a[@rel='next']",
-      "pageElement": ".autopagerize_page_element",
+      "framePageElement": "a[href*='/nc']",
       "requestType": "frame",
-      "responseDelay": 500
+      "responseDelay": 3000
     },
     {
       "url": "^https://aur\\.archlinux\\.org/packages",
@@ -2040,11 +2118,11 @@
       "minHeight": 100
     },
     {
-      "url": "^https://one-piece\\.com/anime/",
+      "url": "^https://one-piece\\.com/anime/\\d",
       "name": "ONE PIECE.com",
-      "exampleUrl": "https://one-piece.com/anime/index.html",
-      "nextLink": "//li[@data-type='next']/a",
-      "pageElement": "//div[contains(concat(' ', @class, ' '), ' el-pagination--set ')]/following-sibling::div[contains(concat(' ', @class, ' '), ' el-card-block ')]"
+      "exampleUrl": "https://one-piece.com/anime/115/index.html",
+      "nextLink": ".el-page-navigation-link__next > a",
+      "pageElement": "#main-content > section:has(.el-page-navigation-link) > :not(.el-btn)"
     },
     {
       "url": "^https://slickdeals\\.net/f/",
@@ -2340,11 +2418,6 @@
       "url": "^https://www\\.saladclub\\.jp/recipe/search\\.html"
     },
     {
-      "requestType": "frame",
-      "responseDelay": 3000,
-      "url": "^https://www\\.monotaro\\.com/s/(q-|\\?(.+&)?q=)"
-    },
-    {
       "disableBuildIn": true,
       "url": "^https://www\\.giveitlove\\.com/\\w+/category/"
     },
@@ -2416,10 +2489,6 @@
       "url": "^https://news\\.careerconnection\\.jp/"
     },
     {
-      "css": ".posts li:after { background: transparent !important; }",
-      "url": "^https://www\\.fashion-headline\\.com/"
-    },
-    {
       "disableBuildIn": true,
       "url": "^https://shopdisney\\.disney\\.co\\.jp/"
     },
@@ -2448,11 +2517,6 @@
       "requestType": "frame",
       "responseDelay": 1500,
       "url": "^https://niziu\\.com/s/n123/page/news"
-    },
-    {
-      "requestType": "frame",
-      "responseDelay": 3000,
-      "url": "https://gadgetsnow\\.indiatimes\\.com/"
     },
     {
       "disableBuildIn": true,
@@ -2494,10 +2558,6 @@
       "url": "^https://www\\.titicaca-online\\.jp/"
     },
     {
-      "disableBuildIn": true,
-      "url": "^https://www\\.thejakartapost\\.com/"
-    },
-    {
       "requestType": "frame",
       "responseDelay": 1000,
       "url": "^https://www\\.bunendo-online\\.com/"
@@ -2510,6 +2570,10 @@
     {
       "disableBuildIn": true,
       "url": "^https://www\\.jalan\\.net/.*?search"
+    },
+    {
+      "url": "^https://www\\.melonbooks\\.co\\.jp/",
+      "disableBuildIn": true
     },
     {
       "requestType": "frame",
@@ -2549,11 +2613,6 @@
     },
     {
       "requestType": "frame",
-      "responseDelay": 1000,
-      "url": "^https://commons\\.nicovideo\\.jp/"
-    },
-    {
-      "requestType": "frame",
       "responseDelay": 2000,
       "url": "^https://news\\.tv-asahi\\.co\\.jp/"
     },
@@ -2570,12 +2629,6 @@
     {
       "disableBuildIn": true,
       "url": "^https://info\\.nextmode\\.co\\.jp/"
-    },
-    {
-      "disableBuildIn": true,
-      "requestType": "frame",
-      "responseDelay": 3000,
-      "url": "^https?://ecocar\\.autoc-one\\.jp/"
     },
     {
       "disableFixImage": true,
@@ -2605,10 +2658,6 @@
     },
     {
       "disableBuildIn": true,
-      "url": "^https?://design\\.web-hon\\.com/"
-    },
-    {
-      "disableBuildIn": true,
       "url": "^https://www\\.nintendo\\.co\\.jp/"
     },
     {
@@ -2623,10 +2672,6 @@
     {
       "disableBuildIn": true,
       "url": "^https://forum\\.gamer\\.com\\.tw/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://\\w{2,3}\\.freepik\\.com/"
     },
     {
       "requestType": "frame",
@@ -2663,14 +2708,6 @@
     {
       "disableBuildIn": true,
       "url": "^https://www\\.deviantart\\.com/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://www\\.pinclipart\\.com/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://www\\.dreamstime\\.com/"
     },
     {
       "disableBuildIn": true,
@@ -2873,11 +2910,6 @@
     {
       "requestType": "frame",
       "responseDelay": 3000,
-      "url": "^https://www\\.eonline\\.com/"
-    },
-    {
-      "requestType": "frame",
-      "responseDelay": 3000,
       "url": "^https://www\\.tbsradio\\.jp/"
     },
     {
@@ -2909,10 +2941,6 @@
       "requestType": "frame",
       "responseDelay": 1000,
       "url": "^https://www\\.jujunyc\\.net/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://www\\.sbs\\.com\\.au/"
     },
     {
       "disableBuildIn": true,
@@ -2983,6 +3011,10 @@
       "url": "^https://www\\.beatink\\.com/"
     },
     {
+      "url": "^https://forbesjapan\\.com/",
+      "disableBuildIn": true
+    },
+    {
       "requestType": "frame",
       "responseDelay": 3000,
       "url": "^https://www\\.nippon\\.com/"
@@ -3011,14 +3043,6 @@
     {
       "disableBuildIn": true,
       "url": "^https://www\\.magmoe\\.com/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://www\\.fripper\\.jp/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://myanimelist\\.net/"
     },
     {
       "enablePagerFunction": true,
@@ -3073,17 +3097,9 @@
       "url": "^https://www\\.47club\\.jp/"
     },
     {
-      "disableBuildIn": true,
-      "url": "^https://fashionpost\\.jp/"
-    },
-    {
       "requestType": "frame",
       "responseDelay": 1000,
       "url": "^https://rhythmzone\\.net/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://toyotatimes\\.jp/"
     },
     {
       "disableBuildIn": true,
@@ -3136,10 +3152,6 @@
     {
       "disableBuildIn": true,
       "url": "^https://lp\\.p\\.pia\\.jp/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://www\\.barks\\.jp/"
     },
     {
       "disableBuildIn": true,
@@ -3265,19 +3277,10 @@
       "url": "^https://sirabee\\.com/"
     },
     {
-      "requestType": "frame",
-      "responseDelay": 3000,
-      "url": "^https://twicomi\\.com/"
-    },
-    {
       "enablePagerFunction": true,
       "requestType": "frame",
       "responseDelay": 1000,
       "url": "^https://readyfor\\.jp/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://pholder\\.com/"
     },
     {
       "disableBuildIn": true,
@@ -3341,14 +3344,6 @@
       "url": "^https://feedly\\.com/"
     },
     {
-      "disableBuildIn": true,
-      "url": "^https://twiman\\.net/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://cartune\\.me/"
-    },
-    {
       "requestType": "frame",
       "responseDelay": 1000,
       "spa": true,
@@ -3386,10 +3381,6 @@
     },
     {
       "disableBuildIn": true,
-      "url": "^https://nozomi\\.la/"
-    },
-    {
-      "disableBuildIn": true,
       "url": "^https://yandex\\.ru/"
     },
     {
@@ -3399,15 +3390,7 @@
     },
     {
       "disableBuildIn": true,
-      "url": "^https://teller\\.jp/"
-    },
-    {
-      "disableBuildIn": true,
       "url": "^http://areaers\\.jp/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://vimeo\\.com/"
     },
     {
       "disableBuildIn": true,
