@@ -62,6 +62,13 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://full-count\\.jp/\\d+",
+      "name": "Full-Count 記事",
+      "exampleUrl": "https://full-count.jp/2025/08/01/post1802824/",
+      "nextLink": "//nav[@class='c-pagination']/span/following-sibling::a[1]",
+      "pageElement": ".c-wp-post > *:not([class*='-ads'])"
+    },
+    {
       "url": "^https://teratail\\.com/",
       "name": "teratail",
       "exampleUrl": "https://teratail.com/",
@@ -1399,6 +1406,13 @@
   ],
   "MIDDLE_SITEINFO": [
     {
+      "url": "^https?://matoyoko\\.com/",
+      "name": "まとめ横丁 ログデータ",
+      "exampleUrl": "http://matoyoko.com/News/log/logdt/20250727/",
+      "nextLink": "//link[@rel='prev']",
+      "pageElement": "id('log_bk')/div[contains(@class, 'info')]"
+    },
+    {
       "url": "^https://www\\.soumu\\.go\\.jp/senkyo/",
       "name": "総務省｜なるほど！選挙",
       "exampleUrl": "https://www.soumu.go.jp/senkyo/senkyo_s/naruhodo/naruhodo03.html",
@@ -2375,10 +2389,6 @@
   "SITE_SETTINGS": [
     {
       "disableBuildIn": true,
-      "url": "^https?://(?:code|enterprise|marke|ec|biz|hr|edtech|product)zine\\.jp/article/detail"
-    },
-    {
-      "disableBuildIn": true,
       "url": "^https?://(?:[^/]+\\.)?(?:instagram|youtube|tiktok|hulu)(?:\\.[^./]{2,3}){1,2}/"
     },
     {
@@ -2444,6 +2454,10 @@
     {
       "disableBuildIn": true,
       "url": "^https://\\w+\\.ismedia\\.jp/articles/-/\\d+"
+    },
+    {
+      "url": "^https://itest\\.5ch\\.net/(?!.*archives)",
+      "disableBuildIn": true
     },
     {
       "disableBuildIn": true,
@@ -2646,6 +2660,10 @@
     },
     {
       "disableBuildIn": true,
+      "url": "^https://joetsu\\.yukiguni\\.town/"
+    },
+    {
+      "disableBuildIn": true,
       "url": "^https://www\\.omegawatches\\.jp/"
     },
     {
@@ -2779,10 +2797,6 @@
       "url": "^https://www\\.slashfilm\\.com/"
     },
     {
-      "disableBuildIn": true,
-      "url": "^https://www\\.joetsu\\.ne\\.jp/"
-    },
-    {
       "spa": true,
       "spaDelay": 1000,
       "url": "^https://github\\.com/search\\?"
@@ -2807,6 +2821,10 @@
     {
       "disableBuildIn": true,
       "url": "^https://www\\.oneesports\\.gg/"
+    },
+    {
+      "url": "^https://www\\.philstar\\.com/",
+      "disableBuildIn": true
     },
     {
       "requestType": "frame",
@@ -2892,6 +2910,10 @@
     {
       "disableBuildIn": true,
       "url": "^https://www\\.gamestop\\.com/"
+    },
+    {
+      "url": "^https://www\\.nytimes\\.com/",
+      "disableBuildIn": true
     },
     {
       "requestType": "frame",
