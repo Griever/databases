@@ -62,6 +62,22 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://www\\.gravity\\.place/",
+      "name": "Gravity",
+      "exampleUrl": "https://www.gravity.place/allstarlist?page=2",
+      "pageElement": ".page > a",
+      "disableBuildIn": true,
+      "spa": true,
+      "spaDelay": 1000
+    },
+    {
+      "url": "^https://barks\\.jp/",
+      "name": "BARKS",
+      "exampleUrl": "https://barks.jp/tag/news/",
+      "nextLink": "//li[span[@aria-current='page']][number()>0]/following-sibling::li[1][number()>0]/a",
+      "pageElement": ".article_lists_flex"
+    },
+    {
       "url": "^https://full-count\\.jp/\\d+",
       "name": "Full-Count 記事",
       "exampleUrl": "https://full-count.jp/2025/08/01/post1802824/",
@@ -817,12 +833,11 @@
       "insertBefore": "id('bres')/following-sibling::node()[1]"
     },
     {
-      "url": "^https://(www\\.)?barks\\.jp/(?:feature|news)/",
-      "name": "BARKS ニュース・特集",
-      "exampleUrl": "https://www.barks.jp/news/?id=1000060027&page=2",
-      "nextLink": "descendant::article[1]/nav/a[@role='button'][not(./following-sibling::*)]",
-      "pageElement": "descendant::article[1]/section[1]",
-      "spa": true
+      "url": "^https://barks\\.jp/news/\\d+",
+      "name": "BARKS 記事",
+      "exampleUrl": "https://barks.jp/news/639977/1/",
+      "nextLink": ".next-page > a",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' custom-pagination ')]/preceding-sibling::*"
     },
     {
       "url": "^https://booklive\\.jp/index/",
@@ -1389,7 +1404,7 @@
       "exampleUrl": "https://www.palcloset.jp/addons/pal/blog/list/",
       "pageElement": "#article_list > ul > li",
       "requestType": "frame",
-      "responseDelay": 1000
+      "responseDelay": 2000
     },
     {
       "url": "^https?://[^/.]+\\.jugem\\.(jp|cc)/",
@@ -3417,6 +3432,10 @@
     {
       "disableBuildIn": true,
       "url": "^https://hugmug\\.jp/"
+    },
+    {
+      "url": "^https://abema\\.tv/",
+      "disableBuildIn": true
     },
     {
       "requestType": "frame",
