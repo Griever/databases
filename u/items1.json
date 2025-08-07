@@ -62,6 +62,13 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://www\\.emsodm\\.com/",
+      "name": "EMSOne",
+      "exampleUrl": "https://www.emsodm.com/gotonewsSearchlist.do?method=gotonewsSearchlist\nhttps://www.emsodm.com/gotonewsSearchlist.do?method=gotonewsSearchlist&offset1=0&offset2=0&offset3=0&tabType=2#gsc.tab=0",
+      "nextLink": "//img[@src='common/images/next.gif']/parent::a",
+      "pageElement": "id('ysco')/../*"
+    },
+    {
       "url": "^https://www\\.gravity\\.place/",
       "name": "Gravity",
       "exampleUrl": "https://www.gravity.place/allstarlist?page=2",
@@ -1682,8 +1689,8 @@
       "url": "^https://([^/.]+\\.)?(?:rbbtoday|response|carcareplus|mycar-life|resemom|inside-games|gamespark|gamebusiness|roundup-gamers|animeanime|cho-animedia|cinemacafe|reanimal|cyclestyle|scansecurity|tsuhan-ec|manetatsu|media-innovation|nomooo|techno-edge|branc|irnote|green-economy|web3\\.gamebusiness|scan\\.netsecurity)\\.((?:ne\\.)?jp|com|net|global)/",
       "name": "IID ニュースメディア",
       "exampleUrl": "https://www.rbbtoday.com/article/?page=2",
-      "nextLink": "//ol[@class='paging-list cf']/*[contains(@class, 'current')]/following-sibling::*[1]/a[contains(@href, 'page=')]|//li[contains(concat(' ', @class, ' '), ' paging-next ')]/a[contains(@href, 'page=')]",
-      "pageElement": "main > .main-news > *"
+      "nextLink": "//link[@rel='next'][contains(@href, 'page=')]",
+      "pageElement": "//main/*[contains(@class, 'main-topics') or contains(@class, 'main-news')]"
     },
     {
       "url": "^https://\\w{2,3}\\.freepik\\.com/",
