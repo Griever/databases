@@ -21,6 +21,7 @@
     "http://wedata.net/items/61099": "bad",
     "http://wedata.net/items/61110": "bad",
     "http://wedata.net/items/63728": "tumblr canonical",
+    "http://wedata.net/items/65156": "bad, pe",
     "http://wedata.net/items/66481": "bad",
     "http://wedata.net/items/76807": "bad",
     "http://wedata.net/items/76907": "bad",
@@ -39,6 +40,7 @@
     "http://wedata.net/items/81996": "bad",
     "http://wedata.net/items/82052": "unnecessary",
     "http://wedata.net/items/85313": "bad",
+    "http://wedata.net/items/85401": "bad, nl",
     "http://wedata.net/items/85451": "dummy",
     "http://wedata.net/items/85560": "tumblr canonical",
     "http://wedata.net/items/85562": "tumblr canonical",
@@ -61,6 +63,35 @@
     "http://wedata.net/items/86138": "bad, nl"
   },
   "TOP_SITEINFO": [
+    {
+      "url": "^https://koubo\\.jp/",
+      "exampleUrl": "https://koubo.jp/contest/list?c=4",
+      "requestType": "frame",
+      "responseDelay": 5000,
+      "framePageElement": "main > ul > li > article",
+      "spa": true,
+      "spaDelay": 1000
+    },
+    {
+      "url": "^https://www\\.shogakukan\\.co\\.jp/",
+      "name": "小学館",
+      "exampleUrl": "https://www.shogakukan.co.jp/dvd/genre/300000?page=2",
+      "nextLink": "//li[contains(@class, 'current')][number()>0]/following-sibling::li[1][number()>0]",
+      "pageElement": "//div[contains(@class, 'pagination01 bottom')]/preceding-sibling::ul[.//img]",
+      "framePageElement": "//div[contains(@class, 'pagination01 bottom')]/preceding-sibling::ul[.//img]",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 5000,
+      "spa": true,
+      "spaDelay": 1000
+    },
+    {
+      "url": "^https://news\\.infoseek\\.co\\.jp/article/",
+      "exampleUrl": "https://news.infoseek.co.jp/article/toyokeizai_20250808_895544/",
+      "disableWedata": true
+    },
     {
       "url": "^https://www\\.emsodm\\.com/",
       "name": "EMSOne",
@@ -2463,10 +2494,6 @@
     },
     {
       "disableBuildIn": true,
-      "url": "^https://[^/]+\\.(?:firebaseapp|web)\\.app/"
-    },
-    {
-      "disableBuildIn": true,
       "url": "^https://jbpress\\.ismedia\\.jp/articles/-/"
     },
     {
@@ -2606,6 +2633,10 @@
     {
       "disableBuildIn": true,
       "url": "^https://www\\.jalan\\.net/.*?search"
+    },
+    {
+      "disableBuildIn": true,
+      "url": "^https://[^/]+\\.firebaseapp\\.app/"
     },
     {
       "url": "^https://www\\.melonbooks\\.co\\.jp/",
