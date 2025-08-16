@@ -518,10 +518,9 @@
     },
     {
       "url": "^https://ameblo\\.jp/",
-      "requestType": "frame",
-      "responseDelay": 1500,
-      "spa": true,
-      "spaDelay": 1000
+      "name": "アメブロ entrylisit",
+      "nextLink": "//link[@rel='next'][contains(@href, 'entrylist')]",
+      "pageElement": "//article//li"
     },
     {
       "url": "^https://ameblo\\.jp/",
@@ -529,6 +528,11 @@
       "exampleUrl": "https://ameblo.jp/irakoir/",
       "nextLink": "//link[@rel=\"next\"]",
       "pageElement": "//ul[contains(concat(' ', @class, ' '), ' skin-paging ')]/following-sibling::*[following-sibling::*[contains(concat(' ', @class, ' '), ' skin-blogFooterNav ')]]"
+    },
+    {
+      "url": "^https://ameblo\\.jp/",
+      "spa": true,
+      "spaDelay": 1000
     },
     {
       "url": "^https://image\\.itmedia\\.co\\.jp/(?:(?!articles/)[^/?#]+/)+articles/[^.?#]+\\.jpg",
@@ -1458,6 +1462,21 @@
     }
   ],
   "MIDDLE_SITEINFO": [
+    {
+      "url": "^https://nureyon\\.com/",
+      "name": "NUREYON",
+      "nextLink": "a.next",
+      "pageElement": "#list",
+      "requestType": "frame",
+      "responseDelay": 1000
+    },
+    {
+      "url": "^https://www\\.uta-net\\.com/",
+      "name": "歌ネット 記事",
+      "exampleUrl": "https://www.uta-net.com/interview/2506_kocchinokento\nhttps://www.uta-net.com/user/interview/1904_adachikana/index2.html\nhttps://www.uta-net.com/user/interview/1609_kiritani_kenta/index.html",
+      "nextLink": "id('page')/preceding-sibling::div[contains(concat(' ', @class, ' '), ' links ')]/a",
+      "pageElement": "id('page')/preceding-sibling::*"
+    },
     {
       "url": "^https?://matoyoko\\.com/",
       "name": "まとめ横丁 ログデータ",
@@ -2594,14 +2613,6 @@
       "url": "^https://fumufumunews\\.jp/articles/"
     },
     {
-      "disableBuildIn": true,
-      "url": "^https?://(?:[^/]+\\.)?twitter\\.com/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https?://(?:[^/]+\\.)?pornhub\\.com/"
-    },
-    {
       "requestType": "frame",
       "responseDelay": 500,
       "url": "^https://ganref\\.jp/photo_contests/"
@@ -2819,7 +2830,6 @@
       "url": "^https://www\\.kurashiru\\.com/"
     },
     {
-      "disableBuildIn": true,
       "disableFixImage": true,
       "disableShowElement": true,
       "url": "^https://www\\.oricon\\.co\\.jp/"
@@ -2924,11 +2934,6 @@
       "url": "^https://www\\.nintendo\\.com/"
     },
     {
-      "requestType": "frame",
-      "responseDelay": 1000,
-      "url": "^https://nureyon\\.com/search"
-    },
-    {
       "disableBuildIn": true,
       "url": "^https://magazinesummit\\.jp/"
     },
@@ -2963,6 +2968,10 @@
     {
       "disableBuildIn": true,
       "url": "^https://www\\.gamestop\\.com/"
+    },
+    {
+      "url": "^https://www\\.shinoby\\.net/",
+      "disableBuildIn": true
     },
     {
       "url": "^https://www\\.nytimes\\.com/",
@@ -3004,7 +3013,7 @@
       "url": "^https://b\\.hatena\\.ne\\.jp/"
     },
     {
-      "disableBuildIn": true,
+      "disableFilter": true,
       "url": "^https://www\\.ssnp\\.co\\.jp/"
     },
     {
@@ -3326,10 +3335,6 @@
       "url": "^https://futurism\\.com/"
     },
     {
-      "disableBuildIn": true,
-      "url": "^https://coconala\\.com/"
-    },
-    {
       "disableShowElement": true,
       "url": "^https://e-hentai\\.org/"
     },
@@ -3530,10 +3535,6 @@
       "requestType": "frame",
       "responseDelay": 3000,
       "url": "https://txxx.com/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://[^/]+/@"
     },
     {
       "disableBuildIn": true,
