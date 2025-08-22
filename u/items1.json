@@ -23,10 +23,12 @@
     "http://wedata.net/items/63728": "tumblr canonical",
     "http://wedata.net/items/65156": "bad, pe",
     "http://wedata.net/items/66481": "bad",
+    "http://wedata.net/items/76452": "bad, request",
     "http://wedata.net/items/76807": "bad",
     "http://wedata.net/items/76907": "bad",
     "http://wedata.net/items/77079": "bad",
     "http://wedata.net/items/77203": "thumbnail inf",
+    "http://wedata.net/items/77236": "bad, pe",
     "http://wedata.net/items/77487": "bad",
     "http://wedata.net/items/77754": "tenhou bad",
     "http://wedata.net/items/80660": "td-block-row",
@@ -36,6 +38,7 @@
     "http://wedata.net/items/81508": "absolute",
     "http://wedata.net/items/81552": "bad, nl",
     "http://wedata.net/items/81792": "bad",
+    "http://wedata.net/items/81905": "bad, pe",
     "http://wedata.net/items/81933": "bad",
     "http://wedata.net/items/81996": "bad",
     "http://wedata.net/items/82052": "unnecessary",
@@ -63,6 +66,40 @@
     "http://wedata.net/items/86138": "bad, nl"
   },
   "TOP_SITEINFO": [
+    {
+      "url": "^https://www\\.google\\.com/search\\?(.*?&)?udm=7",
+      "exampleUrl": "https://www.google.com/search?q=AIM1&udm=7",
+      "disableWedata": true
+    },
+    {
+      "url": "^https://www\\.locondo\\.jp/",
+      "exampleUrl": "https://www.locondo.jp/shop/category/pumps/",
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "framePageElement": "id('catalog_list')",
+      "disableWedata": true
+    },
+    {
+      "url": "^https://www\\.nitori-net\\.jp/",
+      "name": "ニトリネット【公式】",
+      "exampleUrl": "https://www.nitori-net.jp/ec/cat/Bed/1/",
+      "pageElement": ".search-list",
+      "framePageElement": ".search-list",
+      "requestType": "frame",
+      "responseDelay": 5000,
+      "spa": true,
+      "spaDelay": 1000,
+      "launchDelay": 3000
+    },
+    {
+      "url": "^https://www\\.toranoana\\.jp/smart/",
+      "exampleUrl": "https://www.toranoana.jp/smart/sc.cgi?kw=a&f_fg=0&tk=0401&p=1",
+      "requestType": "frame",
+      "responseDelay": 5000,
+      "pageElement": "//ul[@class='ui-listview' or @data-role='listview']/li",
+      "framePageElement": "//ul[@class='ui-listview' or @data-role='listview']/li",
+      "disableWedata": true
+    },
     {
       "url": "^https://koubo\\.jp/",
       "exampleUrl": "https://koubo.jp/contest/list?c=4",
@@ -640,7 +677,7 @@
       "name": "ebookjapan",
       "exampleUrl": "https://ebookjapan.yahoo.co.jp/theme/6/?page=2",
       "pageElement": "//div[contains(concat(' ', @class, ' '), ' pagination ')]/preceding-sibling::*[.//div[contains(@class, 'item__cover')]]",
-      "framePageElement": "ul img[src*='/contents/thumb/']",
+      "framePageElement": "ul img[src*='.jpg']",
       "requestType": "frame",
       "responseDelay": 3000,
       "spa": true,
@@ -766,7 +803,8 @@
       "pageElement": ":is(#js-newsLists, .newsLists, .p-news__list) > *",
       "framePageElement": ":is(#js-newsLists, .newsLists, .p-news__list) > *",
       "requestType": "frame",
-      "responseDelay": 3000
+      "responseDelay": 3000,
+      "exampleUrl": "https://www.tennimu.com/news/\nhttps://www.jigokuraku.com/news/\nhttps://sakuna-anime.com/news/"
     },
     {
       "url": "^https://sasapi-anime\\.com/",
@@ -995,7 +1033,8 @@
       "pageElement": "id('thumbnail-divs')",
       "framePageElement": "id('thumbnail-divs')/*",
       "requestType": "frame",
-      "responseDelay": 3000
+      "responseDelay": 5000,
+      "launchDelay": 3000
     },
     {
       "url": "^https://active\\.nikkeibp\\.co\\.jp/tag/",
@@ -1162,7 +1201,8 @@
       "pageElement": "id('news-view-default')/ul/li",
       "framePageElement": "id('news-view-default')/ul/li",
       "requestType": "frame",
-      "responseDelay": 3000
+      "responseDelay": 5000,
+      "launchDelay": 3000
     },
     {
       "url": "^https?://ecocar\\.autoc-one\\.jp/",
@@ -1462,6 +1502,12 @@
     }
   ],
   "MIDDLE_SITEINFO": [
+    {
+      "url": "^https://ranking\\.net/rankings/",
+      "name": "みんなのランキング",
+      "exampleUrl": "https://ranking.net/rankings/best-k-female-idol-gropus",
+      "pageElement": "id('js-ranks js-result')"
+    },
     {
       "url": "^https://nureyon\\.com/",
       "name": "NUREYON",
@@ -2567,6 +2613,10 @@
       "url": "^https://fan\\.books\\.rakuten\\.co\\.jp/"
     },
     {
+      "url": "^https://www\\.nicovideo\\.jp/ranking/",
+      "disableBuildIn": true
+    },
+    {
       "disableBuildIn": true,
       "url": "^https://news\\.careerconnection\\.jp/"
     },
@@ -2679,6 +2729,10 @@
     {
       "spa": true,
       "url": "^https://uchi\\.tokyo-gas\\.co\\.jp/"
+    },
+    {
+      "url": "^https://brainstormbrewery\\.com/",
+      "disableBuildIn": true
     },
     {
       "url": "^https://www\\.jungledragon\\.com/",
@@ -2821,6 +2875,12 @@
       "url": "^https://naruto-official\\.com/"
     },
     {
+      "url": "^https://www\\.vstone\\.co\\.jp/",
+      "name": "vstone ",
+      "requestType": "frame",
+      "responseDelay": 1000
+    },
+    {
       "disableBuildIn": true,
       "url": "^https://www\\.omosan-st\\.com/"
     },
@@ -2833,11 +2893,6 @@
       "disableFixImage": true,
       "disableShowElement": true,
       "url": "^https://www\\.oricon\\.co\\.jp/"
-    },
-    {
-      "requestType": "frame",
-      "responseDelay": 3000,
-      "url": "^https://news\\.netkeiba\\.com/"
     },
     {
       "disableBuildIn": true,
@@ -2884,6 +2939,11 @@
     {
       "disableBuildIn": true,
       "url": "^https://www\\.oneesports\\.gg/"
+    },
+    {
+      "url": "^https://www\\.engadget\\.com/",
+      "requestType": "frame",
+      "responseDelay": 1000
     },
     {
       "url": "^https://www\\.philstar\\.com/",
@@ -2968,6 +3028,10 @@
     {
       "disableBuildIn": true,
       "url": "^https://www\\.gamestop\\.com/"
+    },
+    {
+      "url": "^https://q\\.hatena\\.ne\\.jp/",
+      "disableBuildIn": true
     },
     {
       "url": "^https://www\\.shinoby\\.net/",
@@ -3287,6 +3351,10 @@
       "requestType": "frame",
       "responseDelay": 1000,
       "url": "^https://bitstar\\.tokyo/"
+    },
+    {
+      "url": "^https://www\\.bgr\\.com/",
+      "disableBuildIn": true
     },
     {
       "disableBuildIn": true,
