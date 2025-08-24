@@ -67,6 +67,21 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://crea\\.bunshun\\.jp/articles/-/",
+      "exampleUrl": "https://crea.bunshun.jp/articles/-/55163",
+      "removeElement": ".article-series-section:has(#article-series-header-column)"
+    },
+    {
+      "url": "^https://jp\\.mercari\\.com/",
+      "name": "メルカリ",
+      "exampleUrl": "https://jp.mercari.com/search?category_id=112&brand_id=38912",
+      "nextLink": "[data-testid=\"pagination-next-button\"] > a",
+      "pageElement": "#item-grid",
+      "framePageElement": "#item-grid > ul > li:last-child img",
+      "requestType": "frame",
+      "responseDelay": 5000
+    },
+    {
       "url": "^https://www\\.google\\.com/search\\?(.*?&)?udm=7",
       "exampleUrl": "https://www.google.com/search?q=AIM1&udm=7",
       "disableWedata": true
@@ -676,10 +691,9 @@
       "url": "^https://ebookjapan\\.yahoo\\.co\\.jp/",
       "name": "ebookjapan",
       "exampleUrl": "https://ebookjapan.yahoo.co.jp/theme/6/?page=2",
-      "pageElement": "//div[contains(concat(' ', @class, ' '), ' pagination ')]/preceding-sibling::*[.//div[contains(@class, 'item__cover')]]",
       "framePageElement": "ul img[src*='.jpg']",
       "requestType": "frame",
-      "responseDelay": 3000,
+      "responseDelay": 5000,
       "spa": true,
       "spaDelay": 3000
     },
@@ -2677,6 +2691,10 @@
       "url": "^https://www\\.prime1studio\\.co\\.jp/"
     },
     {
+      "url": "^https://shop\\.sweetsvillage\\.com/",
+      "disableBuildIn": true
+    },
+    {
       "requestType": "frame",
       "responseDelay": 3000,
       "url": "^https://www\\.titicaca-online\\.jp/"
@@ -3288,6 +3306,10 @@
       "requestType": "frame",
       "responseDelay": 1500,
       "url": "^https://koibanashi\\.com/"
+    },
+    {
+      "url": "^https://www\\.houzz\\.jp/",
+      "disableBuildIn": true
     },
     {
       "disableBuildIn": true,
