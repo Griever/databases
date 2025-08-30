@@ -23,6 +23,7 @@
     "http://wedata.net/items/63728": "tumblr canonical",
     "http://wedata.net/items/65156": "bad, pe",
     "http://wedata.net/items/66481": "bad",
+    "http://wedata.net/items/74669": "bad, nl",
     "http://wedata.net/items/76452": "bad, request",
     "http://wedata.net/items/76807": "bad",
     "http://wedata.net/items/76907": "bad",
@@ -63,9 +64,32 @@
     "http://wedata.net/items/86004": "article",
     "http://wedata.net/items/86017": "article",
     "http://wedata.net/items/86072": "listal bad",
-    "http://wedata.net/items/86138": "bad, nl"
+    "http://wedata.net/items/86138": "bad, nl",
+    "http://wedata.net/items/86226": "bad, nl"
   },
   "TOP_SITEINFO": [
+    {
+      "url": "^https://www\\.fnn\\.jp/articles/-/\\d",
+      "name": "FNNプライムオンライン",
+      "exampleUrl": "https://www.fnn.jp/articles/-/652714\nhttps://www.fnn.jp/articles/-/922396",
+      "nextLink": "//ul[@class='m-pager-list']/li[./span]/following-sibling::li/a[not(contains(@href, '/gallery/'))]",
+      "pageElement": "//div[@class=\"m-pager\"]/preceding-sibling::*[./preceding-sibling::*]"
+    },
+    {
+      "url": "^https://ameblo\\.jp/",
+      "name": "アメブロ 記事",
+      "exampleUrl": "https://ameblo.jp/sayu561228/entry-12925120704.html",
+      "nextLink": ".skin-paginationNext, .skin-pagingNext, link[rel='next']",
+      "pageElement": ".js-entryWrapper",
+      "_disabled": true
+    },
+    {
+      "url": "^https://www\\.example\\.com/",
+      "responseDelay": -1,
+      "spaDelay": -1,
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
     {
       "url": "^https://crea\\.bunshun\\.jp/articles/-/",
       "exampleUrl": "https://crea.bunshun.jp/articles/-/55163",
@@ -79,7 +103,9 @@
       "pageElement": "#item-grid",
       "framePageElement": "#item-grid > ul > li:last-child img",
       "requestType": "frame",
-      "responseDelay": 5000
+      "responseDelay": 5000,
+      "spa": true,
+      "spaDelay": 1000
     },
     {
       "url": "^https://www\\.google\\.com/search\\?(.*?&)?udm=7",
@@ -301,7 +327,7 @@
       "disableShowElement": true
     },
     {
-      "url": "https://wezard\\.net/",
+      "url": "^https://wezard\\.net/",
       "disableBuildIn": true
     },
     {
@@ -570,9 +596,11 @@
     },
     {
       "url": "^https://ameblo\\.jp/",
-      "name": "アメブロ entrylisit",
-      "nextLink": "//link[@rel='next'][contains(@href, 'entrylist')]",
-      "pageElement": "//article//li"
+      "name": "アメブロ 一覧",
+      "nextLink": ".skin-paginationNext, .skin-pagingNext, .pagingNext",
+      "pageElement": ".skin-archiveList, .contentsList ",
+      "exampleUrl": "https://ameblo.jp/4enjoylife/entrylist.html\nhttps://ameblo.jp/jazzgodfather/entrylist.html",
+      "_disabled": true
     },
     {
       "url": "^https://ameblo\\.jp/",
@@ -2669,6 +2697,12 @@
       "url": "^https://www\\.kojimaproductions\\.jp/"
     },
     {
+      "url": "^https://www\\.famitsu\\.com/search\\?",
+      "requestType": "frame",
+      "responseDelay": 5000,
+      "framePageElement": "descendant::li[contains(@class, 'GameCardList_listItem')][last()]//img"
+    },
+    {
       "disableShowElement": true,
       "url": "^https://www\\.rikujyokyogi\\.co\\.jp/"
     },
@@ -3607,6 +3641,11 @@
       "url": "^https://cremu\\.jp/"
     },
     {
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "url": "^https://txxx\\.com/"
+    },
+    {
       "disableBuildIn": true,
       "url": "^https://hbx\\.com/"
     },
@@ -3620,11 +3659,6 @@
       "spa": true,
       "spaDelay": 1000,
       "url": "^https://alu\\.jp/"
-    },
-    {
-      "requestType": "frame",
-      "responseDelay": 3000,
-      "url": "https://txxx.com/"
     },
     {
       "disableBuildIn": true,
