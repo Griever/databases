@@ -89,13 +89,6 @@
       "_disabled": true
     },
     {
-      "url": "^https://www\\.example\\.com/",
-      "responseDelay": -1,
-      "spaDelay": -1,
-      "nextIncrement": 1,
-      "nextStartValue": 1
-    },
-    {
       "url": "^https://crea\\.bunshun\\.jp/articles/-/",
       "exampleUrl": "https://crea.bunshun.jp/articles/-/55163",
       "removeElement": ".article-series-section:has(#article-series-header-column)"
@@ -113,7 +106,7 @@
       "spaDelay": 1000
     },
     {
-      "url": "^https://www\\.google\\.com/search\\?(.*?&)?udm=7",
+      "url": "^https://www\\.google\\.com/search\\?(.*?&)?udm=[27]",
       "exampleUrl": "https://www.google.com/search?q=AIM1&udm=7",
       "disableWedata": true
     },
@@ -867,14 +860,6 @@
     {
       "url": "^https?://(www\\.)?jprime\\.jp/",
       "showElement": ".figure-center"
-    },
-    {
-      "url": "^https://mangaip\\.kodansha\\.co\\.jp/",
-      "name": "講談社マンガIPサーチ by C-station",
-      "exampleUrl": "https://mangaip.kodansha.co.jp/category/boy/",
-      "nextLink": "//li[*[contains(@class, 'active')]][number()>0]/following-sibling::li[1]/a[number()>0]",
-      "pageElement": "//main/div/ul[li/article]",
-      "nextQuery": "page"
     },
     {
       "url": "^https://genseki\\.me/",
