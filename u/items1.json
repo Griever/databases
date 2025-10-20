@@ -69,6 +69,30 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://(www\\.)?gallery2\\.co\\.jp/",
+      "name": "GALLERY・2",
+      "nextLink": "//a[@class='next']",
+      "pageElement": "id('result')/ul",
+      "framePageElement": "id('result')/ul//img[@data-src]",
+      "requestType": "frame",
+      "responseDelay": 15000
+    },
+    {
+      "disableShowElement": true,
+      "exampleUrl": "https://e-hentai.org/",
+      "url": "^https://e-hentai\\.org/"
+    },
+    {
+      "url": "^https://github\\.com/.+/issues",
+      "name": "github issues",
+      "exampleUrl": "https://github.com/actions/toolkit/issues",
+      "nextLink": "//h2/following-sibling::ul[starts-with(@class, 'ListView-module__ul')]",
+      "pageElement": "//h2/following-sibling::ul[starts-with(@class, 'ListView-module__ul')]",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
       "url": "^https://www\\.lmaga\\.jp/",
       "exampleUrl": "https://www.lmaga.jp/ichioshi/",
       "showElement": ".article_txt > h3"
@@ -1531,6 +1555,13 @@
     }
   ],
   "MIDDLE_SITEINFO": [
+    {
+      "url": "^https://www\\.nikoand\\.jp/",
+      "name": "ニコアンド",
+      "exampleUrl": "https://www.nikoand.jp/column_category/niko-blog/",
+      "nextLink": "//li[contains(@class, 'current')][number()>0]/following-sibling::li[1]/a[number()>0]",
+      "pageElement": "main > section > .article-list"
+    },
     {
       "url": "^https://www\\.famitsu\\.com/search\\?",
       "exampleUrl": "https://www.famitsu.com/search?type=game-title&q=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88",
@@ -3208,6 +3239,14 @@
       "url": "^https://www\\.beatink\\.com/"
     },
     {
+      "url": "^https://[^/]+\\.booth\\.pm/",
+      "requestType": "frame",
+      "responseDelay": 15000,
+      "framePageElement": "ul.item-list > li img",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
       "url": "^https://forbesjapan\\.com/",
       "disableBuildIn": true
     },
@@ -3454,10 +3493,6 @@
       "requestType": "frame",
       "responseDelay": 3000,
       "url": "^https://futurism\\.com/"
-    },
-    {
-      "disableShowElement": true,
-      "url": "^https://e-hentai\\.org/"
     },
     {
       "disableBuildIn": true,
