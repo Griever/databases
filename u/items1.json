@@ -69,6 +69,11 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://comic-boost\\.com/",
+      "exampleUrl": "https://comic-boost.com/genre/?p=2",
+      "disableShowElement": true
+    },
+    {
       "url": "^https://(www\\.)?gallery2\\.co\\.jp/",
       "name": "GALLERY・2",
       "nextLink": "//a[@class='next']",
@@ -1283,7 +1288,8 @@
       "framePageElement": "//a[contains(@class, 'PaginationNumber') and contains(@class, 'is-Selected')]",
       "pageElement": "id('layout_contents')/div[@data-js='viewModeContainer']/*",
       "requestType": "frame",
-      "responseDelay": 3000
+      "responseDelay": 3000,
+      "_disabled": true
     },
     {
       "url": "^https://(\\w+\\.)?amazon\\.(?:\\w{2,3}(?:\\.\\w{2})?)/([^?#]*/?)?s\\b",
@@ -2334,6 +2340,16 @@
       "responseDelay": 5000
     },
     {
+      "url": "^https://slickdeals\\.net/",
+      "name": "slickdeals.net category",
+      "exampleUrl": "https://slickdeals.net/computer-deals/",
+      "nextLink": "//main//li[@id and @data-posted-at]",
+      "pageElement": "//main//li[@id and @data-posted-at]",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
       "url": "^https://automaton-media\\.com/",
       "exampleUrl": "https://automaton-media.com/",
       "pageElement": "//nav[contains(@class, 'pagination')]/preceding-sibling::div/article"
@@ -3322,10 +3338,6 @@
     },
     {
       "disableBuildIn": true,
-      "url": "^https://slickdeals\\.net/"
-    },
-    {
-      "disableBuildIn": true,
       "url": "^https://mangapedia\\.com/"
     },
     {
@@ -3551,9 +3563,6 @@
       "url": "^https://friday\\.gold/"
     },
     {
-      "url": "^https://posfie\\.com/@"
-    },
-    {
       "disableBuildIn": true,
       "url": "^https://voyapon\\.com/"
     },
@@ -3609,11 +3618,6 @@
     {
       "spa": true,
       "url": "^https://nnn\\.ed\\.jp/"
-    },
-    {
-      "spa": true,
-      "spaDelay": 2000,
-      "url": "^https://annict\\.com/"
     },
     {
       "disableBuildIn": true,
