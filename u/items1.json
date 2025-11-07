@@ -69,6 +69,26 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://coconala\\.com/contents_market/search",
+      "name": "ココナラコンテンツマーケット",
+      "exampleUrl": "https://coconala.com/contents_market/search",
+      "nextLink": "//button[@aria-label='次のページへ'][not(@disabled)]",
+      "pageElement": "section > h1 ~ div:has(> a[href*='/contents_market/'])",
+      "framePageElement": "//button[@aria-label='次のページへ']",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 15000,
+      "spa": true
+    },
+    {
+      "url": "^http://www\\.insecam\\.org/",
+      "exampleUrl": "http://www.insecam.org/en/bycountry/jp/?page=2",
+      "requestType": "frame",
+      "responseDelay": 1000
+    },
+    {
       "url": "^https://comic-boost\\.com/",
       "exampleUrl": "https://comic-boost.com/genre/?p=2",
       "disableShowElement": true
