@@ -69,6 +69,69 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://uso\\.kkx\\.one/browse/",
+      "name": "UserStyles.org",
+      "exampleUrl": "https://uso.kkx.one/browse/styles?page=2",
+      "nextLink": "//li[contains(@class, 'active')][number()>0]/following-sibling::li[1][number()>0]",
+      "pageElement": "main > div > div:has(a[href*='/style/'])",
+      "framePageElement": "main > div > div:has(a[href*='/style/'])",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 15000
+    },
+    {
+      "url": "^https://www\\.walmart\\.com/search",
+      "name": "Walmart",
+      "nextLink": "nav a[data-testid='NextPage']",
+      "pageElement": "#results-container ~ section:has(img)",
+      "framePageElement": "nav a:is([data-testid='NextPage'], [data-testid='PreviousPage'])",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 15000
+    },
+    {
+      "url": "^https://brandavenue\\.rakuten\\.co\\.jp/",
+      "name": "Rakuten Fashion",
+      "exampleUrl": "https://brandavenue.rakuten.co.jp/all-sites/cateb-0000002001/catem-0000005001/men/?fixed_price_upper=6000&l-id=brn_search_filter_catem",
+      "nextLink": "id('main-pagination')/li[number(text())>0]/following-sibling::li/a[number()>0]",
+      "pageElement": "#item-grid",
+      "framePageElement": "#main-pagination",
+      "requestType": "frame",
+      "responseDelay": 5000,
+      "disableBuildIn": true
+    },
+    {
+      "url": "^https://www\\.userscript\\.zone/",
+      "name": "Userscript.Zone",
+      "exampleUrl": "https://www.userscript.zone/search?source=index&q=auto",
+      "nextLink": "id('next_page')[not(contains(@class, 'hidden'))]",
+      "pageElement": "div.script",
+      "nextQuery": "start",
+      "nextIncrement": 10,
+      "nextStartValue": 0
+    },
+    {
+      "url": "^https://game8\\.jp/",
+      "name": "ゲームエイト 掲示板",
+      "exampleUrl": "https://game8.jp/octopathtraveler-sp/437577",
+      "pageElement": "//div[@data-track-nier-value='top-pagination']/following-sibling::div[starts-with(@id, 'anchor_comment_')]",
+      "css": ".autopagerize_page_info ~ div .c-commentItem__body p { max-height: initial !important; overflow: initial !important;}"
+    },
+    {
+      "url": "^https://huggingface\\.co/models",
+      "name": "Models – Hugging Face",
+      "exampleUrl": "https://huggingface.co/models",
+      "nextLink": "main div.grid > article",
+      "pageElement": "main div.grid > article",
+      "nextQuery": "p",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
       "url": "^https://coconala\\.com/contents_market/search",
       "name": "ココナラコンテンツマーケット",
       "exampleUrl": "https://coconala.com/contents_market/search",
@@ -128,14 +191,6 @@
       "exampleUrl": "https://www.fnn.jp/articles/-/652714\nhttps://www.fnn.jp/articles/-/922396",
       "nextLink": "//ul[@class='m-pager-list']/li[./span]/following-sibling::li/a[not(contains(@href, '/gallery/'))]",
       "pageElement": "//div[@class=\"m-pager\"]/preceding-sibling::*[./preceding-sibling::*]"
-    },
-    {
-      "url": "^https://ameblo\\.jp/",
-      "name": "アメブロ 記事",
-      "exampleUrl": "https://ameblo.jp/sayu561228/entry-12925120704.html",
-      "nextLink": ".skin-paginationNext, .skin-pagingNext, link[rel='next']",
-      "pageElement": ".js-entryWrapper",
-      "_disabled": true
     },
     {
       "url": "^https://crea\\.bunshun\\.jp/articles/-/",
@@ -639,14 +694,6 @@
       "url": "^https://www\\.slrclub\\.com/bbs/",
       "requestType": "frame",
       "responseDelay": 1500
-    },
-    {
-      "url": "^https://ameblo\\.jp/",
-      "name": "アメブロ 一覧",
-      "nextLink": ".skin-paginationNext, .skin-pagingNext, .pagingNext",
-      "pageElement": ".skin-archiveList, .contentsList ",
-      "exampleUrl": "https://ameblo.jp/4enjoylife/entrylist.html\nhttps://ameblo.jp/jazzgodfather/entrylist.html",
-      "_disabled": true
     },
     {
       "url": "^https://ameblo\\.jp/",
@@ -1302,16 +1349,6 @@
       "responseDelay": 3000
     },
     {
-      "url": "^https://www\\.monotaro\\.com/s/(q-|\\?(.+&)?q=)",
-      "name": "【通販モノタロウ】検索",
-      "exampleUrl": "https://www.monotaro.com/s/q-%E3%83%9E%E3%82%A6%E3%82%B9/page-2/",
-      "framePageElement": "//a[contains(@class, 'PaginationNumber') and contains(@class, 'is-Selected')]",
-      "pageElement": "id('layout_contents')/div[@data-js='viewModeContainer']/*",
-      "requestType": "frame",
-      "responseDelay": 3000,
-      "_disabled": true
-    },
-    {
       "url": "^https://(\\w+\\.)?amazon\\.(?:\\w{2,3}(?:\\.\\w{2})?)/([^?#]*/?)?s\\b",
       "name": "Amazon",
       "exampleUrl": "https://www.amazon.co.jp/s?k=windows\nhttps://www.amazon.co.jp/s?k=lego&i=toys\nhttps://www.amazon.co.jp/s?i=stripbooks&rh=p_27%3A%E6%9D%91%E4%B8%8A+%E6%98%A5%E6%A8%B9&_encoding=UTF8&search-type=ss",
@@ -1581,6 +1618,27 @@
     }
   ],
   "MIDDLE_SITEINFO": [
+    {
+      "url": "^https://www\\.openpr\\.com/",
+      "name": "openPR.com",
+      "exampleUrl": "https://www.openpr.com/news/categories2-16-Arts-Culture.html",
+      "nextLink": "a[rel='next']",
+      "pageElement": ".pm-columns-container"
+    },
+    {
+      "url": "^https://gamerszone\\.jp/",
+      "name": "GAMERS ZONE",
+      "exampleUrl": "https://gamerszone.jp/category/news",
+      "pageElement": ".main > .article-list"
+    },
+    {
+      "url": "^https://search\\.brave\\.com/\\w+\\?",
+      "name": "Brave Search",
+      "exampleUrl": "https://search.brave.com/search?q=uAutoPagerize\nhttps://search.brave.com/news?q=uAutoPagerize&offset=1&spellcheck=0",
+      "nextLink": "id('pagination')/a[span/text()='Next']",
+      "pageElement": "id('pagination-snippet related-queries')[1]/preceding-sibling::*",
+      "insertBefore": "id('pagination-snippet')"
+    },
     {
       "url": "^https://www\\.nikoand\\.jp/",
       "name": "ニコアンド",
@@ -3475,6 +3533,10 @@
       "requestType": "frame",
       "responseDelay": 1000,
       "url": "^https://bitstar\\.tokyo/"
+    },
+    {
+      "url": "^https://mangadex\\.org/",
+      "disableBuildIn": true
     },
     {
       "url": "^https://www\\.bgr\\.com/",
