@@ -171,11 +171,11 @@
       "url": "^https://e-hentai\\.org/"
     },
     {
-      "url": "^https://github\\.com/.+/issues",
+      "url": "^https://github\\.com/",
       "name": "github issues",
       "exampleUrl": "https://github.com/actions/toolkit/issues",
-      "nextLink": "//h2/following-sibling::ul[starts-with(@class, 'ListView-module__ul')]",
-      "pageElement": "//h2/following-sibling::ul[starts-with(@class, 'ListView-module__ul')]",
+      "nextLink": "//h2/following-sibling::ul[starts-with(@class, 'ListView-module__ul')][.//a[contains(@href, '/issues/')]]",
+      "pageElement": "//h2/following-sibling::ul[starts-with(@class, 'ListView-module__ul')][.//a[contains(@href, '/issues/')]]/*",
       "nextQuery": "page",
       "nextIncrement": 1,
       "nextStartValue": 1
@@ -3089,11 +3089,6 @@
       "url": "^https://www\\.slashfilm\\.com/"
     },
     {
-      "spa": true,
-      "spaDelay": 1000,
-      "url": "^https://github\\.com/search\\?"
-    },
-    {
       "disableBuildIn": true,
       "url": "^https://www\\.tvfanatic\\.com/"
     },
@@ -3373,10 +3368,6 @@
     {
       "disableBuildIn": true,
       "url": "^https://www\\.magmoe\\.com/"
-    },
-    {
-      "enablePagerFunction": true,
-      "url": "^https://allabout\\.co\\.jp/"
     },
     {
       "disableBuildIn": true,
