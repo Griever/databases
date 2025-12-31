@@ -69,6 +69,51 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://qz\\.com/",
+      "name": "Quartz",
+      "exampleUrl": "https://qz.com/latest?page=2",
+      "nextLink": "//button[@aria-label='Next page']",
+      "pageElement": "//main[article]/descendant-or-self::article",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
+      "url": "^https://cat\\.benesse\\.ne\\.jp/",
+      "name": "ねこのきもちWEB MAGAZINE",
+      "exampleUrl": "https://cat.benesse.ne.jp/tags/?id=551",
+      "nextLink": "//li[*[contains(@class, 'current')]][number()>0]/following-sibling::li[1]/a[number()>0]",
+      "pageElement": "#tag_list > li:not([id])",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
+      "url": "^https://komachi\\.yomiuri\\.co\\.jp/",
+      "name": "発言小町",
+      "exampleUrl": "https://komachi.yomiuri.co.jp/articles/",
+      "nextLink": ".p-pagination__next:not(.is-disabled)",
+      "pageElement": ".p-mainContents__inner > :not(.p-pagination)",
+      "removeElement": ".p-ad__middleRectangles, .ads",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
+      "url": "^https://www\\.business-standard\\.com/",
+      "name": "Business Standard",
+      "exampleUrl": "https://www.business-standard.com/technology/tech-news",
+      "clickElement": "div[class*='Loadmore_loadmorebtn']",
+      "clickInterval": 3000
+    },
+    {
+      "url": "^https://abovethelaw\\.com/",
+      "name": "Above the Law",
+      "clickElement": "#infinite-handle",
+      "clickInterval": 2000,
+      "exampleUrl": "https://abovethelaw.com/category/biglaw/"
+    },
+    {
       "url": "^https://uso\\.kkx\\.one/browse/",
       "name": "UserStyles.org",
       "exampleUrl": "https://uso.kkx.one/browse/styles?page=2",
@@ -92,6 +137,20 @@
       "nextStartValue": 1,
       "requestType": "frame",
       "responseDelay": 15000
+    },
+    {
+      "url": "^https://duckduckgo\\.com/",
+      "exampleUrl": "https://duckduckgo.com/?q=test",
+      "clickElement": "#more-results",
+      "pageElement_aaa": ".react-results--main > li",
+      "disableSeparator": true
+    },
+    {
+      "url": "^https://joetsu\\.yukiguni\\.town/",
+      "name": "上越妙高タウン情報",
+      "exampleUrl": "https://joetsu.yukiguni.town/l-news/",
+      "clickElement": "#morebutton > a",
+      "pageElement": "#article__box-wrap > .article__box"
     },
     {
       "url": "^https://brandavenue\\.rakuten\\.co\\.jp/",
@@ -364,6 +423,14 @@
       "nextLink": "(descendant::a[@rel='next' or @class='next'][1])[//p[contains(@class, 'article-body__cate')]/a[normalize-space(text()[2])='マンガ']]",
       "pageElement": "descendant::div[@class='article-body__main'][1]/*[figure]|\n//article[@class='article-body']/*[self::h1 or contains(@class, 'article-body__info')][//span[@class='current' and text()='1']]",
       "removeElement": ".buttonlink2.aff"
+    },
+    {
+      "url": "^https://ddnavi\\.com/article/",
+      "name": "ダ・ヴィンチWeb 連載",
+      "exampleUrl": "https://ddnavi.com/article/1298767/a/\nhttps://ddnavi.com/article/d817876/a/",
+      "nextLink": "a[rel='next'], a.next",
+      "pageElement": "(//article/*[self::h1 or contains(concat(' ', @class, ' '), ' article-body__info ')]|descendant::div[contains(concat(' ', @class, ' '), ' article-body__main ')][1])[last()=3]",
+      "sameTextFilter": true
     },
     {
       "url": "^https://www\\.excite\\.co\\.jp/news/article/E\\d+",
@@ -749,16 +816,6 @@
       "pageElement": "//div[@data-layer-event-source-placement='content list']",
       "spa": true,
       "spaDelay": 2000
-    },
-    {
-      "url": "^https://www\\.nintendo\\.com/[^/]+/topics/",
-      "name": "Nintendo",
-      "exampleUrl": "https://www.nintendo.com/jp/topics/list",
-      "pageElement": ".nc3-l-grid__inner",
-      "requestType": "frame",
-      "responseDelay": 3000,
-      "spa": true,
-      "spaDelay": 1000
     },
     {
       "url": "^https://gadgetsnow\\.indiatimes\\.com/",
@@ -1619,6 +1676,19 @@
   ],
   "MIDDLE_SITEINFO": [
     {
+      "url": "^https://www\\.minisforum\\.jp/",
+      "name": "Minisforum",
+      "exampleUrl": "https://www.minisforum.jp/collections/all-product",
+      "pageElement": "product-list"
+    },
+    {
+      "url": "^https://www\\.fnn\\.jp/",
+      "name": "FNNプライムオンライン",
+      "exampleUrl": "https://www.fnn.jp/",
+      "clickElement": ":is(.js-read-more, .js-more-btn)[data-page]",
+      "clickInterval": 1000
+    },
+    {
       "url": "^https://www\\.openpr\\.com/",
       "name": "openPR.com",
       "exampleUrl": "https://www.openpr.com/news/categories2-16-Arts-Culture.html",
@@ -1630,6 +1700,13 @@
       "name": "GAMERS ZONE",
       "exampleUrl": "https://gamerszone.jp/category/news",
       "pageElement": ".main > .article-list"
+    },
+    {
+      "url": "^https://news\\.yahoo\\.co\\.jp/(?!articles)",
+      "name": "Yahoo!ニュース",
+      "exampleUrl": "https://news.yahoo.co.jp/search?p=auto&ei=utf-8",
+      "clickElement": "(id('newsFeed')|//div[@class='newsFeed'])//button[.='もっと見る']",
+      "pageElement": ".newsFeed_list > li"
     },
     {
       "url": "^https://search\\.brave\\.com/\\w+\\?",
@@ -2457,7 +2534,7 @@
     {
       "url": "^https://www\\.pinclipart\\.com/",
       "name": "PinClipart",
-      "exampleUrl": "https://www.pinclipart.com/hot/2/",
+      "exampleUrl": "https://www.pinclipart.com/hot/2/\nhttps://www.pinclipart.com/pins/japan/",
       "pageElement": "id('masList')/div",
       "_build_in": true
     },
@@ -2870,6 +2947,11 @@
       "url": "^https://www\\.jalan\\.net/.*?search"
     },
     {
+      "url": "^https://vlptherapeutics\\.co\\.jp/",
+      "requestType": "frame",
+      "responseDelay": 1000
+    },
+    {
       "disableBuildIn": true,
       "url": "^https://[^/]+\\.firebaseapp\\.app/"
     },
@@ -3047,6 +3129,11 @@
       "responseDelay": 1000,
       "spa": true,
       "url": "^https://naruto-official\\.com/"
+    },
+    {
+      "requestType": "frame",
+      "responseDelay": 1000,
+      "url": "^https://(www\\.)?g-witch\\.net/"
     },
     {
       "url": "^https://www\\.vstone\\.co\\.jp/",
@@ -3414,15 +3501,6 @@
       "url": "^https://www\\.47club\\.jp/"
     },
     {
-      "requestType": "frame",
-      "responseDelay": 1000,
-      "url": "^https://rhythmzone\\.net/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://news\\.audee\\.jp/"
-    },
-    {
       "spa": true,
       "spaDelay": 1000,
       "url": "^https://scrambleweb\\.jp/"
@@ -3580,15 +3658,6 @@
       "url": "^https://futurism\\.com/"
     },
     {
-      "disableBuildIn": true,
-      "url": "^https://\\w+\\.holiday/"
-    },
-    {
-      "requestType": "frame",
-      "responseDelay": 1000,
-      "url": "^https://g-witch\\.net/"
-    },
-    {
       "requestType": "frame",
       "responseDelay": 1000,
       "url": "^https://jp\\.wsj\\.com/"
@@ -3636,10 +3705,6 @@
       "url": "^https://friday\\.gold/"
     },
     {
-      "disableBuildIn": true,
-      "url": "^https://voyapon\\.com/"
-    },
-    {
       "spa": true,
       "url": "^https://newscast\\.jp/"
     },
@@ -3669,10 +3734,6 @@
       "url": "^https://bitbank\\.cc/"
     },
     {
-      "disableBuildIn": true,
-      "url": "^https://cgfrog\\.com/"
-    },
-    {
       "enablePagerFunction": true,
       "url": "^https://madcity\\.jp/"
     },
@@ -3697,11 +3758,6 @@
       "url": "^https://yandex\\.ru/"
     },
     {
-      "requestType": "frame",
-      "responseDelay": 2000,
-      "url": "^https://storys\\.jp/"
-    },
-    {
       "disableBuildIn": true,
       "url": "^http://areaers\\.jp/"
     },
@@ -3712,11 +3768,6 @@
     {
       "url": "^https://abema\\.tv/",
       "disableBuildIn": true
-    },
-    {
-      "requestType": "frame",
-      "responseDelay": 1000,
-      "url": "^https://isuta\\.jp/"
     },
     {
       "requestType": "frame",
@@ -3739,11 +3790,6 @@
     {
       "disableBuildIn": true,
       "url": "^https://aukro\\.cz/"
-    },
-    {
-      "requestType": "frame",
-      "responseDelay": 1000,
-      "url": "^https://time\\.com/"
     },
     {
       "spa": true,
