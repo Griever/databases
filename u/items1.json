@@ -69,7 +69,7 @@
   },
   "TOP_SITEINFO": [
     {
-      "url": "https://www.google.com/search",
+      "url": "^https://www\\.google\\.com/search",
       "disableBuildIn": true
     },
     {
