@@ -69,6 +69,44 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "https://www.google.com/search",
+      "disableBuildIn": true
+    },
+    {
+      "url": "^https://joyreactor\\.c(om|c)/",
+      "name": "JoyReactor",
+      "exampleUrl": "https://joyreactor.com/\nhttps://joyreactor.cc/",
+      "nextLink": ".min-h-pagination > a:has(> button > span[aria-label='right'])",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' min-h-pagination ')]/preceding-sibling::*",
+      "requestType": "frame",
+      "responseDelay": 500
+    },
+    {
+      "url": "^https://www\\.bestbuy\\.com/",
+      "name": "Best Buy",
+      "exampleUrl": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&st=game",
+      "disableBuildIn": true
+    },
+    {
+      "url": "^https://www\\.bestbuy\\.com/site/reviews/",
+      "name": "Best Buy Reviews",
+      "exampleUrl": "https://www.bestbuy.com/site/reviews/infinity-game-board/6538280",
+      "nextLink": "ul.pagination > li.next > a",
+      "pageElement": "ul.reviews-list > li"
+    },
+    {
+      "url": "^https://zukan\\.pokemon\\.co\\.jp/detail/\\d+",
+      "name": "ポケモンずかん",
+      "nextLink": ".is-next > a",
+      "pageElement": "main > *",
+      "requestType": "frame",
+      "responseDelay": 500
+    },
+    {
+      "url": "^https://news\\.yahoo\\.co\\.jp/articles/",
+      "css": ".autopagerize_page_info ~ .article_body h2 { font-weight: bold; }"
+    },
+    {
       "url": "^https://qz\\.com/",
       "name": "Quartz",
       "exampleUrl": "https://qz.com/latest?page=2",
@@ -306,6 +344,7 @@
       "exampleUrl": "https://koubo.jp/contest/list?c=4",
       "requestType": "frame",
       "responseDelay": 5000,
+      "pageElement": "main > ul:has(> li > article)",
       "framePageElement": "main > ul > li > article",
       "spa": true,
       "spaDelay": 1000
@@ -629,15 +668,6 @@
       "nextStartValue": 1
     },
     {
-      "url": "^https://healthpress\\.jp/",
-      "name": "healthpress.jp",
-      "exampleUrl": "https://healthpress.jp/2017/09/post-3235.html\nhttps://healthpress.jp/2017/12/post-3423.html",
-      "nextLink": ".link_next a",
-      "pageElement": "#entryBody",
-      "_resource_url": "http://wedata.net/items/81552",
-      "css": "#archive { height: auto !important; }"
-    },
-    {
       "url": "^https://maidigitv\\.jp/",
       "name": "MAiDiGiTV",
       "exampleUrl": "https://maidigitv.jp/movies",
@@ -778,16 +808,6 @@
       "url": "^https://image\\.itmedia\\.co\\.jp/(?:(?!articles/)[^/?#]+/)+articles/[^.?#]+\\.jpg",
       "requestType": "frame",
       "responseDelay": 2000
-    },
-    {
-      "url": "^https://presearch\\.com/",
-      "name": "presearch.com",
-      "exampleUrl": "https://presearch.com/search?q=infinity",
-      "nextLink": "//div[contains(@class, 'text-presearch-alternative border-presearch-alternative')]/following-sibling::div/a",
-      "pageElement": "//div[contains(@class, 'text-gray-300 relative')]/*[.//span[@x-html='result.title']]",
-      "framePageElement": "//div[contains(@class, 'text-gray-300 relative')]/*[.//span[@x-html='result.title']]",
-      "requestType": "frame",
-      "responseDelay": 3000
     },
     {
       "url": "^https://fashionpost\\.jp/",
@@ -1455,15 +1475,6 @@
       "spa": true
     },
     {
-      "url": "^https://www\\.deviantart\\.com/",
-      "name": "deviantART",
-      "exampleUrl": "https://www.deviantart.com/search?q=dragon\nhttps://www.deviantart.com/era7/posts",
-      "nextLink": "//div[@class='_2-0my' or @class='_1DwAZ' or @class='_2qk-S']//a[.='Next']",
-      "pageElement": "//div[@class='_2-0my' or @class='_1DwAZ' or @class='_2qk-S']/preceding-sibling::*[.//img]",
-      "spa": true,
-      "spaDelay": 1000
-    },
-    {
       "url": "^https://bookmeter\\.com/",
       "name": "読書メーター",
       "exampleUrl": "https://bookmeter.com/books/4590029\nhttps://bookmeter.com/search?author=%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3",
@@ -1558,7 +1569,7 @@
     {
       "url": "^https://www\\.gyomusuper\\.jp/.+?/list\\.php",
       "name": "業務スーパー レシピ",
-      "exampleUrl": "https://www.gyomusuper.jp/recipe/list.php?s_id=7",
+      "exampleUrl": "https://www.gyomusuper.jp/recipe/list.php?s_id=41",
       "nextLink": "//div[@class='pagenation']/span[number()>0]/following-sibling::a[1]",
       "pageElement": "//div[@class='pagenation']/preceding-sibling::div[.//a[contains(@href, 'detail.php?')]]",
       "nextQuery": "page",
@@ -1613,11 +1624,7 @@
     {
       "url": "^https://i-voce\\.jp/",
       "name": "VoCE 記事一覧",
-      "exampleUrl": [
-        "https://i-voce.jp/make-up/",
-        "https://i-voce.jp/featured-series/brands-special/",
-        "https://i-voce.jp/feed/663858/"
-      ],
+      "exampleUrl": "https://i-voce.jp/make-up/\nhttps://i-voce.jp/featured-series/brands-special/\nhttps://i-voce.jp/feed/663858/",
       "removeElement": "li:has(p[class*='sponsored'])",
       "spa": true,
       "requestType": "frame",
@@ -2010,13 +2017,6 @@
       "pageElement": "//section[@class='c-pager-area']/preceding-sibling::div[@class='l-container--inner']"
     },
     {
-      "url": "^https://([^/.]+\\.)?(?:rbbtoday|response|carcareplus|mycar-life|resemom|inside-games|gamespark|gamebusiness|roundup-gamers|animeanime|cho-animedia|cinemacafe|reanimal|cyclestyle|scansecurity|tsuhan-ec|manetatsu|media-innovation|nomooo|techno-edge|branc|irnote|green-economy|web3\\.gamebusiness|scan\\.netsecurity)\\.((?:ne\\.)?jp|com|net|global)/",
-      "name": "IID ニュースメディア",
-      "exampleUrl": "https://www.rbbtoday.com/article/?page=2",
-      "nextLink": "//link[@rel='next'][contains(@href, 'page=')]",
-      "pageElement": "//main/*[contains(@class, 'main-topics') or contains(@class, 'main-news')]"
-    },
-    {
       "url": "^https://\\w{2,3}\\.freepik\\.com/",
       "name": "freepik.com",
       "exampleUrl": "https://www.freepik.com/vectors/signs-and-symbols\nhttps://www.freepik.com/search?format=search&last_filter=type&last_value=video&query=Signs+And+Symbols&type=video\nhttps://www.freepik.com/search?format=search&iconType=standard&last_filter=iconType&last_value=standard&query=Signs+And+Symbols&type=icon",
@@ -2336,7 +2336,7 @@
     },
     {
       "url": "^https://commons\\.nicovideo\\.jp/",
-      "exampleUrl": "https://commons.nicovideo.jp/search/material/all?category=%E5%8A%B9%E6%9E%9C%E9%9F%B3&transit_from=commons_librarytop_category_kv",
+      "exampleUrl": "https://commons.nicovideo.jp/search?category=効果音&transit_from=commonas_librarytop_category",
       "framePageElement": "a[href*='/nc']",
       "requestType": "frame",
       "responseDelay": 3000
@@ -2454,7 +2454,8 @@
       "url": "^https://appleinsider\\.com/",
       "name": "AppleInsider",
       "exampleUrl": "https://appleinsider.com/",
-      "pageElement": "id('news-river')/*[article or self::hr]"
+      "nextLink": "id('load-more-btn')[@href]",
+      "pageElement": "//main/div[contains(concat(' ', @class, ' '), ' site-container ')][not(.//a[@id='load-more-btn'])]"
     },
     {
       "url": "^https://agenda-note\\.com/.+/detail/",
@@ -2507,6 +2508,7 @@
     {
       "url": "^https://automaton-media\\.com/",
       "exampleUrl": "https://automaton-media.com/",
+      "nextLink": "//nav[contains(@class, 'pagination')]//span[@aria-current='page'][number()>0]/following-sibling::a[1]",
       "pageElement": "//nav[contains(@class, 'pagination')]/preceding-sibling::div/article"
     },
     {
@@ -2557,6 +2559,7 @@
       "url": "^https://cocokara-next\\.com/",
       "name": "CoCoKARAnext 記事",
       "exampleUrl": "https://cocokara-next.com/athlete_celeb/kojifukutani-fa-05/",
+      "nextLink": "(//div[contains(concat(' ', @class, ' '), ' next-page-link ') or contains(concat(' ', @class, ' '), ' next-page-ttl ')]//a[contains(., '次のページ')])[last()]",
       "pageElement": "#maincolumn > :is(.txtBox, .borderBox)"
     },
     {
@@ -3099,10 +3102,6 @@
     },
     {
       "disableBuildIn": true,
-      "url": "^https://www\\.deviantart\\.com/"
-    },
-    {
-      "disableBuildIn": true,
       "url": "^https://www\\.bunkyo\\.org\\.br/"
     },
     {
@@ -3195,6 +3194,14 @@
     {
       "disableBuildIn": true,
       "url": "^https://www\\.oneesports\\.gg/"
+    },
+    {
+      "url": "^https://www\\.gocomics\\.com/",
+      "disableBuildIn": true
+    },
+    {
+      "url": "^https://www\\.kosho\\.or\\.jp/",
+      "disableBuildIn": true
     },
     {
       "url": "^https://www\\.engadget\\.com/",
@@ -3484,6 +3491,11 @@
       "url": "^https://jikayosha\\.jp/\\d+"
     },
     {
+      "url": "^https://letterboxd\\.com/",
+      "requestType": "frame",
+      "responseDelay": 1500
+    },
+    {
       "spa": true,
       "spaDelay": 1000,
       "url": "^https://huggingface\\.co/"
@@ -3535,6 +3547,11 @@
       "requestType": "frame",
       "responseDelay": 1500,
       "url": "^https://koibanashi\\.com/"
+    },
+    {
+      "url": "^https://presearch\\.com/",
+      "name": "presearch.com",
+      "disableBuildIn": true
     },
     {
       "url": "^https://www\\.houzz\\.jp/",
