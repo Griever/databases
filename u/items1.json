@@ -69,6 +69,11 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://togetter\\.com/",
+      "requestType": "frame",
+      "responseDelay": 500
+    },
+    {
       "url": "^https://www\\.google\\.com/search",
       "disableBuildIn": true
     },
