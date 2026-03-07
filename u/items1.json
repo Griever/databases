@@ -69,13 +69,24 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://dora-world\\.com/",
+      "name": "ドラえもんチャンネル",
+      "exampleUrl": "https://dora-world.com/contents",
+      "nextLink": "//li[a[@aria-current='page']][number()>0]/following-sibling::li[1]/a[number()>0]",
+      "pageElement": "h1 + .contents_list",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
       "url": "^https://togetter\\.com/",
       "requestType": "frame",
       "responseDelay": 500
     },
     {
-      "url": "^https://www\\.google\\.com/search",
-      "disableBuildIn": true
+      "url": "^https://www\\.google(?:\\.[^./]{2,3}){1,2}/search",
+      "disableBuildIn": true,
+      "disableWedata": true
     },
     {
       "url": "^https://joyreactor\\.c(om|c)/",
@@ -310,11 +321,6 @@
       "responseDelay": 5000,
       "spa": true,
       "spaDelay": 1000
-    },
-    {
-      "url": "^https://www\\.google\\.com/search\\?(.*?&)?udm=[27]",
-      "exampleUrl": "https://www.google.com/search?q=AIM1&udm=7",
-      "disableWedata": true
     },
     {
       "url": "^https://www\\.locondo\\.jp/",
