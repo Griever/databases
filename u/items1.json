@@ -69,6 +69,34 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://mfg-anime\\.com/",
+      "name": "アニメ『MFゴースト』公式サイト",
+      "exampleUrl": "https://mfg-anime.com/news/",
+      "showElement": ".e-iv"
+    },
+    {
+      "url": "^https://www\\.businessoffashion\\.com/",
+      "name": "Business of Fashion",
+      "exampleUrl": "https://www.businessoffashion.com/topics/luxury/page/2/",
+      "nextLink": "//a[@aria-label='Next page']",
+      "pageElement": "//a[@aria-label='Next page' or @aria-label='Previous page']/ancestor::div[1]/preceding-sibling::*"
+    },
+    {
+      "url": "^https://fashionista\\.com/",
+      "name": "Fashionista",
+      "exampleUrl": "https://fashionista.com/",
+      "clickElement": "button[phx-track-id='load more']",
+      "pageElement_": "//phoenix-footer-loader/preceding-sibling::section",
+      "clickInterval": 1000
+    },
+    {
+      "url": "^https://sailormoon-official\\.com/",
+      "name": "セーラームーンストア",
+      "exampleUrl": "https://sailormoon-official.com/store/news/",
+      "clickElement": "a#nextload",
+      "pageElement": "#grid-content > *"
+    },
+    {
       "url": "^https://dora-world\\.com/",
       "name": "ドラえもんチャンネル",
       "exampleUrl": "https://dora-world.com/contents",
