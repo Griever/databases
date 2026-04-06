@@ -514,8 +514,8 @@
       "url": "^https://www\\.excite\\.co\\.jp/news/article/E\\d+",
       "name": "エキサイトニュース 漫画",
       "exampleUrl": "https://www.excite.co.jp/news/article/E1750683948865/",
-      "nextLink": "//a[contains(concat(' ', @class, ' '), ' pager-NextpageLink ')][.='続きを読む']|\nid('newsSeriesNextLink')/a[div/text()='次回はこちら']",
-      "pageElement": "//div[contains(concat(' ', @class, ' '), ' story ')]/node()[not(\n  self::text() and normalize-space(self::text())='' or\n  contains(@class, 'ad-aside') or \n  @id='newsSeriesIndexLink' or\n  @id='newsSeriesNextLink' or\n  @id='newsSeriesIndexLinkBottom' or \n  @id='pager-Nextpage'\n)]\n|\n//div[contains(concat(' ', @class, ' '), ' article-header ')][//nav//a[@class='is-current' and text()='1']]"
+      "nextLink": "//a[contains(concat(' ', @class, ' '), ' pager-NextpageLink ')][.='続きを読む']|\nid('newsSeriesNextLink')/a[p/span/text()='この続きは…']",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' story ')]/node()[not(\n  self::text() and normalize-space(self::text())='' or\n  contains(@class, 'ad-aside') or \n  @id='newsSeriesIndexLink' or\n  @id='newsSeriesIndexLinkBottom' or \n  @id='pager-Nextpage'\n)]\n|\n//div[contains(concat(' ', @class, ' '), ' article-header ')][//nav//a[@class='is-current' and text()='1']]"
     },
     {
       "url": "^https://www\\.jz-tamago\\.co\\.jp/",
@@ -1491,15 +1491,14 @@
       "responseDelay": 2000
     },
     {
-      "name": "Pixiv",
       "url": "^https://www\\.pixiv\\.net/",
-      "exampleUrl": "https://www.pixiv.net/tags/Re%3A%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89%E5%A7%8B%E3%82%81%E3%82%8B%E7%95%B0%E4%B8%96%E7%95%8C%E7%94%9F%E6%B4%BB/illustrations\nhttps://www.pixiv.net/user_event.php?type=artworks",
-      "nextLink": "//button[@aria-current]/following-sibling::a[1][not(@hidden)]",
-      "pageElement": "descendant::ul[.//a[@data-gtm-user-id or @data-gtm-value] and .//button/*[local-name()='svg']][last()][not(ancestor::aside)]",
-      "framePageElement": "descendant::ul[.//a[@data-gtm-user-id or @data-gtm-value] and .//button/*[local-name()='svg']][last()][not(ancestor::aside)]/li[last()][.//img[starts-with(@src, 'https://i.pximg.net/')]]",
+      "name": "Pixiv",
+      "exampleUrl": "https://www.pixiv.net/tags/Re%3A%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89%E5%A7%8B%E3%82%81%E3%82%8B%E7%95%B0%E4%B8%96%E7%95%8C%E7%94%9F%E6%B4%BB/illustrations\nhttps://www.pixiv.net/user_event.php?type=artworks\nhttps://www.pixiv.net/users/11/illustrations\nhttps://www.pixiv.net/users/11/manga\nhttps://www.pixiv.net/users/11/novels\nhttps://www.pixiv.net/tags/%E5%89%B5%E4%BD%9C/artworks\nhttps://www.pixiv.net/tags/%E5%89%B5%E4%BD%9C/novels?original_only=1",
+      "nextLink": "//*[(self::button or self::span) and @aria-current]/following-sibling::a[1][not(@hidden)]",
+      "pageElement": "descendant::ul[.//a[@data-gtm-user-id or @data-gtm-value] and .//button/*[local-name()='svg']][last()][not(ancestor::aside)]|\n//*[@data-ga4-label='works_content']/*[.//a[@data-gtm-value]]",
+      "framePageElement": "descendant::ul[.//a[@data-gtm-user-id or @data-gtm-value] and .//button/*[local-name()='svg']][last()][not(ancestor::aside)]/li[last()][.//img[starts-with(@src, 'https://i.pximg.net/')]]|\n//*[@data-ga4-label='works_content']/descendant::div[@radius][last()]/img",
       "requestType": "frame",
-      "responseDelay": 5000,
-      "spa": true
+      "responseDelay": 15000
     },
     {
       "url": "^https://www\\.pixiv\\.net/search/users\\?",
