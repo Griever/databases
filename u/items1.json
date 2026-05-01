@@ -2,6 +2,7 @@
   "DISABLED_ITEMS": {
     "http://wedata.net/items/400": "post",
     "http://wedata.net/items/447": "Discuz (Forum|Thread)",
+    "http://wedata.net/items/462": "bad absolute",
     "http://wedata.net/items/561": "bad, iframe",
     "http://wedata.net/items/649": "hAtom",
     "http://wedata.net/items/650": "hAtom",
@@ -15,6 +16,7 @@
     "http://wedata.net/items/29787": "bad",
     "http://wedata.net/items/31114": "tumblr hatom",
     "http://wedata.net/items/31158": "tumblr autopagerize_page_element",
+    "http://wedata.net/items/31621": "bad, js",
     "http://wedata.net/items/32012": "bad",
     "http://wedata.net/items/32771": "bad",
     "http://wedata.net/items/49408": "bad",
@@ -52,6 +54,7 @@
     "http://wedata.net/items/85565": "bad inf",
     "http://wedata.net/items/85609": "bad, pe",
     "http://wedata.net/items/85640": "ismedia",
+    "http://wedata.net/items/85719": "bad",
     "http://wedata.net/items/85756": "bad, pe",
     "http://wedata.net/items/85766": "dummy",
     "http://wedata.net/items/85802": "tumblr canonical",
@@ -68,6 +71,88 @@
     "http://wedata.net/items/86226": "bad, nl"
   },
   "TOP_SITEINFO": [
+    {
+      "url": "^https://tower\\.jp/",
+      "name": "TOWER RECORDS",
+      "exampleUrl": "https://tower.jp/item/masters-choice/genre/",
+      "nextLink": "//button[contains(@class, 'is-active')][number()>0]/following-sibling::button[1][number()>0]",
+      "pageElement": ".TOL-masters-choice-PC-article-list,\n.TOL-masters-choice-SP-article-list",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://(?:www\\.)?contextfreeart\\.org/gallery/search\\.php",
+      "name": "Context Free Gallery",
+      "exampleUrl": "https://www.contextfreeart.org/gallery/search.php?t=faves&num=5",
+      "nextLink": "//a[@class=\"pnlink\"][last()][not(@style=\"visibility: hidden;\")]",
+      "pageElement": "id('CFAcontent')/*[not(a/@class='pnlink')]",
+      "nextQuery": "from",
+      "nextIncrement": 5,
+      "nextStartValue": 0
+    },
+    {
+      "url": "^https://www\\.crank-in\\.net/(?:.*(gallery|person).*)/\\d+",
+      "name": "クランクイン！ - 写真 -",
+      "exampleUrl": "https://www.crank-in.net/person/2729\nhttps://www.crank-in.net/gallery/column/76673\nhttps://www.crank-in.net/trend/gallery/life/125002",
+      "nextLink": "descendant::figure[1]//a[@class='arrow-right-link'][not(contains(@href,'/1#gallery-img'))]",
+      "pageElement": "//main/article//figure[.//*[@class='photo-slide-img' or @class='photo-link-main']]/*[self::figcaption or @class='photo-slide-img' or @class='photo-link-main']"
+    },
+    {
+      "url": "^https://eiga\\.com/news/",
+      "name": "映画ニュース - 映画.com",
+      "exampleUrl": "https://eiga.com/news/",
+      "nextLink": "//a[contains(concat(' ', @class, ' '), ' prev-next-wrap__btn ') and contains(., '日の映画ニュース')]",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' pagination ')]/preceding-sibling::section[contains(concat(' ', @class, ' '), ' list-wrap ')]"
+    },
+    {
+      "url": "^https?://park\\.ajinomoto\\.co\\.jp/(?:recipe/search|tag)/",
+      "name": "AJINOMOTO Park レシピ検索",
+      "exampleUrl": "https://park.ajinomoto.co.jp/recipe/search/?search_word=%E8%B1%9A%E8%82%89",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "id('newList popularityList')"
+    },
+    {
+      "url": "^https://natalie\\.mu/.+/gallery/.+",
+      "name": "コミックナタリー gallery",
+      "exampleUrl": "https://natalie.mu/comic/gallery/news/670271/2859950",
+      "nextLink": "a.NA_article_img_nav-next[href*='/gallery/']",
+      "pageElement": ".NA_article_img_thumb",
+      "removeElement": ".NA_article_img_thumb > :not(img)"
+    },
+    {
+      "url": "^https://www\\.(buffaloes|fighters|marines|rakuteneagles|seibulions|softbankhawks)(\\.co)?\\.jp/game/calendar",
+      "name": "パ・リーグ 試合日程（カレンダー）",
+      "exampleUrl": "https://www.marines.co.jp/game/calendar/202605/",
+      "nextLink": "#next_month",
+      "pageElement": ".c-calendar-month"
+    },
+    {
+      "url": "^https://www\\.giants\\.jp/",
+      "name": "読売ジャイアンツ（巨人軍）公式サイト",
+      "exampleUrl": "https://www.giants.jp/news/",
+      "nextLink": "//a[@rel='next'][not(@aria-disabled='true')]",
+      "pageElement": "ul[class*='article_list-article'] > li",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
+      "url": "^https://hanshintigers\\.jp/",
+      "name": "広島東洋カープ公式サイト",
+      "exampleUrl": "https://hanshintigers.jp/news/topics/all/",
+      "nextLink": "id('year-n')/ul/li[img[substring(@src, string-length(@src) - string-length('_o.gif') + 1) = '_o.gif']]/preceding-sibling::li[1]/a",
+      "pageElement": "#news-list > .panes"
+    },
+    {
+      "url": "^https://www\\.carp\\.co\\.jp/",
+      "name": "広島東洋カープ公式サイト",
+      "exampleUrl": "https://www.carp.co.jp/news",
+      "clickElement": "id('tab-news-team')/ul/div/button[.='もっと見る']",
+      "pageElement": "id('tab-news-team')/ul/li"
+    },
     {
       "url": "^https://mfg-anime\\.com/",
       "name": "アニメ『MFゴースト』公式サイト",
@@ -692,9 +777,12 @@
     },
     {
       "url": "^https?://www\\.furaffinity\\.net/(?:browse|msg/submissions|(?:favorites|gallery|scraps)/[^/]+)/",
-      "name": "Fur Affinity",
-      "exampleUrl": "https://www.furaffinity.net/browse/",
-      "css": ".blocked-content { filter: none !important; }"
+      "name": "Fur Affinity [dot] net",
+      "nextLink": "//form[button[text()='Next' and not(@disabled)]]",
+      "pageElement": "//section[@class='gallery s-200 ']/*",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 2
     },
     {
       "url": "^https://www\\.soundhouse\\.co\\.jp/",
@@ -2858,6 +2946,10 @@
       "url": "^https://www\\.extrafabulouscomics\\.com/"
     },
     {
+      "url": "^https://www\\.originalgamescores\\.com/",
+      "disableBuildIn": true
+    },
+    {
       "disableBuildIn": true,
       "url": "^https://natgeo\\.nikkeibp\\.co\\.jp/atcl"
     },
@@ -3529,6 +3621,10 @@
       "url": "^https://jikayosha\\.jp/\\d+"
     },
     {
+      "url": "^https://joho-todai\\.com/",
+      "disableBuildIn": true
+    },
+    {
       "url": "^https://letterboxd\\.com/",
       "requestType": "frame",
       "responseDelay": 1500
@@ -3585,6 +3681,10 @@
       "requestType": "frame",
       "responseDelay": 1500,
       "url": "^https://koibanashi\\.com/"
+    },
+    {
+      "url": "^https://www\\.meta\\.com/",
+      "disableBuildIn": true
     },
     {
       "url": "^https://presearch\\.com/",
