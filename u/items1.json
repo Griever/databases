@@ -72,6 +72,56 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://search\\.theregister\\.com/",
+      "exampleUrl": "https://search.theregister.com/?q=test",
+      "requestType": "frame",
+      "responseDelay": 1000
+    },
+    {
+      "nextLink": "//a[@rel=\"next\"]",
+      "pageElement": "id('post')/*[not(@id='page_wrap')]",
+      "url": "^https?://(?:www\\.)?uniforme(\\.co)?\\.jp/news/",
+      "exampleUrl": "https://www.uniforme.co.jp/news/page/2"
+    },
+    {
+      "url": "^https?://forum\\.hardware\\.fr/",
+      "exampleUrl": "https://forum.hardware.fr/hfr/Hardware/liste_sujet-1.htm",
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https?://sai-zen-sen\\.jp/(?:works|special)/",
+      "exampleUrl": "https://sai-zen-sen.jp/works/fictions/doppelganger/01/01.html",
+      "requestType": "frame",
+      "responseDelay": 1000
+    },
+    {
+      "url": "^https://techtarget\\.itmedia\\.co\\.jp/",
+      "exampleUrl": "https://techtarget.itmedia.co.jp/tt/news/1608/10/news06.html",
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://www\\.gsmarena\\.com/",
+      "exampleUrl": "https://www.gsmarena.com/samsung_galaxy_note10-reviews-9788.php",
+      "disableBuildIn": true
+    },
+    {
+      "url": "^https://dokomade\\.net/",
+      "exampleUrl": "https://dokomade.net/",
+      "requestType": "frame",
+      "responseDelay": 3000
+    },
+    {
+      "url": "^https://www\\.nicovideo\\.jp/ranking/",
+      "name": "動画ランキング - ニコニコ動画",
+      "nextLink": "//nav[contains(@id, 'pagination')]/a[@aria-current='page'][number()>0]/following-sibling::a[1][number()>0]",
+      "pageElement": ".d_grid > .gap_x3 > .gap_x3",
+      "framePageElement": ".d_grid > .gap_x3 > .gap_x3 > [style*=\"display: none\"]",
+      "requestType": "frame",
+      "responseDelay": 15000
+    },
+    {
       "url": "^https://tower\\.jp/",
       "name": "TOWER RECORDS",
       "exampleUrl": "https://tower.jp/item/masters-choice/genre/",
@@ -439,8 +489,8 @@
       "url": "^https://www\\.locondo\\.jp/",
       "exampleUrl": "https://www.locondo.jp/shop/category/pumps/",
       "requestType": "frame",
-      "responseDelay": 3000,
-      "framePageElement": "id('catalog_list')",
+      "responseDelay": 15000,
+      "framePageElement": "//div[contains(concat(' ', @class, ' '), ' catalog_paging ')]/ul/li[contains(@class, 'current')][number()>0]",
       "disableWedata": true
     },
     {
@@ -684,12 +734,6 @@
       "responseDelay": 1000
     },
     {
-      "url": "^https://gendai\\.media/list/",
-      "name": "現代ビジネス /list/",
-      "exampleUrl": "https://gendai.media/list/genre/gendaibusiness/politics",
-      "pageElement": "main > *:has(a[href*='/articles/'])"
-    },
-    {
       "url": "^https://[^/]+\\.aliexpress\\.com/w/",
       "name": "AliExpress",
       "exampleUrl": "https://ja.aliexpress.com/w/wholesale-%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%83%9C%E3%83%BC%E3%83%AB.html",
@@ -720,17 +764,6 @@
       "name": "Togetter 記事",
       "exampleUrl": "https://togetter.com/li/2547666",
       "pageElement": "descendant::div[contains(concat(' ', @class, ' '), ' pagenation ')][last()]/preceding-sibling::*"
-    },
-    {
-      "url": "^https://comicspace\\.jp/",
-      "name": "コミックスペース",
-      "exampleUrl": "https://comicspace.jp/title/genre/1",
-      "pageElement": "._titlesWrap > div:has(figure)",
-      "framePageElement": "._titlesWrap > div figure img[src*=':']",
-      "requestType": "frame",
-      "responseDelay": 3000,
-      "spa": true,
-      "spaDelay": 2000
     },
     {
       "url": "^https://colleize\\.com/",
@@ -782,7 +815,8 @@
       "pageElement": "//section[@class='gallery s-200 ']/*",
       "nextQuery": "page",
       "nextIncrement": 1,
-      "nextStartValue": 2
+      "nextStartValue": 2,
+      "exampleUrl": "https://www.furaffinity.net/browse/"
     },
     {
       "url": "^https://www\\.soundhouse\\.co\\.jp/",
@@ -795,14 +829,16 @@
       "nextStartValue": 1
     },
     {
-      "url": "^https://maidigitv\\.jp/",
-      "name": "MAiDiGiTV",
-      "exampleUrl": "https://maidigitv.jp/movies",
-      "nextLink": ".pagination",
+      "url": "^https://mantan-web\\.jp/movie/",
+      "name": "動画アーカイブ MANTANWEB",
+      "exampleUrl": "https://mantan-web.jp/movie/archive",
+      "nextLink": "#jump > a",
       "pageElement": ".movie-list",
       "nextQuery": "page",
       "nextIncrement": 1,
-      "nextStartValue": 1
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 1000
     },
     {
       "url": "^https://maquia\\.hpplus\\.jp/",
@@ -1050,14 +1086,18 @@
       "exampleUrl": "https://www.fashion-headline.com/category/fashion"
     },
     {
-      "url": "^https://www\\.baidu\\.com/s",
+      "url": "^https://www\\.baidu\\.com/",
       "name": "Baidu",
       "nextLink": "id('page')/div/a[last()]",
       "pageElement": "id('content_left')/*",
       "insertBefore": "id('content_left')/following-sibling::node()[last()]",
       "_resource_url": "http://wedata.net/items/425",
       "spa": true,
-      "spaDelay": 1000
+      "spaDelay": 1000,
+      "exampleUrl": "https://www.baidu.com/s?wd=japan",
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "framePageElement": "id('content_left')/*"
     },
     {
       "url": "^https?://nhentai\\.net/",
@@ -1253,14 +1293,6 @@
     {
       "url": "^https://booklive\\.jp/index/",
       "spa": true
-    },
-    {
-      "url": "^https://mirai-dora-world-online\\.com/",
-      "name": "ドラえもん未来デパート オンライン",
-      "exampleUrl": "https://mirai-dora-world-online.com/ic",
-      "pageElement": ".sysItemList > .sysThumbnail",
-      "requestType": "frame",
-      "responseDelay": 1500
     },
     {
       "url": "^https://cookpad\\.com/",
@@ -1517,11 +1549,12 @@
     {
       "url": "^https://wowma\\.jp/",
       "name": "Wowma! for au",
-      "exampleUrl": "https://wowma.jp/bep/m/klist3?sk=BB8187859A5B96E436F8s1&categ_id=5305&at=FP&e_scope=O&non_gr=ex https://wowma.jp/bep/m/klist2?user=24793691&e_scope=O https://wowma.jp/bep/m/klist2?user=24793691&e_scope=O&srm=Y&sort1=price%252CA",
-      "nextLink": "//li[@class='next']/a",
-      "pageElement": "//div[@class='searchListingItems ']/ul/li",
+      "exampleUrl": "https://wowma.jp/bep/m/klist3?sk=BB8187859A5B96E436F8s1&categ_id=5305&at=FP&e_scope=O&non_gr=ex\nhttps://wowma.jp/bep/m/klist2?user=24793691&e_scope=O",
+      "nextLink": "//li[*[contains(@class, 'selected')]][number()>0]/following-sibling::li[1][number()>0]/a",
+      "pageElement": "//ul[starts-with(@class, 'PcPaging_paging__')]/preceding-sibling::*[.//a/div/img[starts-with(@src, 'https://image.wowma.jp/')]]",
+      "framePageElement": "//ul[starts-with(@class, 'PcPaging_paging__')]/preceding-sibling::*[.//a/div/img[starts-with(@src, 'https://image.wowma.jp/')]]",
       "requestType": "frame",
-      "responseDelay": 500
+      "responseDelay": 10000
     },
     {
       "url": "^https://news\\.netkeiba\\.com/",
@@ -1630,9 +1663,9 @@
       "url": "^https?://j-town\\.net/",
       "name": "Jタウンネット",
       "exampleUrl": "https://j-town.net/tag/22739/?page=2",
-      "nextLink": "//li[contains(@class,'is-active')]/following-sibling::li[1][following-sibling::li]/a",
+      "nextLink": "//li[contains(@class,'is-active')][number()>0]/following-sibling::li[1][number()>0]/a",
       "pageElement": "//section[contains(concat(' ', @class, ' '), ' section_listpage ')]/div[contains(concat(' ', @class, ' '), ' section_listpage_list ')]",
-      "framePageElement": "//li[contains(@class,'is-active')]/following-sibling::li[1][following-sibling::li]/a",
+      "framePageElement": "//li[contains(@class,'is-active')][number()>0]/following-sibling::li[1][number()>0]/a",
       "requestType": "frame",
       "responseDelay": 3000,
       "nextQuery": "page",
@@ -2178,9 +2211,9 @@
     {
       "url": "^https://(www\\.|car)goodspress\\.jp/",
       "name": "&GP",
-      "exampleUrl": "https://www.goodspress.jp/ https://cargoodspress.jp",
+      "exampleUrl": "https://www.goodspress.jp/\nhttps://www.goodspress.jp/sites/shokuraku/",
       "nextLink": "//a[contains(concat(' ', @class, ' '), ' next ')]",
-      "pageElement": "//main/ul[contains(concat(' ', @class, ' '), ' list-articles ')]/li"
+      "pageElement": "//main/ul[contains(concat(' ', @class, ' '), ' list-articles ')]/li|\n//main/div[contains(concat(' ', @class, ' '), ' special_posts ')]/article"
     },
     {
       "url": "^https://www\\.dragonquest\\.jp/",
@@ -3143,11 +3176,6 @@
       "url": "^https://www\\.scsagamihara\\.com/"
     },
     {
-      "requestType": "frame",
-      "responseDelay": 3000,
-      "url": "^https://camp-fire\\.jp/projects/"
-    },
-    {
       "disableBuildIn": true,
       "url": "^https://info\\.nextmode\\.co\\.jp/"
     },
@@ -3759,6 +3787,14 @@
       "url": "^https://bitstar\\.tokyo/"
     },
     {
+      "url": "^https://i\\.lumine\\.jp/",
+      "disableBuildIn": true
+    },
+    {
+      "url": "^https://takecomic\\.jp/",
+      "spa": true
+    },
+    {
       "url": "^https://mangadex\\.org/",
       "disableBuildIn": true
     },
@@ -3919,6 +3955,10 @@
     {
       "disableBuildIn": true,
       "url": "^https://hugmug\\.jp/"
+    },
+    {
+      "url": "^https://time\\.com/",
+      "spa": true
     },
     {
       "url": "^https://abema\\.tv/",
