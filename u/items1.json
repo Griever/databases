@@ -9,6 +9,7 @@
     "http://wedata.net/items/681": "tumblr canonical",
     "http://wedata.net/items/2194": "bad",
     "http://wedata.net/items/2482": "bad",
+    "http://wedata.net/items/2665": "bad, pe",
     "http://wedata.net/items/25672": "absolute",
     "http://wedata.net/items/25843": "ismedia",
     "http://wedata.net/items/26621": "unnecessary",
@@ -17,25 +18,34 @@
     "http://wedata.net/items/31114": "tumblr hatom",
     "http://wedata.net/items/31158": "tumblr autopagerize_page_element",
     "http://wedata.net/items/31621": "bad, js",
+    "http://wedata.net/items/32005": "bad, nl",
     "http://wedata.net/items/32012": "bad",
     "http://wedata.net/items/32771": "bad",
     "http://wedata.net/items/49408": "bad",
+    "http://wedata.net/items/55843": "bad, pe",
     "http://wedata.net/items/61099": "bad",
     "http://wedata.net/items/61110": "bad",
     "http://wedata.net/items/63728": "tumblr canonical",
+    "http://wedata.net/items/64713": "bad, nl",
     "http://wedata.net/items/65156": "bad, pe",
     "http://wedata.net/items/66481": "bad",
     "http://wedata.net/items/74669": "bad, nl",
+    "http://wedata.net/items/74958": "bad, none",
+    "http://wedata.net/items/76334": "bad, second",
     "http://wedata.net/items/76452": "bad, request",
     "http://wedata.net/items/76807": "bad",
     "http://wedata.net/items/76907": "bad",
+    "http://wedata.net/items/76919": "bad, pe",
     "http://wedata.net/items/77079": "bad",
+    "http://wedata.net/items/77125": "bad, rtrp",
     "http://wedata.net/items/77203": "thumbnail inf",
     "http://wedata.net/items/77236": "bad, pe",
     "http://wedata.net/items/77487": "bad",
     "http://wedata.net/items/77754": "tenhou bad",
+    "http://wedata.net/items/79987": "bad, pe",
     "http://wedata.net/items/80660": "td-block-row",
     "http://wedata.net/items/80835": "dummy",
+    "http://wedata.net/items/80948": "bad, nl",
     "http://wedata.net/items/81178": "bad",
     "http://wedata.net/items/81254": "listal bad",
     "http://wedata.net/items/81508": "absolute",
@@ -44,9 +54,12 @@
     "http://wedata.net/items/81905": "bad, pe",
     "http://wedata.net/items/81933": "bad",
     "http://wedata.net/items/81996": "bad",
+    "http://wedata.net/items/82042": "bad, nl",
     "http://wedata.net/items/82052": "unnecessary",
+    "http://wedata.net/items/82220": "bad, inf",
     "http://wedata.net/items/85313": "bad",
     "http://wedata.net/items/85401": "bad, nl",
+    "http://wedata.net/items/85420": "bad, inf",
     "http://wedata.net/items/85451": "dummy",
     "http://wedata.net/items/85560": "tumblr canonical",
     "http://wedata.net/items/85562": "tumblr canonical",
@@ -57,6 +70,7 @@
     "http://wedata.net/items/85719": "bad",
     "http://wedata.net/items/85756": "bad, pe",
     "http://wedata.net/items/85766": "dummy",
+    "http://wedata.net/items/85785": "bad, pe",
     "http://wedata.net/items/85802": "tumblr canonical",
     "http://wedata.net/items/85805": "dummy",
     "http://wedata.net/items/85852": "unnecessary",
@@ -65,12 +79,90 @@
     "http://wedata.net/items/85915": "tumblr dummy",
     "http://wedata.net/items/85947": "ismedia",
     "http://wedata.net/items/86004": "article",
+    "http://wedata.net/items/86016": "bad, pe",
     "http://wedata.net/items/86017": "article",
     "http://wedata.net/items/86072": "listal bad",
     "http://wedata.net/items/86138": "bad, nl",
+    "http://wedata.net/items/86143": "bad, pe",
     "http://wedata.net/items/86226": "bad, nl"
   },
   "TOP_SITEINFO": [
+    {
+      "url": "^https://www\\.amazon\\.co\\.jp/",
+      "name": "Amazon レビュー",
+      "exampleUrl": "https://www.amazon.co.jp/product-reviews/B015OW3M1W/",
+      "clickElement": "id('cm_cr-pagination_bar')//a[@data-hook='show-more-button' and starts-with(@href, '/product-reviews/')]",
+      "pageElement": "id('cm_cr-review_list')//ul",
+      "framePageElement": "id('cm_cr-pagination_bar')"
+    },
+    {
+      "url": "^https://addons\\.mozilla\\.org/",
+      "spa": true
+    },
+    {
+      "url": "^https://kstyle\\.com/",
+      "name": "Kstyle",
+      "exampleUrl": "https://kstyle.com/category.ksn?categoryCode=KP\nhttps://kstyle.com/photo.ksn\nhttps://kstyle.com/search.ksn?searchWord=%E6%97%A5%E6%9C%AC",
+      "nextLink": "//a[@rel='next'][not(@href)][not(@aria-disabled='true')]",
+      "pageElement": "(//div[contains(@class, 'page_page_body')]//*[self::h1 or self::h2]/following-sibling::ul)[last()]",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
+      "url": "^https://mainichi\\.jp/",
+      "name": "毎日新聞",
+      "exampleUrl": "https://mainichi.jp/world/",
+      "clickElement": ".link-more > button",
+      "pageElement": ".articlelist.js-morelist > *"
+    },
+    {
+      "url": "^https://boatnavi\\.hochi\\.co\\.jp/articles\\?page=1#articles-top",
+      "name": "boatnavi.hochi.co.jp",
+      "exampleUrl": "https://boatnavi.hochi.co.jp/articles?page=1#articles-top",
+      "nextLink": "//a[@aria-current='page' and @aria-label='次のページ'][not(contains(concat(' ', @class, ' '), ' disabled '))]",
+      "pageElement": "#articles-top + header + ul",
+      "framePageElement": "#articles-top + header + ul",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 5000
+    },
+    {
+      "url": "^https://smart-flash\\.jp/",
+      "name": "Smart FLASH 記事",
+      "exampleUrl": "https://smart-flash.jp/entertainment/entertainment-news/406598/",
+      "disableBuildIn": true
+    },
+    {
+      "url": "^https://be-story\\.jp",
+      "name": "美ST ONLINE",
+      "exampleUrl": "https://be-story.jp/hair/",
+      "removeElement": ".js-hero"
+    },
+    {
+      "url": "^https://imagelink\\.kyodonews\\.jp/search\\?",
+      "name": "KYODO NEWS IMAGELINK",
+      "exampleUrl": "https://imagelink.kyodonews.jp/search?product_type=1,2,11&keyword=%E7%B6%BE%E7%80%AC%E3%81%AF%E3%82%8B%E3%81%8B&pg=1",
+      "nextLink": "//li[contains(@class, 'page') and contains(@class, 'current')][number()>0]/following-sibling::li[1][number()>0]",
+      "pageElement": "main li.content",
+      "framePageElement": "main li.content",
+      "nextQuery": "pg",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 10000,
+      "spa": true,
+      "spaDelay": 3000
+    },
+    {
+      "url": "^https://profile\\.yoshimoto\\.co\\.jp/",
+      "name": "タレント検索結果｜吉本興業株式会社",
+      "exampleUrl": "https://profile.yoshimoto.co.jp/talent/list/?keywords=&from_where1=&age_from=&age_to=",
+      "clickElement": "id('moreBtn')",
+      "pageElement": ".resultBox"
+    },
     {
       "url": "^https://search\\.theregister\\.com/",
       "exampleUrl": "https://search.theregister.com/?q=test",
@@ -734,6 +826,12 @@
       "responseDelay": 1000
     },
     {
+      "url": "^https://gendai\\.media/list/",
+      "name": "gendai.media/list",
+      "exampleUrl": "https://gendai.media/list/genre/money/family_finance\nhttps://gendai.media/list/genre/gendaibusiness/politics",
+      "pageElement": "//main/section[count(.//a[contains(@href, '/articles/-/')])=1]|\n//nav[@aria-label='ページネーション']/preceding-sibling::*[.//a[contains(@href, '/articles/-/')]]"
+    },
+    {
       "url": "^https://[^/]+\\.aliexpress\\.com/w/",
       "name": "AliExpress",
       "exampleUrl": "https://ja.aliexpress.com/w/wholesale-%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%83%9C%E3%83%BC%E3%83%AB.html",
@@ -876,10 +974,10 @@
     {
       "url": "^https://shikiho\\.toyokeizai\\.net/",
       "name": "会社四季報オンライン",
-      "exampleUrl": "https://shikiho.toyokeizai.net/news",
+      "exampleUrl": "https://shikiho.toyokeizai.net/news\nhttps://shikiho.toyokeizai.net/columns\nhttps://shikiho.toyokeizai.net/us",
       "nextLink": ".pagination__items__btn.next:not(.disabled)",
-      "pageElement": "ul.newsList",
-      "framePageElement": "ul.newsList",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' pagination ')]/preceding-sibling::*[self::ul or contains(@class, 'table')]",
+      "framePageElement": ".pagination__items__btn.active",
       "nextQuery": "page",
       "nextIncrement": 1,
       "nextStartValue": 1,
@@ -1428,15 +1526,6 @@
       "_build_in": true
     },
     {
-      "url": "^https://www\\.newsweekjapan\\.jp/tagsearch/",
-      "name": "ニューズウィーク日本版",
-      "exampleUrl": "https://www.newsweekjapan.jp/tagsearch/%E3%82%A6%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%8A",
-      "pageElement": "id('pager-search')/preceding-sibling::div[contains(concat(' ', @class, ' '), ' search-results-container ')]",
-      "requestType": "frame",
-      "responseDelay": 1000,
-      "_build_in": true
-    },
-    {
       "url": "^https://mora\\.jp/.",
       "name": "mora",
       "exampleUrl": "https://mora.jp/newreleasepage/all",
@@ -1560,7 +1649,7 @@
       "url": "^https://news\\.netkeiba\\.com/",
       "name": "netkeiba.com ニュースバックナンバー",
       "exampleUrl": "https://news.netkeiba.com/?pid=news_all&category=A",
-      "nextLink": "//a[@rel='next']",
+      "nextLink": "//a[@rel='next']|id('NewsNewsRankList')//a[text()='もっと見る']",
       "pageElement": "id('news-view-default')/ul/li",
       "framePageElement": "id('news-view-default')/ul/li",
       "requestType": "frame",
@@ -1601,37 +1690,6 @@
       "pageElement": "[class*='-desktop-grid']",
       "requestType": "frame",
       "responseDelay": 500
-    },
-    {
-      "url": "^https://www\\.pixiv\\.net/howto/category/\\d+/",
-      "name": "www.pixiv.net/howto",
-      "exampleUrl": "https://www.pixiv.net/howto/category/1/%E3%83%9D%E3%83%BC%E3%82%BA?order=date_d&s_mode=s_tag&mode=all&s_type=howto",
-      "nextLink": "//a[@rel='next']",
-      "pageElement": "id('js-knowhow-thumbnail-collection')",
-      "requestType": "frame",
-      "responseDelay": 2000
-    },
-    {
-      "url": "^https://www\\.pixiv\\.net/",
-      "name": "Pixiv",
-      "exampleUrl": "https://www.pixiv.net/tags/Re%3A%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89%E5%A7%8B%E3%82%81%E3%82%8B%E7%95%B0%E4%B8%96%E7%95%8C%E7%94%9F%E6%B4%BB/illustrations\nhttps://www.pixiv.net/user_event.php?type=artworks\nhttps://www.pixiv.net/users/11/illustrations\nhttps://www.pixiv.net/users/11/manga\nhttps://www.pixiv.net/users/11/novels\nhttps://www.pixiv.net/tags/%E5%89%B5%E4%BD%9C/artworks\nhttps://www.pixiv.net/tags/%E5%89%B5%E4%BD%9C/novels?original_only=1",
-      "nextLink": "//*[(self::button or self::span) and @aria-current]/following-sibling::a[1][not(@hidden)]",
-      "pageElement": "descendant::ul[.//a[@data-gtm-user-id or @data-gtm-value] and .//button/*[local-name()='svg']][last()][not(ancestor::aside)]|\n//*[@data-ga4-label='works_content']/*[.//a[@data-gtm-value]]",
-      "framePageElement": "descendant::ul[.//a[@data-gtm-user-id or @data-gtm-value] and .//button/*[local-name()='svg']][last()][not(ancestor::aside)]/li[last()][.//img[starts-with(@src, 'https://i.pximg.net/')]]|\n//*[@data-ga4-label='works_content']/descendant::div[@radius][last()]/img",
-      "requestType": "frame",
-      "responseDelay": 15000
-    },
-    {
-      "url": "^https://www\\.pixiv\\.net/search/users\\?",
-      "name": "Pixiv /search/users?",
-      "exampleUrl": "https://www.pixiv.net/search/users?s_mode=s_usr&nick=a",
-      "nextLink": "//button[@aria-current]/following-sibling::button[1]",
-      "pageElement": "descendant::div[contains(concat(' ', @class, ' '), ' grid ')][.//a[@data-gtm-user-id]]",
-      "framePageElement": "descendant::div[contains(concat(' ', @class, ' '), ' grid ')][.//a[@data-gtm-user-id]]/li[last()][.//img[starts-with(@src, 'https://i.pximg.net/')]]",
-      "nextQuery": "p",
-      "requestType": "frame",
-      "responseDelay": 5000,
-      "spa": true
     },
     {
       "url": "^https://bookmeter\\.com/",
@@ -1685,7 +1743,7 @@
       "name": "Yahoo!ファイナンス /news/",
       "exampleUrl": "https://finance.yahoo.co.jp/news/bus_all",
       "nextLink": "id('newslist')//li[contains(@class, 'current') and number()>0]",
-      "pageElement": "id('newslist')/div/div/ul/li[a[contains(@href, '/news/')]]",
+      "pageElement": "id('newslist')/div[starts-with(@class, 'newsList')]/ul/li",
       "nextQuery": "page",
       "nextIncrement": 1
     },
@@ -1694,7 +1752,7 @@
       "name": "Yahoo!ファイナンス /stocks/",
       "exampleUrl": "https://finance.yahoo.co.jp/stocks/ranking/up?market=all&term=daily\nhttps://finance.yahoo.co.jp/stocks/screening/highdividend",
       "nextLink": "id('pagerbtm')//li[last()]/button[not(@disabled)]",
-      "pageElement": "id('item')/div/table/tbody/tr",
+      "pageElement": "id('item')/descendant::tbody[1]/tr",
       "nextQuery": "page",
       "nextIncrement": 1
     },
@@ -1746,7 +1804,7 @@
     {
       "url": "^https://twiman\\.net/",
       "name": "ツイマンガ",
-      "exampleUrl": "https://twiman.net/illust/t/1girl?type=tag&term=latest&min=50",
+      "exampleUrl": "https://twiman.net/",
       "nextLink": "//ul[contains(concat(' ', @class, ' '), ' pagination ')]/a[number() > 0 and li[contains(concat(' ', @class, ' '), ' border-indigo-500 ')]]/following-sibling::a[1][number()>0]",
       "pageElement": "//ul[@role='list']|//div[contains(concat(' ', @class, ' '), ' grid ')]",
       "spa": true,
@@ -1784,7 +1842,6 @@
       "url": "^https://i-voce\\.jp/",
       "name": "VoCE 記事一覧",
       "exampleUrl": "https://i-voce.jp/make-up/\nhttps://i-voce.jp/featured-series/brands-special/\nhttps://i-voce.jp/feed/663858/",
-      "removeElement": "li:has(p[class*='sponsored'])",
       "spa": true,
       "requestType": "frame",
       "responseDelay": 1000,
@@ -1841,6 +1898,64 @@
     }
   ],
   "MIDDLE_SITEINFO": [
+    {
+      "url": "^https://[^/]+\\.fandom\\.com/",
+      "name": "Interactive Maps Fandom",
+      "nextLink": ".wds-step-pagination__step-next",
+      "pageElement": "#mw-content-text .all-maps__maps-grid"
+    },
+    {
+      "url": "^https://[^/]+\\.fandom\\.com/",
+      "name": "全ページ | Fandom",
+      "exampleUrl": "https://starwars.fandom.com/ja/wiki/%E7%89%B9%E5%88%A5:%E3%83%9A%E3%83%BC%E3%82%B8%E4%B8%80%E8%A6%A7?from=%E6%97%A5%E6%9C%AC&to=&namespace=0\nhttps://harrypotter.fandom.com/wiki/Special:AllPages",
+      "nextLink": "//div[contains(concat(' ', @class, ' '), ' mw-allpages-nav ')]/a[contains(text(), '次のページ') or contains(text(), 'Next')]",
+      "pageElement": ".mw-allpages-nav, .mw-allpages-body"
+    },
+    {
+      "url": "^https://saru\\.co\\.jp/",
+      "name": "TVマガ",
+      "exampleUrl": "https://saru.co.jp/tvmaga/category/interview/",
+      "nextLink": "//link[@rel='next']",
+      "pageElement": "//ul[contains(concat(' ', @class, ' '), ' pagination ')]/preceding-sibling::div[not(contains(@class, 'heading'))]"
+    },
+    {
+      "url": "^https://www\\.cinematoday\\.jp/movie/release/",
+      "name": "今週公開の映画｜シネマトゥデイ",
+      "exampleUrl": "https://www.cinematoday.jp/movie/release/",
+      "nextLink": "//nav/a[text()='次週公開 ']",
+      "pageElement": "//main/article/section"
+    },
+    {
+      "url": "^https://www\\.pixiv\\.net/howto/category/\\d+/",
+      "name": "www.pixiv.net/howto",
+      "exampleUrl": "https://www.pixiv.net/howto/category/1/%E3%83%9D%E3%83%BC%E3%82%BA?order=date_d&s_mode=s_tag&mode=all&s_type=howto",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": "id('js-knowhow-thumbnail-collection')",
+      "requestType": "frame",
+      "responseDelay": 2000
+    },
+    {
+      "url": "^https://www\\.pixiv\\.net/",
+      "name": "Pixiv",
+      "exampleUrl": "https://www.pixiv.net/tags/Re%3A%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89%E5%A7%8B%E3%82%81%E3%82%8B%E7%95%B0%E4%B8%96%E7%95%8C%E7%94%9F%E6%B4%BB/illustrations\nhttps://www.pixiv.net/user_event.php?type=artworks\nhttps://www.pixiv.net/users/11/illustrations\nhttps://www.pixiv.net/users/11/manga\nhttps://www.pixiv.net/users/11/novels\nhttps://www.pixiv.net/tags/%E5%89%B5%E4%BD%9C/artworks\nhttps://www.pixiv.net/tags/%E5%89%B5%E4%BD%9C/novels?original_only=1",
+      "nextLink": "//*[(self::button or self::span) and @aria-current]/following-sibling::a[1][not(@hidden)]",
+      "pageElement": "descendant::ul[.//a[@data-gtm-user-id or @data-gtm-value] and .//button/*[local-name()='svg']][last()][not(ancestor::aside)]|\n//*[@data-ga4-label='works_content']/*[.//a[@data-gtm-value]]",
+      "framePageElement": "descendant::ul[.//a[@data-gtm-user-id or @data-gtm-value] and .//button/*[local-name()='svg']][last()][not(ancestor::aside)]/li[last()][.//img[starts-with(@src, 'https://i.pximg.net/')]]|\n//*[@data-ga4-label='works_content']/descendant::div[@radius][last()]/img",
+      "requestType": "frame",
+      "responseDelay": 15000
+    },
+    {
+      "url": "^https://www\\.pixiv\\.net/search/users\\?",
+      "name": "Pixiv /search/users?",
+      "exampleUrl": "https://www.pixiv.net/search/users?s_mode=s_usr&nick=a",
+      "nextLink": "//button[@aria-current]/following-sibling::button[1]",
+      "pageElement": "descendant::div[contains(concat(' ', @class, ' '), ' grid ')][.//a[@data-gtm-user-id]]",
+      "framePageElement": "descendant::div[contains(concat(' ', @class, ' '), ' grid ')][.//a[@data-gtm-user-id]]/li[last()][.//img[starts-with(@src, 'https://i.pximg.net/')]]",
+      "nextQuery": "p",
+      "requestType": "frame",
+      "responseDelay": 5000,
+      "spa": true
+    },
     {
       "url": "^https://www\\.minisforum\\.jp/",
       "name": "Minisforum",
@@ -2934,8 +3049,9 @@
     },
     {
       "requestType": "frame",
-      "responseDelay": 1000,
-      "url": "^https://column\\.sp\\.baseball\\.findfriends\\.jp/"
+      "responseDelay": 10000,
+      "url": "^https://column\\.sp\\.baseball\\.findfriends\\.jp/",
+      "framePageElement": "//div[contains(@class, 'ager')]//a[text()='次へ']"
     },
     {
       "disableBuildIn": true,
@@ -2999,6 +3115,10 @@
       "requestType": "frame",
       "responseDelay": 1500,
       "url": "^https://nhk-charactershop-tokyo\\.com/"
+    },
+    {
+      "url": "^https://www\\.thegamecollection\\.net/",
+      "disableBuildIn": true
     },
     {
       "url": "^https://www\\.business-standard\\.com/",
@@ -3578,6 +3698,10 @@
     {
       "disableBuildIn": true,
       "url": "^https://www\\.beatink\\.com/"
+    },
+    {
+      "url": "^https://jp\\.yoshiki\\.net/",
+      "disableShowElement": true
     },
     {
       "url": "^https://[^/]+\\.booth\\.pm/",
