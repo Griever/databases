@@ -88,6 +88,41 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://rtrp\\.jp/",
+      "name": "rtrp.jp",
+      "exampleUrl": "https://rtrp.jp/locations/70/",
+      "nextLink": ".pagination a.next",
+      "pageElement": ":has(~.pagination)",
+      "framePageElement": ".pagination",
+      "requestType": "frame",
+      "responseDelay": 15000
+    },
+    {
+      "url": "^https://popnroll\\.tv/",
+      "name": "Pop'n'Roll",
+      "exampleUrl": "https://popnroll.tv/articles",
+      "nextLink": "//button[@width='main' and @type='button' and text()='次ページ']",
+      "pageElement": "//section/h1/following-sibling::div/ul",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
+      "url": "^https://tumblrgallery\\.xyz/",
+      "name": "Tumblr Gallery",
+      "stopElement": ".js_loading"
+    },
+    {
+      "url": "^https://www\\.askul\\.co\\.jp/",
+      "name": "アスクル",
+      "exampleUrl": "https://www.askul.co.jp/s/10-1007-0103014-01030140015/",
+      "nextLink": "//a[contains(concat(' ', @class, ' '), ' -next ')][not(@disabled)]",
+      "pageElement": "id('itemRefineSearch-searchResultBody')",
+      "framePageElement": "id('itemRefineSearch-searchResultBody')//a",
+      "spa": true,
+      "spaDelay": 3000
+    },
+    {
       "url": "^https://www\\.amazon\\.co\\.jp/",
       "name": "Amazon レビュー",
       "exampleUrl": "https://www.amazon.co.jp/product-reviews/B015OW3M1W/",
@@ -283,7 +318,7 @@
     },
     {
       "url": "^https://hanshintigers\\.jp/",
-      "name": "広島東洋カープ公式サイト",
+      "name": "阪神タイガース公式サイト",
       "exampleUrl": "https://hanshintigers.jp/news/topics/all/",
       "nextLink": "id('year-n')/ul/li[img[substring(@src, string-length(@src) - string-length('_o.gif') + 1) = '_o.gif']]/preceding-sibling::li[1]/a",
       "pageElement": "#news-list > .panes"
@@ -500,7 +535,7 @@
       "nextStartValue": 1
     },
     {
-      "url": "^https://coconala\\.com/contents_market/search",
+      "url": "^https://coconala\\.com/contents_market",
       "name": "ココナラコンテンツマーケット",
       "exampleUrl": "https://coconala.com/contents_market/search",
       "nextLink": "//button[@aria-label='次のページへ'][not(@disabled)]",
@@ -705,7 +740,8 @@
       "pageElement": "//div[contains(concat(' ', @class, ' '), ' mod-pager ')]/preceding-sibling::div[.//a[contains(@href, '/product/')]]",
       "nextQuery": "page",
       "nextIncrement": 1,
-      "nextStartValue": 1
+      "nextStartValue": 1,
+      "exampleUrl": "https://www.shopch.jp/pc/product/prodlist/category?category1=01&il=Header&ic=jewelry"
     },
     {
       "url": "^https://www\\.walkerplus\\.com/special/fandomplus/article/",
@@ -1689,7 +1725,8 @@
       "exampleUrl": "https://www.amazon.co.jp/gp/bestsellers/computers/2151972051/ref=zg_bs_nav_computers_2_2151970051",
       "pageElement": "[class*='-desktop-grid']",
       "requestType": "frame",
-      "responseDelay": 500
+      "responseDelay": 15000,
+      "framePageElement": "id('gridItemRoot')[count(.//a//img) >= 50]"
     },
     {
       "url": "^https://bookmeter\\.com/",
@@ -1814,7 +1851,7 @@
       "url": "^https?://www\\d?\\.bing\\.com/search",
       "name": "Bing search",
       "exampleUrl": "https://www.bing.com/search?q=autopagerize\nhttps://www4.bing.com/search?q=food\nhttps://www4.bing.com/search?q=food&qs=n&sp=-1&pq=foo&sc=8-3&sk=&cvid=387D0CF73BAD466697D930524DD38825&first=11&FORM=PERE",
-      "nextLink": "//a[contains(@class,'sb_pagN')]",
+      "nextLink": "a[class*='sb_pagN']",
       "pageElement": "id('b_results')/li[contains(concat(' ', @class, ' '), ' b_algo ')]|//style[contains(., '.cico')]",
       "insertBefore": "id('b_results')/li[@class='b_pag']",
       "spa": true
@@ -1898,6 +1935,27 @@
     }
   ],
   "MIDDLE_SITEINFO": [
+    {
+      "url": "^https://xxxclub\\.cc/",
+      "name": "XXXClub",
+      "exampleUrl": "https://xxxclub.cc/torrents/browse/0/",
+      "nextLink": "//a[not(contains(@style, 'absolute')) and text()='Next Page']",
+      "pageElement": ".browsetableinside"
+    },
+    {
+      "url": "^https://www\\.goal\\.com/jp",
+      "name": "Goal.com",
+      "exampleUrl": "https://www.goal.com/jp/%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9",
+      "nextLink": "//div[contains(@class, 'paginator')]/a[text()='以前のニュース']",
+      "pageElement": "//div[contains(@class, 'paginator')]/preceding-sibling::section[1]/ol[li/article]"
+    },
+    {
+      "url": "^https://wmg\\.jp/",
+      "name": "wmg.jp",
+      "exampleUrl": "https://wmg.jp/akanishi-jin/news/\nhttps://wmg.jp/himurokyosuke/discography/",
+      "nextLink": "//a[@rel='next']",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' list__pager ')]/preceding-sibling::section//div[contains(@class, '__list')]"
+    },
     {
       "url": "^https://[^/]+\\.fandom\\.com/",
       "name": "Interactive Maps Fandom",
@@ -3087,12 +3145,12 @@
       "url": "^https://\\w+\\.ismedia\\.jp/articles/-/\\d+"
     },
     {
-      "url": "^https://itest\\.5ch\\.net/(?!.*archives)",
-      "disableBuildIn": true
-    },
-    {
       "disableBuildIn": true,
       "url": "^https://www\\.extrafabulouscomics\\.com/"
+    },
+    {
+      "url": "^https://itest\\.5ch\\.io/(?!.*archives)",
+      "disableBuildIn": true
     },
     {
       "url": "^https://www\\.originalgamescores\\.com/",
@@ -3233,6 +3291,10 @@
       "url": "^https://www\\.jalan\\.net/.*?search"
     },
     {
+      "url": "^https://www\\.helicalfusion\\.com/",
+      "disableBuildIn": true
+    },
+    {
       "url": "^https://vlptherapeutics\\.co\\.jp/",
       "requestType": "frame",
       "responseDelay": 1000
@@ -3284,11 +3346,6 @@
       "requestType": "frame",
       "responseDelay": 1000,
       "url": "^https://www\\.laineygossip\\.com/"
-    },
-    {
-      "requestType": "frame",
-      "responseDelay": 2000,
-      "url": "^https://news\\.tv-asahi\\.co\\.jp/"
     },
     {
       "disableFixImage": true,
@@ -3474,6 +3531,10 @@
       "url": "^https://www\\.oneesports\\.gg/"
     },
     {
+      "url": "^https://www\\.askul\\.co\\.jp/",
+      "disableBuildIn": true
+    },
+    {
       "url": "^https://www\\.gocomics\\.com/",
       "disableBuildIn": true
     },
@@ -3517,10 +3578,6 @@
       "responseDelay": 1000,
       "spa": true,
       "url": "^https://dokusho-ojikan\\.jp/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://www\\.askul\\.co\\.jp/"
     },
     {
       "disableBuildIn": true,
@@ -3773,6 +3830,10 @@
       "url": "^https://jikayosha\\.jp/\\d+"
     },
     {
+      "url": "^https://escorenews\\.com/",
+      "disableBuildIn": true
+    },
+    {
       "url": "^https://joho-todai\\.com/",
       "disableBuildIn": true
     },
@@ -3846,10 +3907,6 @@
     {
       "url": "^https://www\\.houzz\\.jp/",
       "disableBuildIn": true
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://deviceplus\\.jp/"
     },
     {
       "disableBuildIn": true,
@@ -4117,7 +4174,8 @@
     {
       "requestType": "frame",
       "responseDelay": 3000,
-      "url": "^https://txxx\\.com/"
+      "url": "^https://txxx\\.com/",
+      "spa": true
     },
     {
       "disableBuildIn": true,
