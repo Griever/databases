@@ -88,6 +88,41 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://www\\.janpara\\.co\\.jp/sale/search/result/",
+      "name": "検索結果 全店舗｜じゃんぱら",
+      "exampleUrl": "https://www.janpara.co.jp/sale/search/result/?cache_key=/sale/search/result/&OUTCLSCODE=17&ORDER=3&PAGE=2",
+      "nextLink": "//a[contains(concat(' ', @class, ' '), ' pageLink ') and contains(@href, 'PAGE=') and @title='次ページ']",
+      "pageElement": ".search_list > :has(>a):not(.pagelinks)",
+      "framePageElement": ".search_list > :has(>a):not(.pagelinks)",
+      "requestType": "frame",
+      "responseDelay": 10000
+    },
+    {
+      "url": "^https://www\\.amuse\\.co\\.jp/",
+      "name": "AMUSE",
+      "exampleUrl": "https://www.amuse.co.jp/topics/index.php?p=3",
+      "nextLink": ".m-pager__next",
+      "pageElement": ".t-topicsList__list > div > ul",
+      "removeElement": "#pager",
+      "nextQuery": "p",
+      "nextIncrement": 1,
+      "nextStartValue": 1
+    },
+    {
+      "url": "^https://boatnavi\\.hochi\\.co\\.jp/articles",
+      "name": "boatnavi.hochi",
+      "exampleUrl": "https://boatnavi.hochi.co.jp/articles",
+      "nextLink": "//nav/a[@aria-label='次のページ']",
+      "pageElement": "ul[role='list']:has(+.pagination)",
+      "framePageElement": "ul[role='list']:has(+.pagination)",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 3000,
+      "spa": true
+    },
+    {
       "url": "^https://rtrp\\.jp/",
       "name": "rtrp.jp",
       "exampleUrl": "https://rtrp.jp/locations/70/",
@@ -304,7 +339,7 @@
       "name": "パ・リーグ 試合日程（カレンダー）",
       "exampleUrl": "https://www.marines.co.jp/game/calendar/202605/",
       "nextLink": "#next_month",
-      "pageElement": ".c-calendar-month"
+      "pageElement": ".c-datecontrol, .c-calendar-month"
     },
     {
       "url": "^https://www\\.giants\\.jp/",
@@ -415,12 +450,15 @@
     {
       "url": "^https://qz\\.com/",
       "name": "Quartz",
-      "exampleUrl": "https://qz.com/latest?page=2",
+      "exampleUrl": "https://qz.com/business-news/pharma",
       "nextLink": "//button[@aria-label='Next page']",
       "pageElement": "//main[article]/descendant-or-self::article",
+      "framePageElement": "//main[article]/descendant-or-self::article",
       "nextQuery": "page",
       "nextIncrement": 1,
-      "nextStartValue": 1
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 10000
     },
     {
       "url": "^https://cat\\.benesse\\.ne\\.jp/",
@@ -523,6 +561,16 @@
       "exampleUrl": "https://game8.jp/octopathtraveler-sp/437577",
       "pageElement": "//div[@data-track-nier-value='top-pagination']/following-sibling::div[starts-with(@id, 'anchor_comment_')]",
       "css": ".autopagerize_page_info ~ div .c-commentItem__body p { max-height: initial !important; overflow: initial !important;}"
+    },
+    {
+      "url": "^https://review\\.rakuten\\.co\\.jp/item/(?!.*\\/1\\.1\\/).*$",
+      "name": "楽天市場 みんなのレビュー·口コミ",
+      "exampleUrl": "https://review.rakuten.co.jp/item/1/110152_10040804",
+      "nextLink": "//button[contains(@class, 'current')][number()>0]/following-sibling::button[number()>0][1]",
+      "pageElement": "#itemReviewList + ul > li",
+      "nextQuery": "p",
+      "nextIncrement": 1,
+      "nextStartValue": 1
     },
     {
       "url": "^https://huggingface\\.co/models",
@@ -1432,11 +1480,6 @@
       "url": "^https://cookpad\\.com/",
       "disableBuildIn": true,
       "spa": true
-    },
-    {
-      "url": "^https://cookpad\\.com/\\w+/users/\\d+/sent_cooksnaps",
-      "name": "クックパッド /sent_cooksnaps",
-      "pageElement": "id('main_contents')/div[.//img[contains(@src, '/photo.jpg')]]"
     },
     {
       "url": "^https://cookpad\\.com/",
@@ -3173,6 +3216,11 @@
       "requestType": "frame",
       "responseDelay": 1500,
       "url": "^https://nhk-charactershop-tokyo\\.com/"
+    },
+    {
+      "url": "^https://openrecnext\\.amebaownd\\.com/",
+      "requestType": "frame",
+      "responseDelay": 1000
     },
     {
       "url": "^https://www\\.thegamecollection\\.net/",
