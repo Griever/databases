@@ -537,13 +537,12 @@
     {
       "url": "^https://brandavenue\\.rakuten\\.co\\.jp/",
       "name": "Rakuten Fashion",
-      "exampleUrl": "https://brandavenue.rakuten.co.jp/all-sites/cateb-0000002001/catem-0000005001/men/?fixed_price_upper=6000&l-id=brn_search_filter_catem",
+      "exampleUrl": "https://brandavenue.rakuten.co.jp/all-sites/cateb-0000002001/men/?fixed_price_upper=6000&l-id=brn_search_filter_catem_clear",
       "nextLink": "id('main-pagination')/li[number(text())>0]/following-sibling::li/a[number()>0]",
       "pageElement": "#item-grid",
-      "framePageElement": "#main-pagination",
+      "framePageElement": "id('item-grid')[.//img and count(.//img)=count(.//li[@id])]",
       "requestType": "frame",
-      "responseDelay": 5000,
-      "disableBuildIn": true
+      "responseDelay": 10000
     },
     {
       "url": "^https://www\\.userscript\\.zone/",
@@ -654,11 +653,9 @@
       "exampleUrl": "https://jp.mercari.com/search?category_id=112&brand_id=38912",
       "nextLink": "[data-testid=\"pagination-next-button\"] > a",
       "pageElement": "#item-grid",
-      "framePageElement": "#item-grid > ul > li:last-child img",
+      "framePageElement": "id('item-grid')[not(.//div[contains(concat(' ', @class, ' '), ' merSkeleton ')])]",
       "requestType": "frame",
-      "responseDelay": 5000,
-      "spa": true,
-      "spaDelay": 1000
+      "responseDelay": 10000
     },
     {
       "url": "^https://www\\.locondo\\.jp/",
@@ -1979,6 +1976,13 @@
   ],
   "MIDDLE_SITEINFO": [
     {
+      "url": "^https?://www\\.g-renda\\.com/",
+      "name": "G-Renda",
+      "exampleUrl": "http://www.g-renda.com/",
+      "nextLink": "//div[contains(concat(' ', @class, ' '), ' site_center_headline_body ')]/span[number()>0]/following-sibling::a[1][number()>0]",
+      "pageElement": ".site_center_headline ~ *:not(:has(>a[href*='pid=']))"
+    },
+    {
       "url": "^https://xxxclub\\.cc/",
       "name": "XXXClub",
       "exampleUrl": "https://xxxclub.cc/torrents/browse/0/",
@@ -2242,13 +2246,6 @@
       "pageElement": "//div[@class='board']"
     },
     {
-      "url": "^https?://bashalog\\.c-brains\\.jp/",
-      "name": "バシャログ。",
-      "exampleUrl": "http://bashalog.c-brains.jp/category/smartphone/",
-      "nextLink": "//li[@class='next']/a",
-      "pageElement": "//div[@class='inner' and article[@class='box-tile']]"
-    },
-    {
       "url": "^https://(shop|pc)\\.tsukumo\\.co\\.jp/(?:nav|search)",
       "name": "TSUKUMO公式通販サイト",
       "exampleUrl": "https://shop.tsukumo.co.jp/search/?keyword=mouse",
@@ -2262,13 +2259,6 @@
       "nextLink": "//a[@class='article-pager__prev' and text()='前の日']",
       "pageElement": "//ul[@class='article-list']",
       "insertBefore": "//div[@class='calendar__wrap']/following-sibling::*[1]"
-    },
-    {
-      "url": "^https://www\\.narinari\\.com/archive/",
-      "name": "Narinari.com",
-      "exampleUrl": "https://www.narinari.com/archive/2022/07/27/",
-      "nextLink": "descendant::a[contains(text(), 'の記事一覧')][following-sibling::text()[1][normalize-space(.)='>']]",
-      "pageElement": "descendant::ul[@class='thumbnails']"
     },
     {
       "url": "^https://[\\w-]+?\\.militaryblog\\.jp/(?!e\\d+)",
@@ -2355,27 +2345,11 @@
       "pageElement": "id('primary secondary')[1]//*[self::div[@class='concept_light clearfix'] or self::ul[@class='sentences']]"
     },
     {
-      "url": "^https://webtan\\.impress\\.co\\.jp/",
-      "name": "Web担当者Forum",
-      "exampleUrl": "https://webtan.impress.co.jp/e/2010/04/22/7748\nhttps://webtan.impress.co.jp/e/2012/09/11/13298/page/6\nhttps://webtan.impress.co.jp/e/2011/04\nhttps://webtan.impress.co.jp/list/all",
-      "nextLink": "//li[@class='pager-next last']/a",
-      "pageElement": "//div[contains(concat(' ', @class, ' '), ' field-name-body ')]/div/div[@class='field-item even']/*[not((self::div|preceding-sibling::div)[@id='next_page_link_auto'])]|//div[@class='view-content' and .//article[starts-with(@id, 'node-')]]",
-      "comment": "has data-original. disabled http://wedata.net/items/2194"
-    },
-    {
       "name": "LINE公式ブログ",
       "url": "^https://line-ja\\.officialblog\\.jp/",
       "nextLink": "#main a[rel='next']",
       "pageElement": "#main > #main-inner > .article-wrapper",
       "exampleUrl": "https://official-blog-ja.line.me/"
-    },
-    {
-      "url": "^https://curazy\\.com/archives/\\d",
-      "name": "笑うメディア クレイジー stop",
-      "exampleUrl": "https://curazy.com/archives/485000 https://curazy.com/archives/567648",
-      "nextLink": "dummy",
-      "pageElement": "dummy",
-      "stopElement": "self::node()[not(//span[contains(concat(' ', @class, ' '), ' post-page-numbers ')])]|//style[contains(translate(., ' ', ''), '.page-links{display:none')]"
     },
     {
       "url": "^https://pubmed\\.ncbi\\.nlm\\.nih\\.gov/\\?term=test",
@@ -2409,13 +2383,6 @@
       "exampleUrl": "https://www.recordchina.co.jp/latest.php?page=3",
       "nextLink": "//div[contains(concat(' ', @class, ' '), ' nextpage ')]/a",
       "pageElement": "//div[contains(concat(' ', @class, ' '), ' left-side-detail ')]/section[1]/div/div[contains(concat(' ', @class, ' '), ' news-body ')]"
-    },
-    {
-      "url": "^https://www\\.(?:polygon|eater|sbnation)\\.com/",
-      "name": ".c-compact-river__entry",
-      "exampleUrl": "https://www.eater.com/ https://www.sbnation.com/",
-      "nextLink": "a.c-pagination__more, a.c-pagination__next",
-      "pageElement": ".c-compact-river__entry"
     },
     {
       "url": "^https://www\\.lifehacker\\.jp/",
@@ -3421,6 +3388,13 @@
     {
       "disableBuildIn": true,
       "url": "^https://joetsu\\.yukiguni\\.town/"
+    },
+    {
+      "url": "^https://(\\w+\\.)?xhamster\\.com/",
+      "name": "xHamster",
+      "framePageElement": "//div[@data-role='video-section-content-role']\n[count(.//div[contains(concat(' ', @class, ' '), ' video-thumb ')]/a)=count(.//div[contains(concat(' ', @class, ' '), ' video-thumb ')]/a/img)]",
+      "requestType": "frame",
+      "responseDelay": 10000
     },
     {
       "disableBuildIn": true,
