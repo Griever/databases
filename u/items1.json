@@ -88,6 +88,27 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://gundam-official\\.com/",
+      "name": "GUNDAM Official Website",
+      "exampleUrl": "https://gundam-official.com/news?page=3",
+      "pageElement": "main > section > .MuiGrid-root.MuiGrid-container",
+      "framePageElement": "main > section > .MuiGrid-root.MuiGrid-container",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 10000
+    },
+    {
+      "url": "^https://(\\w+\\.)?xhamster\\.com/",
+      "name": "xHamster",
+      "exampleUrl": "https://jp.xhamster.com/categories/japanese",
+      "framePageElement": "//div[@data-role='video-section-content-role' or @data-role='thumb-list-block']\n[count(.//div[contains(concat(' ', @class, ' '), ' video-thumb ')]/a)=count(.//div[contains(concat(' ', @class, ' '), ' video-thumb ')]/a/img)]",
+      "requestType": "frame",
+      "responseDelay": 10000,
+      "disableWedata": true
+    },
+    {
       "url": "^https://www\\.janpara\\.co\\.jp/sale/search/result/",
       "name": "検索結果 全店舗｜じゃんぱら",
       "exampleUrl": "https://www.janpara.co.jp/sale/search/result/?cache_key=/sale/search/result/&OUTCLSCODE=17&ORDER=3&PAGE=2",
@@ -1765,8 +1786,7 @@
       "exampleUrl": "https://www.amazon.co.jp/gp/bestsellers/computers/2151972051/ref=zg_bs_nav_computers_2_2151970051",
       "pageElement": "[class*='-desktop-grid']",
       "requestType": "frame",
-      "responseDelay": 15000,
-      "framePageElement": "id('gridItemRoot')[count(.//a//img) >= 50]"
+      "responseDelay": 3000
     },
     {
       "url": "^https://bookmeter\\.com/",
@@ -1975,6 +1995,13 @@
     }
   ],
   "MIDDLE_SITEINFO": [
+    {
+      "url": "^https://www\\.kleinanzeigen\\.de/",
+      "name": "kleinanzeigen.de",
+      "exampleUrl": "https://www.kleinanzeigen.de/s-neubauprojekte/seite:2/c403",
+      "nextLink": "//a[@aria-label='Nächste']",
+      "pageElement": "id('srchrslt-results')"
+    },
     {
       "url": "^https?://www\\.g-renda\\.com/",
       "name": "G-Renda",
@@ -3390,11 +3417,8 @@
       "url": "^https://joetsu\\.yukiguni\\.town/"
     },
     {
-      "url": "^https://(\\w+\\.)?xhamster\\.com/",
-      "name": "xHamster",
-      "framePageElement": "//div[@data-role='video-section-content-role']\n[count(.//div[contains(concat(' ', @class, ' '), ' video-thumb ')]/a)=count(.//div[contains(concat(' ', @class, ' '), ' video-thumb ')]/a/img)]",
-      "requestType": "frame",
-      "responseDelay": 10000
+      "url": "^https://www\\.oscarpro\\.co\\.jp/",
+      "disableBuildIn": true
     },
     {
       "disableBuildIn": true,
@@ -3551,6 +3575,10 @@
     {
       "disableBuildIn": true,
       "url": "^https://www\\.oneesports\\.gg/"
+    },
+    {
+      "url": "^https://www\\.nikki\\.ne\\.jp/",
+      "disableBuildIn": true
     },
     {
       "url": "^https://www\\.askul\\.co\\.jp/",
