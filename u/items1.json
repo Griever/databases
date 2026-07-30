@@ -88,6 +88,24 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://movie-tsutaya\\.tsite\\.jp/",
+      "name": "宅配DVDレンタルのTSUTAYA DISCAS ランキング",
+      "exampleUrl": "https://movie-tsutaya.tsite.jp/netdvd/dvd/hotrankingGenreWeekly.do?genreID=00005",
+      "nextLink": "//h2[contains(concat(' ', @class, ' '), ' cd-dvd-rank-paginationOn ')]/../following-sibling::td[1]/h2/a",
+      "pageElement": "//div[contains(concat(' ', @class, ' '), ' content-product-ranking ')]",
+      "requestType": "frame",
+      "responseDelay": 500
+    },
+    {
+      "url": "^https://www\\.photolibrary\\.jp/",
+      "name": "フォトライブラリー",
+      "exampleUrl": "https://www.photolibrary.jp/search/?p=%B0%A6%C3%CE&page=2&sya=1\nhttps://www.photolibrary.jp/cat/?cat=cooking&pr=n&vr=0&o=200&pm=100",
+      "nextLink": "//div[contains(concat(' ', @class, ' '), ' next_yaji ')]/parent::a",
+      "pageElement": "#my-gallery",
+      "requestType": "frame",
+      "responseDelay": 500
+    },
+    {
       "url": "^https://gundam-official\\.com/",
       "name": "GUNDAM Official Website",
       "exampleUrl": "https://gundam-official.com/news?page=3",
@@ -1996,6 +2014,13 @@
   ],
   "MIDDLE_SITEINFO": [
     {
+      "url": "^https://www\\.net-frx\\.com/.",
+      "name": "Get Freax",
+      "exampleUrl": "https://www.net-frx.com/search/label/%E3%82%A2%E3%83%8B%E3%83%A1?&max-results=20",
+      "nextLink": "id('Blog1_blog-pager-older-link')|id('blog-pager-older-link545454')/text()",
+      "pageElement": "id('list')"
+    },
+    {
       "url": "^https://www\\.kleinanzeigen\\.de/",
       "name": "kleinanzeigen.de",
       "exampleUrl": "https://www.kleinanzeigen.de/s-neubauprojekte/seite:2/c403",
@@ -2850,9 +2875,9 @@
     {
       "url": "^https://one-piece\\.com/anime/\\d",
       "name": "ONE PIECE.com",
-      "exampleUrl": "https://one-piece.com/anime/115/index.html",
+      "exampleUrl": "https://one-piece.com/anime/128/index.html",
       "nextLink": ".el-page-navigation-link__next > a",
-      "pageElement": "#main-content > section:has(.el-page-navigation-link) > :not(.el-btn)"
+      "pageElement": "main > *"
     },
     {
       "url": "^https://slickdeals\\.net/f/",
@@ -3678,6 +3703,10 @@
       "url": "^https://www\\.gamestop\\.com/"
     },
     {
+      "url": "^https://www\\.net-frx\\.com/",
+      "disableBuildIn": true
+    },
+    {
       "url": "^https://q\\.hatena\\.ne\\.jp/",
       "disableBuildIn": true
     },
@@ -3737,10 +3766,6 @@
       "requestType": "frame",
       "responseDelay": 1000,
       "url": "^https://www\\.jujunyc\\.net/"
-    },
-    {
-      "disableBuildIn": true,
-      "url": "^https://www\\.net-frx\\.com/"
     },
     {
       "requestType": "frame",
