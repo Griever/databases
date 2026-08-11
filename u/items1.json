@@ -88,6 +88,18 @@
   },
   "TOP_SITEINFO": [
     {
+      "url": "^https://www\\.posemaniacs\\.com/",
+      "name": "No tag Unisex poses | POSEMANIACS - Royalty free 3d pose reference for all artists",
+      "exampleUrl": "https://www.posemaniacs.com/poses",
+      "nextLink": "//p[text()='Next']/../following-sibling::p[text()='>']",
+      "pageElement": "main > article > .grid",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "requestType": "frame",
+      "responseDelay": 500
+    },
+    {
       "url": "^https://movie-tsutaya\\.tsite\\.jp/",
       "name": "宅配DVDレンタルのTSUTAYA DISCAS ランキング",
       "exampleUrl": "https://movie-tsutaya.tsite.jp/netdvd/dvd/hotrankingGenreWeekly.do?genreID=00005",
@@ -2096,8 +2108,8 @@
       "name": "Pixiv",
       "exampleUrl": "https://www.pixiv.net/tags/Re%3A%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89%E5%A7%8B%E3%82%81%E3%82%8B%E7%95%B0%E4%B8%96%E7%95%8C%E7%94%9F%E6%B4%BB/illustrations\nhttps://www.pixiv.net/user_event.php?type=artworks\nhttps://www.pixiv.net/users/11/illustrations\nhttps://www.pixiv.net/users/11/manga\nhttps://www.pixiv.net/users/11/novels\nhttps://www.pixiv.net/tags/%E5%89%B5%E4%BD%9C/artworks\nhttps://www.pixiv.net/tags/%E5%89%B5%E4%BD%9C/novels?original_only=1",
       "nextLink": "//*[(self::button or self::span) and @aria-current]/following-sibling::a[1][not(@hidden)]",
-      "pageElement": "descendant::ul[.//a[@data-gtm-user-id or @data-gtm-value] and .//button/*[local-name()='svg']][last()][not(ancestor::aside)]|\n//*[@data-ga4-label='works_content']/*[.//a[@data-gtm-value]]",
-      "framePageElement": "descendant::ul[.//a[@data-gtm-user-id or @data-gtm-value] and .//button/*[local-name()='svg']][last()][not(ancestor::aside)]/li[last()][.//img[starts-with(@src, 'https://i.pximg.net/')]]|\n//*[@data-ga4-label='works_content']/descendant::div[@radius][last()]/img",
+      "pageElement": "//*[@data-ga4-label='works_content']/*[.//a[@data-gtm-value]]",
+      "framePageElement": "//*[@data-ga4-label='works_content'][not(.//figure)]",
       "requestType": "frame",
       "responseDelay": 15000
     },
@@ -3924,7 +3936,8 @@
     },
     {
       "disableBuildIn": true,
-      "url": "^https://www\\.pixiv\\.net/"
+      "url": "^https://www\\.pixiv\\.net/",
+      "spa": true
     },
     {
       "disableBuildIn": true,
