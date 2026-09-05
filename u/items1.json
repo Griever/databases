@@ -212,7 +212,7 @@
       "url": "^https://www\\.amazon\\.co\\.jp/",
       "name": "Amazon レビュー",
       "exampleUrl": "https://www.amazon.co.jp/product-reviews/B015OW3M1W/",
-      "clickElement": "id('cm_cr-pagination_bar')//a[@data-hook='show-more-button' and starts-with(@href, '/product-reviews/')]",
+      "clickElement": "id('cm_cr-pagination_bar')//a[@data-hook='show-more-button' and contains(@href, 'reviews/')]",
       "pageElement": "id('cm_cr-review_list')//ul",
       "framePageElement": "id('cm_cr-pagination_bar')"
     },
@@ -2109,7 +2109,7 @@
       "exampleUrl": "https://www.pixiv.net/tags/Re%3A%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89%E5%A7%8B%E3%82%81%E3%82%8B%E7%95%B0%E4%B8%96%E7%95%8C%E7%94%9F%E6%B4%BB/illustrations\nhttps://www.pixiv.net/user_event.php?type=artworks\nhttps://www.pixiv.net/users/11/illustrations\nhttps://www.pixiv.net/users/11/manga\nhttps://www.pixiv.net/users/11/novels\nhttps://www.pixiv.net/tags/%E5%89%B5%E4%BD%9C/artworks\nhttps://www.pixiv.net/tags/%E5%89%B5%E4%BD%9C/novels?original_only=1",
       "nextLink": "//nav/*[(self::button or self::span) and @aria-current]/following-sibling::a[1][not(@hidden)]",
       "pageElement": "//nav[*[(self::button or self::span) and @aria-current and number()>0]]\n/preceding::*[self::ul//a[@data-gtm-value and @data-ga4-label='thumbnail_link'] or self::div[contains(concat(' ', @class, ' '), ' grid ')]][1]",
-      "framePageElement": "//nav[*[(self::button or self::span) and @aria-current and number()>0]]\n/preceding::*[self::ul//a[@data-gtm-value and @data-ga4-label='thumbnail_link'] or self::div[contains(concat(' ', @class, ' '), ' grid ')]][1]\n[*[not(contains(@style, 'hidden'))][.//a[@data-ga4-label='thumbnail_link']][last()]//a[@data-ga4-label='thumbnail_link']//img]\n",
+      "framePageElement": "//nav[*[(self::button or self::span) and @aria-current and number()>0]]\n/preceding::*[self::ul//a[@data-gtm-value and @data-ga4-label='thumbnail_link'] or self::div[contains(concat(' ', @class, ' '), ' grid ')]][1]\n/*[not(contains(@style, 'hidden'))][.//a[@data-ga4-label='thumbnail_link']][last()]//a[@data-ga4-label='thumbnail_link']//img\n",
       "requestType": "frame",
       "responseDelay": 15000
     },
@@ -4224,6 +4224,11 @@
     {
       "disableBuildIn": true,
       "url": "^https://hugmug\\.jp/"
+    },
+    {
+      "url": "^https://pixta\\.jp/",
+      "requestType": "frame",
+      "responseDelay": 500
     },
     {
       "url": "^https://time\\.com/",
