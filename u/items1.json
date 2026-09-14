@@ -285,10 +285,9 @@
       "pageElement": ".resultBox"
     },
     {
-      "url": "^https://search\\.theregister\\.com/",
-      "exampleUrl": "https://search.theregister.com/?q=test",
-      "requestType": "frame",
-      "responseDelay": 1000
+      "url": "^https://(?:search|www)\\.theregister\\.com/.+",
+      "clickElement": "//a[@data-nav='next']",
+      "pageElement": ".labclient-content > article"
     },
     {
       "nextLink": "//a[@rel=\"next\"]",
@@ -371,11 +370,15 @@
       "pageElement": "//div[contains(concat(' ', @class, ' '), ' pagination ')]/preceding-sibling::section[contains(concat(' ', @class, ' '), ' list-wrap ')]"
     },
     {
-      "url": "^https?://park\\.ajinomoto\\.co\\.jp/(?:recipe/search|tag)/",
-      "name": "AJINOMOTO Park レシピ検索",
-      "exampleUrl": "https://park.ajinomoto.co.jp/recipe/search/?search_word=%E8%B1%9A%E8%82%89",
-      "nextLink": "//link[@rel='next']",
-      "pageElement": "id('newList popularityList')"
+      "url": "^https://park\\.ajinomoto\\.co\\.jp/",
+      "name": "味の素パーク",
+      "exampleUrl": "https://park.ajinomoto.co.jp/search/recipe/?word=%E8%B1%9A%E8%82%89\nhttps://park.ajinomoto.co.jp/search/contents/?word=%E8%B1%9A%E8%82%89&order=POP",
+      "nextLink": "//nav/button[@aria-label='次のページへ']",
+      "pageElement": ".search-contents, .search-recipe",
+      "nextQuery": "page",
+      "nextIncrement": 1,
+      "nextStartValue": 1,
+      "spaDelay": 2000
     },
     {
       "url": "^https://natalie\\.mu/.+/gallery/.+",
@@ -2025,6 +2028,19 @@
     }
   ],
   "MIDDLE_SITEINFO": [
+    {
+      "url": "^https://asia\\.nikkei\\.com/",
+      "name": "Nikkei Asia",
+      "exampleUrl": "https://asia.nikkei.com/spotlight/iran-tensions",
+      "pageElement": "//div[contains(@class, 'StreamPagination')]/preceding-sibling::div[contains(@class, 'Grid')]"
+    },
+    {
+      "url": "^https://tters\\.jp/",
+      "name": "Tters",
+      "exampleUrl": "https://tters.jp/g/dfd58ecf12f2",
+      "nextLink": "//a[contains(concat(' ', @class, ' '), ' pagination-next ') and text()='次へ']",
+      "pageElement": ".item-feed > [data-post-id]"
+    },
     {
       "url": "^https://www\\.net-frx\\.com/.",
       "name": "Get Freax",
@@ -4116,6 +4132,10 @@
       "requestType": "frame",
       "responseDelay": 3000,
       "url": "^https://futurism\\.com/"
+    },
+    {
+      "url": "^https://ranking\\.net/",
+      "removeElement": ".relative.mt-4:has(.js-slick)"
     },
     {
       "requestType": "frame",
