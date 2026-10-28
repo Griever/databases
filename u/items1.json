@@ -706,8 +706,8 @@
       "name": "メルカリ",
       "exampleUrl": "https://jp.mercari.com/search?category_id=112&brand_id=38912",
       "nextLink": "[data-testid=\"pagination-next-button\"] > a",
-      "pageElement": "#item-grid",
-      "framePageElement": "id('item-grid')[not(.//div[contains(concat(' ', @class, ' '), ' merSkeleton ')])]",
+      "pageElement": "descendant::li[@data-testid='item-cell'][1]/..",
+      "framePageElement": "descendant::li[@data-testid='item-cell'][1]/parent::*[not(.//div[contains(concat(' ', @class, ' '), ' merSkeleton ')])]",
       "requestType": "frame",
       "responseDelay": 10000
     },
