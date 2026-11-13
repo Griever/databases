@@ -214,7 +214,7 @@
       "exampleUrl": "https://www.amazon.co.jp/product-reviews/B015OW3M1W/",
       "clickElement": "id('cm_cr-pagination_bar')//a[@data-hook='show-more-button' and contains(@href, 'reviews/')]",
       "pageElement": "id('cm_cr-review_list')//ul",
-      "framePageElement": "id('cm_cr-pagination_bar')"
+      "framePageElement": "id('cm_cr-pagination_bar')//a[@data-hook='show-more-button' and contains(@href, 'reviews/')]"
     },
     {
       "url": "^https://addons\\.mozilla\\.org/",
